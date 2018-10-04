@@ -1,5 +1,5 @@
 git status
-	-Entrega como estan mis archivos c/r al repositorio o al master commit.
+	-Entrega como están mis archivos c/r al repositorio o al master commit.
 git add
 	-Pide la dirección del aricho que cambiaste
 git pull
