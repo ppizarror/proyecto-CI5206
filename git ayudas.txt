@@ -1,0 +1,10 @@
+git status
+	-Entrega como estan mis archivos c/r al repositorio o al master commit.
+git add
+	-Pide la dirección del aricho que cambiaste
+git pull
+git commit -m "comentario"
+git push
+git ignore
+	- Elelemtos, archivos o carpetas que quiero ignorar
+	- se puede ordenar con # (comentario)
