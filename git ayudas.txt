@@ -2,9 +2,21 @@ git status
 	-Entrega como están mis archivos c/r al repositorio o al master commit.
 git add
 	-Pide la dirección del aricho que cambiaste
-git pull
+	-Puede ser git add--all
+	-o git add *.hola añade todos los documentos con formato .hola
 git commit -m "comentario"
+	- Al paquete generado en git add le añade un comentario con el cambio realizado-
+	-Esto deja el archivo o paquete de archivos preparados para enviar.
 git push
+	-Sube el paquete anterior a la nube modificando automaticamente el master.
+git pull
+	-Con este puedo descargar todos los archivos del master en la nube.
+	-Cuando hay archivos con un mismo nombre tienes dos opciones
+		-o reemplazar el archivo de tu carpeta con el de la nube
+		-o hacer un git push con tus archivos que son distintos a los de la nube, cambiando el master.
 git ignore
 	- Elelemtos, archivos o carpetas que quiero ignorar
 	- se puede ordenar con # (comentario)
+get diff
+	-entrega las diferencias en los archivos.
+	
