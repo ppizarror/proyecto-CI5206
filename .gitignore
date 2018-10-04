@@ -1,0 +1,26 @@
+# Archivos autocad
+*.bak
+*.dwl
+*.dwl2
+
+# Archivos compilación latex
+*.aux
+*.lof
+*.lomycapequ
+*.lot
+*.out
+*.synctex.*
+*.toc
+*.log
+*.lol
+*.bbl
+*.blg
+
+# Archivos ETABS
+*.$et
+*.ebk
+*.tlog
+*.ico
+
+# Archivos de windows
+*desktop.ini
