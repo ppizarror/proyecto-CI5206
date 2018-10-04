@@ -1,7 +1,7 @@
 # Archivos autocad
 *.bak
 *.dwl
-*.dlw2
+*.dwl2
 
 # Archivos compilación latex
 *.aux
@@ -21,3 +21,6 @@
 *.ebk
 *.tlog
 *.ico
+
+# Archivos de windows
+*desktop.ini
