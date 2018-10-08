@@ -24,3 +24,7 @@
 
 # Archivos de windows
 *desktop.ini
+
+# Archivos residuales de word/excel
+*$*.doc*
+*$*.xls*
