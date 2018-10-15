@@ -19,6 +19,3 @@ git ignore
 	- se puede ordenar con # (comentario)
 get diff
 	-entrega las diferencias en los archivos.
-
-fin
-	
