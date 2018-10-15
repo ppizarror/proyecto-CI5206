@@ -1,0 +1,256 @@
+\newpage
+\section{Materiales}
+
+Se presentan los materiales a utilizar en el proyecto junto con sus principales características y propiedades.
+
+\begin{itemize}
+    \item \textbf{Hormigón}\\
+    Se hará uso de dos hormigones para este edificio, H-40 y H-35. El primer hormigón está pensado para un uso en los primeros pisos del edificio junto con el subterráneo, mientras que el segundo se utilizará para el resto de los pisos ubicados mayor altura. De acuerdo a la norma NCh 170.Of1985 se obtienen las siguientes propiedades:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Tensiones admisibles y características de hormgigones a utilizar.}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Grado} &
+          \boldmath{}\textbf{$\rho [tonf/m^3]$}\unboldmath{}&
+          \boldmath{}\textbf{$f'c [Mpa]$} &
+          \boldmath{}\textbf{$E [Mpa]$} &
+          \boldmath{}\textbf{$\nu [-]$} &
+          \boldmath{}\textbf{$G [Mpa]$}
+          \boldmath{}\bigstrut\\
+        \hline
+        H35 &
+          2,5 &
+          30 &
+          25742,96 &
+          0,2 &
+          10726,23
+          \bigstrut[t]\\
+        H40 &
+          2,5 &
+          35 &
+          27805,57 &
+          0,2 &
+          11585,66
+          \bigstrut[b]\\
+        \hline
+        \end{tabular}%
+      \label{hormigon}%
+    \end{table}%
+
+    
+    \item \textbf{Acero}\\
+    Se considera un acero ASTM-A36 como acero estructural y de refuerzo, el cual posee las siguientes características:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Tensiones admisibles y características del acero a utilizar.}
+      \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Grado} &
+          \boldmath{}\textbf{$F_{y} [tonf/cm^2]$} &
+          \boldmath{}\textbf{$F_{u} [tonf/cm^2]$} &
+          \boldmath{}\textbf{$E [tonf/cm^2]$} &
+          \boldmath{}\textbf{$\nu [-]$} &
+          \boldmath{}\textbf{$G [tonf/cm^2]$}
+          \bigstrut\\
+        \hline
+        A36 &
+          2,53 &
+          4,08 &
+          2100 &
+          0,29 &
+          787,44
+          \bigstrut\\
+        \hline
+        \end{tabular}}%
+      \label{acero}%
+    \end{table}%
+    
+    
+    \item \textbf{Madera}\\
+    De acuerdo a la NCh 1198 se entregan las principales propiedades de dos especies de madera de sección transversal circular, el pino radiata y el eucalipto.
+    
+    \begin{table}[H]
+      \centering
+      \caption{Tensiones admisibles y módulo de elasticidad para piezas estructurales de madera.}
+      \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Especie} &
+          \boldmath{}\textbf{$E [Mpa]$} &
+          \boldmath{}\textbf{$Flexion [Mpa]$} &
+          \boldmath{}\textbf{$Traccion [Mpa]$} &
+          \boldmath{}\textbf{$Comp. [Mpa]$} &
+          \boldmath{}\textbf{$Corte [Mpa]$} &
+          \boldmath{}\textbf{$Comp. normal [Mpa]$}
+          \bigstrut\\
+        \hline
+        Pino radiata &
+          6423 &
+          13,8 &
+          8,3 &
+          5,4 &
+          0,71 &
+          2,45
+          \bigstrut[t]\\
+        Eucalipto &
+          12425 &
+          32,5 &
+          19,5 &
+          17,7 &
+          1,73 &
+          8,47
+          \bigstrut[b]\\
+        \hline
+        \end{tabular}}%
+      \label{madera}%
+    \end{table}%
+
+    
+    \item \textbf{Albañilería}\\ 
+    De acuerdo a la NCh 2123.Of1997 se entregan las resistencias a corte y tracción por flexión perpendicular a la junta horizontal del mortero para distintas clases de cerámicos y bloques de hormigón utilizados en albañilería:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Resistencias al corte y tracción de elementos de albañilería.}
+      \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|c|l|c|c|c|c|}
+        \hline
+        \textbf{Unidad} &
+          \multicolumn{1}{c|}{\boldmath{}\textbf{Clase}} &
+          \boldmath{}\textbf{$F_{bt} [Mpa]$} &
+          \boldmath{}\textbf{$F_{y} [Mpa]$} &
+          \boldmath{}\textbf{Grado mortero} &
+          \boldmath{}\textbf{$\tau_{m} [Mpa]$}
+          \bigstrut\\
+        \hline
+        Cerámica &
+          \multicolumn{1}{c|}{MqM} &
+          0,3 &
+          16 &
+          M 15 &
+          0,6
+          \bigstrut[t]\\
+         &
+          \multicolumn{1}{c|}{MqP} &
+          0,3 &
+          10 &
+          M 10 &
+          0,5
+          \\
+         &
+          \multicolumn{1}{c|}{MqHv} &
+          0,3 &
+          10 &
+          M 10 &
+          0,5
+          \\
+         &
+          \multicolumn{1}{c|}{mnM} &
+          0,1 &
+          4 &
+          M 5 &
+          0,25
+          \bigstrut[b]\\
+        \hline
+        Bloques de H. &
+          Sin relleno de huecos &
+          0,1 &
+          4,5 &
+          M 10 &
+          0,3
+          \bigstrut[t]\\
+         &
+          Con relleno total &
+          0,6 &
+          5 &
+          M 10 &
+          0,2
+          \bigstrut[b]\\
+        \hline
+        \end{tabular}}%
+      \label{albanileria}%
+    \end{table}%
+
+    
+    \item \textbf{Metalcon}\\
+    Se consideran los siguientes elementos para la conformación de una estructura de metalcon:
+    
+    \insertimage[\label{sistema-metalcon}]{materiales/matalcon}{width=10cm}{Secciones que forman parte del metalcon.}
+    
+    Para varios tipos de los elementos anteriores se entregan las capacidades a flexión, carga axial y corte de los perfiles según la especificación AISI 1989, y considerando una tensión de fluencia del material de $F_{y}=2812 \quad kgf/cm^2$:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Capacidades a flexión, carga axial y corte de perfiles de metalcon.}
+      \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Perfil} &
+          \boldmath{}\textbf{$Mx(+) [kgf \cdot cm]$} &
+          \boldmath{}\textbf{$Mx(-) [kgf \cdot cm]$} &
+          \boldmath{}\textbf{$My(-) [kgf \cdot cm]$} &
+          \boldmath{}\textbf{$P [kgf]$} &
+          \boldmath{}\textbf{$V [kgf]$}
+          \bigstrut\\
+        \hline
+        400MA05 &
+          1210 &
+          1310 &
+          1510 &
+          801 &
+          326
+          \bigstrut[t]\\
+        400MA085 &
+          2150 &
+          2150 &
+          2750 &
+          1690 &
+          713
+          \\
+        40CA05 &
+          1010 &
+          874 &
+          820 &
+          498 &
+          166
+          \\
+        40CA085 &
+          1950 &
+          1410 &
+          1410 &
+          1120 &
+          350
+          \\
+        60CA05 &
+          1710 &
+          927 &
+          830 &
+          507 &
+          124
+          \\
+        60CA085 &
+          3280 &
+          1500 &
+          1460 &
+          1170 &
+          482
+          \\
+        90CA085CP &
+          7110 &
+          2120 &
+          1990 &
+          1590 &
+          411
+          \bigstrut[b]\\
+        \hline
+        \end{tabular}}%
+      \label{metalcon}%
+    \end{table}%
+    
+\end{itemize}
+
+%A continuación se entrega la siguiente tabla resumen con las características más relevantes de cada material.

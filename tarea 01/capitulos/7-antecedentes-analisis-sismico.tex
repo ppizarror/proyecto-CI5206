@@ -1,0 +1,61 @@
+\newpage
+\section{Antecedentes Análisis Sísmico}
+
+\subsection{Zona sísmica}
+
+El edificio se encuentra en la ciudad de Antofagasta, declarada como zona sísmica tipo 3 según la norma Chilena NCh 433 Of 1996:2012 (Figura \ref{zona-sismica}).
+
+\insertimageboxed[\label{zona-sismica}]{bases-de-calculo/zona-sismica}{width=10cm}{0.5}{Zona sísmica ciudad de Antofagasta, Figura 4.1 norma NCh 433.}
+
+\begin{table}[H]
+  \centering
+  \caption{Valor de la aceleración efectiva $A_o$, Tabla 6.2 NCh433.}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Zona sísmica} & \boldmath{}\textbf{$A_o$}\unboldmath{} \bigstrut\\
+    \hline
+    1     & 0.20g \bigstrut[t]\\
+    2     & 0.30g \\
+    3     & 0.40g \bigstrut[b]\\
+    \hline
+    \end{tabular}%
+  \label{tab:zonasismicaAo}%
+\end{table}%
+
+Luego, según la Tabla \ref{tab:zonasismicaAo} el edificio poseerá una aceleración efectiva $A_o$ igual a 0.40g.
+
+\subsection{Período de la estructura}
+
+Se utilizará una aproximación encontrada en la literatura, utilizada durante el curso de Diseño Sísmico, para el cálculo del período de la estructura en función de la altura:
+
+\insertequationanum{T^{*}=0.035\cdot N_{piso} = 0.84s} % También puede ser 0.0.2*H_t
+
+En donde $N_{piso}$ corresponde a cantidad de pisos, obtenida de los planos.
+
+\subsection{Cálculo coeficiente sísmico}
+
+En edificios de H.A. de estas características el coeficiente sísmico debe ser del orden del 10\%, teóricamente, según el acápite 6.2.3.1 de la norma sísmica NCh433:
+
+\insertequationanum{C = \frac{2.75\cdot S\cdot A_o}{g\cdot R}\bigg(\frac{T'}{T^{*}}\bigg)^{n} = 0.034}
+
+El valor del coeficiente sísmico no debe ser inferior a $C_{min}=\frac{A_o\cdot S}{6\cdot g} = 0.06$, por otro lado el valor de C no necesita ser mayor que el indicado por la tabla 6.4, el cual, para el tipo de estructura con $R=7$ se tiene $C_{max}=\frac{0.35\cdot S \cdot A_o}{g} = 0.126$. \\
+
+Luego, dado que 10\% está dentro de los rangos de C, se usará $C=0.1$.
+
+\subsection{Cálculo peso sísmico}
+
+Se tiene que $P=23\cdot A_{piso}\cdot q$ en donde $q$ es el peso sísmico por piso, igual a $1 \frac{Ton}{m^2}$ y $A_{piso}$ corresponde al área de las losas de los pisos del edificio. Dicha área se obtuvo a partir de los planos AutoCAD, restando el área de los ascensores, equivalente a $410.4\ m^2$ por cada piso. Luego:
+
+\insertequationanum{P = 23 \cdot 410.4 \cdot 1 = 9439.2\ [Ton]}
+
+\subsection{Corte basal}
+
+Según el capítulo 6.2.3 de la norma NCh433 el esfuerzo de corte basal está dado por:
+
+\insertequationanum{Q_o = C\cdot I \cdot P = 943.92 \ [Ton]}
+
+\subsection{Espectro de diseño}
+
+El espectro de diseño se obtuvo según punto 6.3.5 de NCh433, en donde se utilizó el período estimado $T^{*}$ para obtener el perfil de $S_a$. Dado que no se posee suficiente información se utilizará el mismo perfil para ambos ejes x e y. Principales valores: $R^{*}_{x,y}=10,194$, $Q_{x,y}=943,92\ [Ton]$, aceleración máxima: $0.957\ \frac{m}{s^2}$.
+
+\insertimage{bases-de-calculo/espectro}{width=10cm}{Espectro de diseño, según NCh433.}

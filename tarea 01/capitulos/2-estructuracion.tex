@@ -1,0 +1,51 @@
+\newpage
+\section{Estructuración}
+
+\subsection{Tipo de estructuración}
+
+El tipo de estructuración es del tipo muro y losa de Hormigón Armado (H.A.); En este sentido el muro tiene la función de transmitir cargas tipo gravitacionales (compresión) a las fundaciones y resistir cargas cortantes, tracciones y compresiones por flexión en en caso de un sismo. Las losas por otra parte tributan las cargas al sistema de muros.
+
+\insertimage[\label{sistema-foto-muro}]{bases-de-calculo/estructuracion-muro}{width=8cm}{Ilustración de referencia edificio de muros de hormigón armado.}
+
+\begin{images}{Ilustraciones sistema de muros, Ref.: Reinforced Concrete Design of Tall Buildings, Taranath, B. S., CRC Press, 2010.}
+    \addimage{bases-de-calculo/sistema-muro}{width=6cm}{Sistema estructural de muro.}
+    \addimage{bases-de-calculo/sistema-muro2}{width=6cm}{Ejemplos de dificaciones con elemento de muro.}
+\end{images}
+
+De acuerdo a lo estipulado en la NCh433 Tabla 5.1 y Tabla 6.1 se tienen los siguientes parámetros de modificación de acuerdo al tipo de estructuración, en donde $R$ y $R_o$ corresponden a factores de reducción e $I$ es el nivel de importancia de la estructura.
+
+\begin{table}[H]
+  \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Parámetro} & \textbf{Valor} \bigstrut\\
+    \hline
+    R     & 7 \bigstrut\\
+    \hline
+    $R_o$ & 11 \bigstrut\\
+    \hline
+    I     & 1 \bigstrut\\
+    \hline
+    \end{tabular}%
+
+\end{table}%
+
+\subsection{Elementos estructurales}
+
+\begin{itemize}
+    \item \textbf{Muro de carga}\\
+    El muro de carga o muro portante es un elemento estructural del edificio que permite transmitir cargas de tipo compresionales (peso) de la estructura hacia las fundaciones, además tiene la función de resistir cargas cortantes producto de un sismo. Los muros funcionan principalmente a compresión y corte.
+    
+    \begin{images}{Elemento estructural muro, tipo de trabajo. Ref: Paulay and Priestley, 1992.}
+    \addimage{bases-de-calculo/muro-corte}{width=5cm}{Muros, trabajando en corte dado solicitaciones horizontales tipo viento o sísmico.}
+    \addimage{bases-de-calculo/muro-trabajo}{width=5cm}{Muros, trabajo en compresión y corte.}
+\end{images}
+    \item \textbf{Losas}\\
+    Permite tributar las cargas y solicitaciones de uso hacia los sistemas de muro de la estructura. Es un elemento estructural que trabaja principalmente en flexión.
+    
+    \item \textbf{Vigas}\\
+    En la estructura también es posible encontrar vigas, ubicadas entre los muros. Estos elementos permiten transmitir y conectar los elementos de muro, trabajando principalmente en flexión.
+    
+    \item \textbf{Fundaciones}\\
+    Las fundaciones son elementos estructurales que transmiten al suelo las cargas transmitidas por el sistema de muros, el diseño está limitado a no permitir que la estructura completa sufra asentamientos de gran magnitud y que no existan asentamientos diferenciales. Con el fin de que estas limitaciones se cumplan se deben transmitir las cargas hasta un estrato de suelo que tenga una resistencia suficiente y distribuirlas en un área capaz de minimizar las presiones de contacto. Además de estas limitaciones se debe proporcionar suficiente resistencia que resista el deslizamiento y el volteo.
+\end{itemize}

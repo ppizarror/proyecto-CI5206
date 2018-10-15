@@ -1,0 +1,48 @@
+\newpage
+\section{Suelo y parámetros mecánica de suelos}
+La transmisión de cargas producidas en los muros se transfiere al suelo mediante el uso de fundaciones. Dada la naturaleza del proyecto, como su estructuración no consta de columnas, sino que solo sistemas de muros, las fundaciones a utilizar corresponden a zapatas corridas.
+
+Los muros generalmente trasmiten a su fundación además de cargas
+verticales, momentos flectores; debido a este momento la carga resultante no coincide con el
+centroide de la fundación, ya que estos momentos son generados por vientos, sismos entre
+otras presiones laterales y sus magnitudes son variables en el tiempo. Si estas presiones
+fueran constantes se podría colocar el centro de la fundación bajo la carga resultante y con
+esto evitar la excentricidad. 
+
+\subsection{Presiones de suelo}
+A nivel del subterráneo del edificio, existen presiones de suelo que actúan de forma horizontal a los muros de este nivel. Dichas presiones se producen principalmente por el preso propio del suelo, como también producto de la altura del nivel freático.
+
+%falta mas , ¿habían presiones verticales no? ¿Que mono seria bueno poner?
+
+
+\subsection{Clasificación suelo y descripción de características generales}
+
+El tipo de suelo de la estructura está clasificado como tipo A - 8.0-10.0 $Kg/cm^2$. Según NCh 433 el suelo posee los siguientes parámetros:
+
+\begin{table}[H]
+  \centering
+  \caption{Parámetros que dependen del tipo de suelo.}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Parámetro} & \textbf{Valor} \bigstrut\\
+    \hline
+    S     & 0.90 \bigstrut[t]\\
+    $T_o$(s) & 0.15 \\
+    $T'$(s) & 0.20 \\
+    n     & 1.00 \\
+    p     & 2.0 \bigstrut[b]\\
+    \hline
+    \end{tabular}%
+  \label{tab:paramsuelo}%
+\end{table}%
+
+\subsection{Balastos}
+La constante de balasto representa una medida de la rigidez de un terreno. El cálculo de este coeficiente viene dado por:
+
+\insertequation{k_{b}=\frac{P}{A\cdot w}=\frac{\sigma_{V}}{w}}
+
+De la ecuación anterior se puede rescatar que, para estimar de forma preliminar la constante de balasto se necesita saber la carga que las zapatas transfieren al suelo por unidad de área, junto además con la deformación que experimentará el suelo producto de esta carga, la cual es transferida a través de los muros.
+
+Considerando todo el peso sísmico de la estructura y el área de los muros presentes en el subterráneo, es posible tener buenas aproximaciones para $P$ y $A$, sin embargo, las deformaciones del suelo requieren de un análisis mas exhaustivo difícil de efectuar en este análisis preliminar.
+%\subsection{Diagramas de empuje}
+%puta no se me ocurre que chamullar bien aca sorry, talvez es mejor no pescarlo

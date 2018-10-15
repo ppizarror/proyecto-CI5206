@@ -1,0 +1,70 @@
+\newpage
+\section {Combinaciones de carga}
+
+Los elementos estructurales serán diseñados para aquella combinación de cargas que genere la condición más desfavorable, en cuanto a su resistencia límite requerida. \\
+
+Los estados de carga serán modificados por factores de mayoración o minoración de acuerdo a la combinación general de cargas, según se indique en la norma NCh3171, apartado 9.2.1 combinaciones de cargas nominales que se usan en el método de tensiones admisibles. \\
+
+Como criterios generales de combinación para todas las estructuras se establece que, a lo menos, se debe considerar lo siguiente: \\ % ¿ será necesario señalar que es para edificios?
+%naaaa en la norma mencionan la mierda de ocupación, pero pa los combos no se considera na de eso
+%mencionaba unos combos que iban o no, dependiendo de la situación, pero ninguno aplicaba pa este caso, le pongo por qué no? mejors weno
+% los de 433 pico? bah nada
+
+\indent C1          $=PP$\\
+\indent C2          $=PP+SC$\\
+\indent C3.1        $=PP+S$\\
+\indent C3.2        $=PP+L_{r}$\\
+\indent C4.1        $=PP+0.75SC+0.75S$\\
+\indent C4.2        $=PP+0.75SC+0.75L_{r}$\\
+\indent C5.a.1      $=PP+W^{+}$\\
+\indent C5.a.2      $=PP+W^{-}$\\
+\indent C5.b.1      $=PP+S+Ex+Ez$\\
+\indent C5.b.2      $=PP+S+Ex-Ez$\\
+\indent C5.b.3      $=PP+S-Ex+Ez$\\
+\indent C5.b.4      $=PP+S-Ex-Ez$\\
+\indent C5.b.1      $=PP+S+Ey+Ez$\\
+\indent C5.b.2      $=PP+S+Ey-Ez$\\
+\indent C5.b.3      $=PP+S-Ey+Ez$\\
+\indent C5.b.4      $=PP+S-Ey-Ez$\\
+\indent C6.a.1      $=PP+0,75SC+0,75W^{+}+0,75S$\\
+\indent C6.a.2      $=PP+0,75SC+0,75W^{-}+0,75S$\\
+\indent C6.a.3      $=PP+0,75SC+0,75W^{+}+0,75Lr$\\
+\indent C6.a.4      $=PP+0,75SC+0,75W^{-}+0,75Lr$\\
+\indent C6.b.1      $=PP+0,75SC+0,75W^{+}+0,75Ex+0,75Ez$\\
+\indent C6.b.2      $=PP+0,75SC+0,75W^{+}+0,75Ex-0,75Ez$\\
+\indent C6.b.3      $=PP+0,75SC+0,75W^{+}-0,75Ex+0,75Ez$\\
+\indent C6.b.4      $=PP+0,75SC+0,75W^{+}-0,75Ex-0,75Ez$\\
+\indent C6.b.5      $=PP+0,75SC+0,75W^{+}+0,75Ey+0,75Ez$\\
+\indent C6.b.6      $=PP+0,75SC+0,75W^{+}+0,75Ey-0,75Ez$\\
+\indent C6.b.7      $=PP+0,75SC+0,75W^{+}-0,75Ey+0,75Ez$\\
+\indent C6.b.8      $=PP+0,75SC+0,75W^{+}-0,75Ey-0,75Ez$\\
+\indent C7.1        $=0,6PP+W^{+}$\\
+\indent C7.2        $=0,6PP+W^{-}$\\
+\indent C8.1        $=0,6PP+Ex+Ez$\\
+\indent C8.2        $=0,6PP+Ex-Ez$\\
+\indent C8.3        $=0,6PP-Ex+Ez$\\
+\indent C8.4        $=0,6PP-Ex-Ez$\\
+\indent C8.5        $=0,6PP+Ey+Ez$\\
+\indent C8.6        $=0,6PP+Ey-Ez$\\
+\indent C8.7        $=0,6PP-Ey+Ez$\\
+\indent C8.8        $=0,6PP-Ey-Ez$\\
+
+%No se consideran las combinaciones 7 y 8 de la NCH 3171 por ser siempre menores a las combinaciones 5.a y 5.b; y por el sistema... FAKE
+ 
+Donde:
+
+\begin{table}[H]
+  \centering
+    \begin{tabular}{lp{12cm}}
+    \textbf{PP} & Carga por peso propio \\
+    \textbf{SC} & Sobrecarga de uso \\
+    \textbf{W} & Carga de viento \\
+    \textbf{Lr} & Carga de uso de techo \\
+    \textbf{S} & Carga de nieve \\
+    \textbf{Ex, Ey} & Sismo horizontal \\
+    \textbf{Ez} & Sismo vertical \\
+    \textbf{H} & Carga debido a la presión lateral de tierra, a la presión del agua subterránea, o a la presión lateral de materiales a granel, más el empuje sísmico de suelo u otros materiales en las combinaciones que incluyan el efecto sísmico \\
+    \end{tabular}%
+\end{table}%
+
+De acuerdo al apartado 9.2.1 b) de la NCH 3171, cuando la carga H esta presente, aplicada sobre los muros del subterráneo en este caso, su factor debe ser 1,0 en las combinaciones 2, 3.n y 4.n, y cuando la acción de H se suma al efecto de las cargas E o W en las combinaciones 5.a.n, 5.b.n, 6.a.n y 6.b.n.

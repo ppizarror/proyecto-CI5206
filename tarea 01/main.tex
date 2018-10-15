@@ -1,0 +1,100 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      5.5.5 (27/09/2018)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R. @ppizarror
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelinforme {Bases de cálculo}
+\def\temaatratar {Entrega N°1}
+
+\def\autordeldocumento {Grupo N1}
+\def\nombredelcurso {Proyecto de Hormigón Armado}
+\def\codigodelcurso {CI5206-2}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de Ingeniería Civil}
+\def\imagendepartamento {departamentos/dic}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\tablaintegrantes {
+\begin{tabular}{ll}
+	Integrantes:
+	& \begin{tabular}[t]{@{}l@{}}
+		Mauricio Leal V. \\
+		Pablo Pizarro R. \\
+		Ignacio Yáñez G.
+	\end{tabular} \\
+	Profesor:
+	& \begin{tabular}[t]{@{}l@{}}
+		Juan Mendoza V.
+	\end{tabular} \\
+	Auxiliares:
+	& \begin{tabular}[t]{@{}l@{}}
+		Felipe Andrade T.
+	\end{tabular} \\
+	& \\
+	\multicolumn{2}{l}{Fecha de entrega: 03 de octubre de 2018} \\
+	\multicolumn{2}{l}{\localizacionuniversidad}
+\end{tabular}}{
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/env/imports}
+
+% IMPORTACIÓN DE FUNCIONES Y ENTORNOS
+\input{lib/cmd/all}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/style/all}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/cfg/init}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\input{lib/page/portrait}
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/cfg/page}
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\input{lib/page/index} % Índice, se puede borrar
+
+% CONFIGURACIONES FINALES
+\input{lib/cfg/final}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+% IMPORTACIÓN
+\input{capitulos/1-info-general.tex}
+\input{capitulos/2-estructuracion.tex}
+\input{capitulos/3-materiales.tex}
+\input{capitulos/4-normas.tex}
+\input{capitulos/5-solicitaciones.tex}
+\input{capitulos/6-combinaciones.tex}
+\input{capitulos/7-antecedentes-analisis-sismico.tex}
+\input{capitulos/8-suelo-parametros-mecanica.tex}
+\input{capitulos/9-conclusiones.tex}
+
+% FIN DEL DOCUMENTO
+\end{document}
