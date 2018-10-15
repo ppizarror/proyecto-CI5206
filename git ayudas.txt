@@ -1,4 +1,4 @@
-git status
+﻿git status
 	-Entrega como están mis archivos c/r al repositorio o al master commit.
 git add
 	-Pide la dirección del aricho que cambiaste
@@ -19,4 +19,6 @@ git ignore
 	- se puede ordenar con # (comentario)
 get diff
 	-entrega las diferencias en los archivos.
+
+fin
 	
