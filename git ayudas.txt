@@ -1,7 +1,7 @@
 ﻿git status
 	-Entrega como están mis archivos c/r al repositorio o al master commit.
 git add
-	-Pide la dirección del aricho que cambiaste
+	-Pide la dirección del aricho que cambiaste.
 	-Puede ser git add--all
 	-o git add *.hola añade todos los documentos con formato .hola
 git commit -m "comentario"
