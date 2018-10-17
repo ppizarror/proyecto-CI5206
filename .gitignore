@@ -22,6 +22,11 @@
 *.tlog
 *.ico
 
+# Archivos resultado de ETABS
+*.K*
+*.Y*
+*.msh
+
 # Archivos de windows
 *desktop.ini
 
