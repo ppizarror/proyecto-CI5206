@@ -33,3 +33,6 @@
 # Archivos residuales de word/excel
 *$*.doc*
 *$*.xls*
+
+# Archivo místico
+~*.tmp
