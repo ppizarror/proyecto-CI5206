@@ -1,0 +1,480 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      6.0.0 (13/10/2018)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R. @ppizarror
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelinforme {Prediseño de elementos estructurales}
+\def\temaatratar {Entrega N°2}
+
+\def\autordeldocumento {Grupo N1}
+\def\nombredelcurso {Proyecto de Hormigón Armado}
+\def\codigodelcurso {CI5206-2}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de Ingeniería Civil}
+\def\imagendepartamento {dic}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\tablaintegrantes {
+\begin{tabular}{ll}
+	Integrantes:
+	& \begin{tabular}[t]{@{}l@{}}
+		Mauricio Leal V. \\
+		Pablo Pizarro R. \\
+		Ignacio Yáñez G.
+	\end{tabular} \\
+	Profesor:
+	& \begin{tabular}[t]{@{}l@{}}
+		Juan Mendoza V.
+	\end{tabular} \\
+	Auxiliares:
+	& \begin{tabular}[t]{@{}l@{}}
+		Felipe Andrade T.
+	\end{tabular} \\
+	& \\
+	\multicolumn{2}{l}{Fecha de entrega: 17 de octubre de 2018} \\
+	\multicolumn{2}{l}{\localizacionuniversidad}
+\end{tabular}}{
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/env/imports}
+
+% IMPORTACIÓN DE FUNCIONES Y ENTORNOS
+\input{lib/cmd/all}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/style/all}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/cfg/init}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\input{lib/page/portrait}
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/cfg/page}
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\input{lib/page/index} % Índice, se puede borrar
+
+% CONFIGURACIONES FINALES
+\input{lib/cfg/final}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+\section{Objetivos}
+En este informe se realiza el prediseño sísmico de muros, vigas y losas del edificio. Para ello, se definen espesores, alturas, largos, entre otros, según corresponda.\\
+
+Los resultados expresados a continuación están acompañados por su respectiva explicación previa de cálculo.
+
+\section{Dimensiones mínimas requeridas}
+Se deben tener en cuenta las siguientes consideraciones para la determinación de dimensiones mínimas en cada elemento estructural.
+    \begin{itemize}
+        \item \textbf{Muros}\\
+        De acuerdo a la estructuración del edificio, la zona más débil sísmicamente corresponde al piso 2 ya que a partir de este no existe caja perimetral.
+        Teniendo en consideración que, para la determinación de espesores mínimos, solo los muros largos aportan, entonces:
+        
+        Considerando con corte resistente promedio de  los muros de:
+        \insertequation{\bar{\tau}=7 \quad kgf/cm^{2}}
+        
+        Los muros de un mismo piso deben analizarse de manera conjunta y en ambos ejes, tal que se cumpla:
+        
+        \insertequation{\bar{\tau}= \frac{Q_{res}}{e_{min} \cdot L_{muros\ \ x,y}} }
+        
+        De la ecuación anterior es posible despejar el espesor mínimo de muros en cada eje de un piso, para lo cual se necesita el largo de muros en dicho eje, y el corte resistente de dicho piso. Este último viene dado por:
+        
+        \insertequation{Q_{res}=C \cdot I \cdot P_{Si} }
+        
+        Por último se considera un factor de importancia de 1, un coeficiente sísmico del 10\%, y un peso sísmico por piso determinado por:
+        
+        
+        \insertequation{P_{Si}=\Omega_{i} \cdot 1.0 \quad T/m^{2} }
+        
+        Donde $\Omega_{i}$ representa el área del piso i.
+
+        \newpage
+        \item \textbf{Vigas}\\
+        La altura de las vigas queda determinada por la luz entre apoyos. Dependiendo del tipo de apoyos se obtendrán distintas alturas mínimas de viga, las que además no deben exceder los treinta centímetros para los pisos y cincuenta centímetros para los subterráneos, ambos con el espesor de losa incluido. 
+        Para cada tipo de apoyo se debe cumplir:
+        \begin{itemize}
+            \item Apoyada-apoyada: h > L / 10
+            \item Empotrada- empotrada: h > L / 15
+            \item Viga en voladizo: h > L / 5
+        \end{itemize}
+        
+        \item \textbf{Losas}\\
+        Para la determinación de los espesores de losa por piso se debe seguir la siguiente secuencia:
+        \begin{enumerate}
+            \item Determinar las 3 losas más desfavorables por piso. Esto se hace en términos de las losas que tengan mayores luces.
+            \item Para cada losa escogida se considera la luz más corta (L), junto con los siguientes parámetros:
+            \begin{itemize}
+                \item $\Phi$: coeficiente de esbeltez.
+                    \begin{itemize}
+                        \item 1.0 Losa con bordes del lado menor apoyado-apoyado.
+                        \item 0.8 Losa con bordes del lado menor apoyado-empotrado.
+                        \item 0.6 Losa con bordes del lado menor empotrado-empotrado.
+                    \end{itemize}
+                \item r: recubrimiento losa, 2.0 cm típico.
+                \item $\lambda$: coeficiente de uso.
+                    \begin{itemize}
+                        \item 35 losa típica.
+                        \item 40 losa de techo.
+                    \end{itemize}
+                El espesor mínimo queda determinado con la siguiente expresión:
+                \item $e_{min}$: espesor de diseño losa.
+                
+                \insertequation{e_{min}> \frac{L \cdot \Phi}{\lambda}+r}
+
+            \end{itemize}
+            \item De los espesores obtenidos en la parte anterior, se escoge el de mayor espesor mínimo.
+            \item Finalmente, el espesor obtenido(e) para el piso se aproxima al entero mayor.
+        \end{enumerate}
+        
+    \end{itemize}
+
+\newpage
+\section{Prediseño de elementos estructurales}
+
+    \begin{itemize}
+        \item \textbf{Muros}\\
+        
+        Para el prediseño de los muros se calculó el área de cada losa, esto permitió obtener el corte de cada piso. Para el caso de las áreas del primer piso (Muros del -1) y del segundo piso (Muros del piso 1) se tributó la mitad del área de las losas de los estacionamientos.
+
+        \begin{table}[H]
+          \centering
+          \caption{Prediseño de muros.}
+            \itemresize{1.0}{
+                \begin{tabular}{|c|cc|cc|cc|cc|cc|}
+            \hline
+            \textbf{N° piso} & \textbf{Q} & \textbf{$Q_{acum}$} & \textbf{$L_x$} & \textbf{$L_y$} & \textbf{$e_x$} & \textbf{$e_y$} & \textbf{$\tau_{x}$} & \textbf{$\tau_{y}$} & \textbf{${FU}_x$} & \textbf{${FU}_y$} \bigstrut\\
+            \hline
+            23    & 41,04 & 41,04 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 4,7\% & 5,5\% \bigstrut[t]\\
+            22    & 41,04 & 82,08 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 9,5\% & 11,0\% \\
+            21    & 41,04 & 123,12 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 14,2\% & 16,6\% \\
+            20    & 41,04 & 164,16 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 19,0\% & 22,1\% \\
+            19    & 41,04 & 205,2 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 23,7\% & 27,6\% \\
+            18    & 41,04 & 246,24 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 28,4\% & 33,1\% \\
+            17    & 41,04 & 287,28 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 33,2\% & 38,6\% \\
+            16    & 41,04 & 328,32 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 37,9\% & 44,1\% \\
+            15    & 41,04 & 369,36 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 42,6\% & 49,7\% \\
+            14    & 41,04 & 410,4 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 47,4\% & 55,2\% \\
+            13    & 41,04 & 451,44 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 52,1\% & 60,7\% \\
+            12    & 41,04 & 492,48 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 56,9\% & 66,2\% \\
+            11    & 41,04 & 533,52 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 61,6\% & 71,7\% \\
+            10    & 41,04 & 574,56 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 66,3\% & 77,3\% \\
+            9     & 41,04 & 615,6 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 71,1\% & 82,8\% \\
+            8     & 41,04 & 656,64 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 75,8\% & 88,3\% \\
+            7     & 41,04 & 697,68 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 80,6\% & 93,8\% \\
+            6     & 41,04 & 738,72 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 85,3\% & 99,3\% \\
+            5     & 41,04 & 779,76 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & 866,04 & 929,60 & 90,0\% & 83,9\% \\
+            4     & 41,04 & 820,8 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & 866,04 & 929,60 & 94,8\% & 88,3\% \\
+            3     & 41,04 & 861,84 & 61,86 & 50,03 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & 866,04 & 875,53 & 99,5\% & 98,4\% \\
+            2     & 41,04 & 902,88 & 60,38 & 45,00 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & \cellcolor[rgb]{ .502,  .502,  .502}0,30 & 1056,65 & 945,00 & 85,4\% & 95,5\% \\
+            1     & 46,72 & 949,60 & 71,49 & 48,88 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & \cellcolor[rgb]{ .502,  .502,  .502}0,30 & 1251,08 & 1026,48 & 75,9\% & 92,5\% \\
+            -1    & 73,47 & 1023,06 & 94,19 & 50,55 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & \cellcolor[rgb]{ .502,  .502,  .502}0,30 & 1648,33 & 1061,55 & 62,1\% & 96,4\% \bigstrut[b]\\
+            \hline
+            \end{tabular}%
+            }
+          \label{tab:addlabel}%
+        \end{table}%
+
+        
+        \item \textbf{Vigas}\\
+        Aplicando el criterio para altura máxima de vigas mencionado anteriormente, se determinó los largos máximo de vigas según las distintas condiciones de apoyo, luego de imponer en ellas la altura máxima correspondiente a subterráneo o piso normal.
+        
+        \begin{table}[htbp]
+          \centering
+          \caption{Largos máximos de vigas.}
+                \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Altura máxima [cm]} &
+              \textbf{Apoyos} &
+              \textbf{Largo máximo [m]}
+              \bigstrut\\
+            \hline
+            \multirow{3}[2]{*}{50} &
+              Empotrado - Empotrado &
+              7,5
+              \bigstrut[t]\\
+             &
+              Empotrado - Apoyado &
+              5
+              \\
+             &
+              Apoyado - Apoyado &
+              2,5
+              \bigstrut[b]\\
+            \hline
+            \multirow{3}[2]{*}{30} &
+              Empotrado - Empotrado &
+              4,5
+              \bigstrut[t]\\
+             &
+              Empotrado - Apoyado &
+              3
+              \\
+             &
+              Apoyado - Apoyado &
+              1,5
+              \bigstrut[b]\\
+            \hline
+            \end{tabular}%
+          \label{vigas}%
+        \end{table}%
+        
+        Con esto se verificaron las vigas normales de los niveles 1 y -1, que son las que presentan limitaciones en su largo. 
+        Las vigas invertidas (o antepechos) no se verificaron porque su altura esta establecida en los planos de arquitectura.
+\newpage
+        \item \textbf{Losas}\\
+        A continuación se muestran las 3 losas más desfavorables encontradas en cada nivel y sus espesores calculados en función de su luz más corta.
+        
+    \begin{table}[H]
+      \centering
+      \caption{Espesores mínimos de losas.}
+        \begin{tabular}{|c|ccccc|}
+    \cline{2-6}    \multicolumn{1}{r|}{} &
+          \textbf{Losa} &
+          \textbf{Largo critico (m)} &
+          \textbf{Tipo apoyo} &
+          \textbf{e (cm)} &
+          \textbf{e red (cm)}
+          \bigstrut\\
+        \hline
+        \multirow{3}[2]{*}{Piso 1} &
+          110 &
+          5,56 &
+          0,6 &
+          11,53 &
+          12
+          \bigstrut[t]\\
+         &
+          127 &
+          8,4 &
+          0,6 &
+          16,40 &
+          17
+          \\
+         &
+          130 &
+          6,78 &
+          0,6 &
+          13,62 &
+          14
+          \bigstrut[b]\\
+        \hline
+        \multirow{4}[2]{*}{Piso 2} &
+          215 &
+          6 &
+          0,8 &
+          15,71 &
+          16
+          \bigstrut[t]\\
+         &
+          207 &
+          5 &
+          0,6 &
+          10,57 &
+          11
+          \\
+         &
+          216 &
+          5,7 &
+          0,8 &
+          15,03 &
+          16
+          \\
+         &
+          205 &
+          5,6 &
+          0,6 &
+          11,60 &
+          12
+          \bigstrut[b]\\
+        \hline
+        \multirow{3}[2]{*}{Piso 3} &
+          301 &
+          5,95 &
+          0,8 &
+          15,60 &
+          16
+          \bigstrut[t]\\
+         &
+          304 &
+          5,95 &
+          0,8 &
+          15,60 &
+          16
+          \\
+         &
+          305 &
+          7,16 &
+          0,6 &
+          14,27 &
+          15
+          \bigstrut[b]\\
+        \hline
+        \multirow{3}[2]{*}{Piso tipo} &
+          tipo 01 &
+          6,01 &
+          0,8 &
+          15,74 &
+          16
+          \bigstrut[t]\\
+         &
+          tipo 04  &
+          6,01 &
+          0,8 &
+          15,74 &
+          16
+          \\
+         &
+          tipo 10 &
+          5,62 &
+          0,8 &
+          14,85 &
+          15
+          \bigstrut[b]\\
+        \hline
+        \multirow{3}[2]{*}{Piso 24} &
+          2401 &
+          6,01 &
+          0,8 &
+          15,74 &
+          16
+          \bigstrut[t]\\
+         &
+          2404 &
+          6,01 &
+          0,8 &
+          15,74 &
+          16
+          \\
+         &
+          2405 &
+          5,62 &
+          0,8 &
+          14,85 &
+          15
+          \bigstrut[b]\\
+        \hline
+        \multirow{2}[2]{*}{Techumbre} &
+          TE01 &
+          2,7 &
+          0,6 &
+          6,63 &
+          7
+          \bigstrut[t]\\
+         &
+          TE02 &
+          2,1 &
+          1 &
+          8,00 &
+          8
+          \bigstrut[b]\\
+        \hline
+        Cubierta  &
+          CU01 &
+          1,9 &
+          0,6 &
+          5,26 &
+          20
+          \bigstrut\\
+        \hline
+        \end{tabular}%
+    \end{table}%
+
+    Finalmente, considerando el espesor más desfavorable para cada piso se definen los espesores finales de losa por piso:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Resumen espesores de losa por piso.}
+        \begin{tabular}{|c|c|}
+    \cline{2-2}    \multicolumn{1}{c|}{} &
+          Espesor (cm)
+          \bigstrut\\
+        \hline
+        Piso 1 &
+          17
+          \bigstrut[t]\\
+        Piso 2  &
+          16
+          \\
+        Piso 3  &
+          16
+          \\
+        Piso Tipo &
+          16
+          \\
+        Piso 24 &
+          16
+          \\
+        Techumbre  &
+          8
+          \\
+        Cubierta &
+          20
+          \bigstrut[b]\\
+        \hline
+        \end{tabular}%
+    \end{table}%
+\end{itemize}
+
+\newpage
+\section{Comentarios y Conclusiones}
+
+Para el cálculo de los espesores de los muros se consideró como área tributante de piso la mitad de la sección de las losas de estacionamientos, esto dado que los estacionamientos también ejercen corte sobre la estructura, y parte de este se tributa a la torre, la otra mitad a los muros perimetrales. Esto si bien aumentó el corte basal en comparación al cálculo previo realizado no significó mayor incremento en el espesor de los muros, ya que de cualquier manera se tuvo que aumentar el espesor en pisos superiores dado el incremento del corte y la pérdida de algunos muros.
+
+\begin{table}[H]
+  \centering
+  \caption{Espesores de muros sin considerar tributación losa estacionamientos.}
+    \itemresize{1.0}{
+        \begin{tabular}{|c|cc|cc|cc|cc|cc|}
+        \hline
+        \textbf{N° piso} & \textbf{Q} & \textbf{$Q_{acum}$} & \textbf{$L_x$} & \textbf{$L_y$} & \textbf{$e_x$} & \textbf{$e_y$} & \textbf{$\tau_{x}$} & \textbf{$\tau_{y}$} & \textbf{${FU}_x$} & \textbf{${FU}_y$} \bigstrut\\
+        \hline
+        6     & 41,04 & 738,72 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & 866,04 & 743,68 & 85,3\% & 99,3\% \bigstrut[t]\\
+        5     & 41,04 & 779,76 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & 866,04 & 929,60 & 90,0\% & 83,9\% \\
+        4     & 41,04 & 820,8 & 61,86 & 53,12 & \cellcolor[rgb]{ .851,  .851,  .851}0,20 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & 866,04 & 929,60 & 94,8\% & 88,3\% \\
+        \rowcolor[rgb]{ .969,  .655,  .655} 3     & 41,04 & 861,84 & 61,86 & 50,03 & 0,20  & 0,25  & 866,04 & 875,53 & 99,5\% & 98,4\% \\
+        2     & 41,04 & 902,88 & 60,38 & 45,00 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & \cellcolor[rgb]{ .502,  .502,  .502}0,30 & 1056,65 & 945,00 & 85,4\% & 95,5\% \\
+        1     & 32,67 & 935,55 & 71,49 & 48,88 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & \cellcolor[rgb]{ .502,  .502,  .502}0,30 & 1251,08 & 1026,48 & 74,8\% & 91,1\% \\
+        -1    & 40,66 & 976,21 & 94,19 & 50,55 & \cellcolor[rgb]{ .682,  .667,  .667}0,25 & \cellcolor[rgb]{ .502,  .502,  .502}0,30 & 1648,33 & 1061,55 & 59,2\% & 92,0\% \bigstrut[b]\\
+        \hline
+        \end{tabular}%
+    }
+    \label{tablapisos3}%
+\end{table}%
+
+Como se puede observar en la tabla \ref{tablapisos3} el piso 3 alcanza el máximo de utilización de sus muros en el eje x e y, con lo cual en dichos ejes se tuvo que aumentar de manera obligada el ancho de los muros de 0.2 a 0.25 en el eje x, y de 0.25 a 0.30 en el eje y.
+
+\newp Para el cálculo de los largos de los muros en cada eje se ignoró el aporte de muros menores a un metro, esto dado el criterio de diseño visto en cátedra, a razón de que muros menores a dichas dimensiones poseen una resistencia al corte menor.
+
+\newp Las losas fueron diseñadas siempre considerando el mayor espesor. Si bien en piso tipo y superiores se obtuvo un espesor razonable (16cm) se obtuvo un gran espesor en la losa del piso 1 dado las grandes luces de algunas sublosas, como la 130.
+
+\insertimage{losapesa}{width=10cm}{Losa 130.}
+
+% FIN DEL DOCUMENTO
+\end{document}
