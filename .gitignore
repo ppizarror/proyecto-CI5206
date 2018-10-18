@@ -28,7 +28,7 @@
 *.msh
 
 # Archivos de windows
-*desktop.ini
+**/desktop.ini
 
 # Archivos residuales de word/excel
 *$*.doc*
