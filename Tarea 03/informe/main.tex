@@ -1,0 +1,700 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      6.0.1 (21/10/2018)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R. @ppizarror
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelinforme {Cubicaciones}
+\def\temaatratar {Proyecto de Hormigón Armado - Entrega N°3}
+
+\def\autordeldocumento {Grupo N1}
+\def\nombredelcurso {Proyecto de Hormigón Armado}
+\def\codigodelcurso {CI5206-2}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de Ingeniería Civil}
+\def\imagendepartamento {departamentos/dic}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\tablaintegrantes {
+\begin{tabular}{ll}
+	Integrantes:
+	& \begin{tabular}[t]{@{}l@{}}
+		Mauricio Leal V. \\
+		Pablo Pizarro R. \\
+		Ignacio Yáñez G.
+	\end{tabular} \\
+	Profesor:
+	& \begin{tabular}[t]{@{}l@{}}
+		Juan Mendoza V.
+	\end{tabular} \\
+	Auxiliar:
+	& \begin{tabular}[t]{@{}l@{}}
+		Felipe Andrade T.
+	\end{tabular} \\
+	& \\
+	\multicolumn{2}{l}{Fecha de entrega: 24 de octubre de 2018} \\
+	\multicolumn{2}{l}{\localizacionuniversidad}
+\end{tabular}}{
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/env/imports}
+
+% IMPORTACIÓN DE FUNCIONES Y ENTORNOS
+\input{lib/cmd/all}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/style/all}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/cfg/init}
+\usepackage{adjustbox}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\input{lib/page/portrait} % Se puede borrar
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/cfg/page}
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\input{lib/page/index} % Se puede borrar
+
+% CONFIGURACIONES FINALES
+\input{lib/cfg/final}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+\section{Pesos involucrados en las losas}
+
+Para el cálculo de cubicaciones y pesos que reciben las losas de cada piso se consideran los siguientes elementos:
+\begin{itemize}
+    \item Muros y Tabiques.
+    \item Vigas normales, invertidas y semi-invertidas.
+    \item Estuco, Enlucido y Sobrelosa.
+\end{itemize}
+
+Para el caso de los muros, estos deben llevar una capa de estuco tal y como se muestra a continuación:
+
+\insertimage[]{img/estucos_muro}{width=9cm}{Disposición de capa de estucos en muros.}
+
+Para las vigas, dependiendo de si estas son normales o invertidas, se tendrán dos configuraciones distintas para el estuco y enlucido que estas llevan:
+
+\begin{images}[]{Disposición de estuco y enlucido.}
+    \addimage{img/vigainvertida}{width=5.5cm}{Viga Invertida.}
+    \addimage{img/viganormal}{width=6.5cm}{Viga Normal.}
+\end{images}
+
+Por último, para las losas, la disposición de enlucido y sobrelosa se ejemplifica a continuación:
+
+\insertimage[]{img/losa}{width=10cm}{Disposición de enlucido y sobrelosa.}
+\section{Cubicaciones de elementos}
+    \begin{itemize}
+        \item Características de los materiales \\
+        A continuación se muestran los pesos  y espesores de los elementos utilizados.
+         
+            \begin{table}[H]
+              \centering
+              \caption{Pesos Volumétricos.}
+                \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Elemento} &
+                  \boldmath{}\textbf{Densidad [$T/m^3$]}\unboldmath{}
+                  \bigstrut\\
+                \hline
+                $\gamma_{Hormigon}$ &
+                  2,5
+                  \bigstrut\\
+                \hline
+                $\gamma_{Estuco}$ &
+                  2,0
+                  \bigstrut\\
+                \hline
+                $\gamma_{Enlucido}$ &
+                  2,0
+                  \bigstrut\\
+                \hline
+                $\gamma_{Sobrelosa}$ &
+                  1,5
+                  \bigstrut\\
+                \hline
+                \end{tabular}%
+              \label{volumen}%
+            \end{table}%
+
+            \begin{table}[H]
+              \centering
+              \caption{Pesos por área.}
+                \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Elemento} & \boldmath{}\textbf{Peso [$T/m^2$]}\unboldmath{} \bigstrut\\
+                \hline
+                Peso tabique & 0.100 \bigstrut\\
+                \hline
+                Sobrecarga uso vivienda & 0.200 \bigstrut\\
+                \hline
+                Sobrecarga escala uso público & 0.400 \bigstrut\\
+                \hline
+                Sobrecarga estacionamientos & 0.500 \bigstrut\\
+                \hline
+                \end{tabular}%
+              \label{Area}%
+            \end{table}
+
+            \begin{table}[H]
+              \centering
+              \caption{Espesores elementos.}
+                \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Elemento} &
+                  \textbf{Espesor (m)}
+                  \bigstrut\\
+                \hline
+                Estuco &
+                  0,025
+                  \bigstrut\\
+                \hline
+                Enlucido &
+                  0,02
+                  \bigstrut\\
+                \hline
+                Sobrelosa &
+                  0,05
+                  \bigstrut\\
+                \hline
+                \end{tabular}%
+              \label{Espesor}%
+            \end{table}%
+
+        \newpage
+        \item Cubicaciones Losas\\
+        Para la determinación del Peso Sísmico de las losas, se obtienen los siguientes resultados por piso:
+         
+            \begin{table}[H]
+              \centering
+              \caption{Espesores de losa por piso.}
+                \begin{tabular}{|c|c|}
+            \cline{2-2}    \multicolumn{1}{c|}{} &
+                  \textbf{Espesor (cm)}
+                  \bigstrut\\
+                \hline
+                Piso 1 &
+                  0,17
+                  \bigstrut[t]\\
+                Piso 2  &
+                  0,16
+                  \\
+                Piso 3  &
+                  0,16
+                  \\
+                Piso Tipo &
+                  0,16
+                  \\
+                Cubierta &
+                  0,16
+                  \bigstrut[b]\\
+                \hline
+                \end{tabular}%
+              \label{Espesor losas}%
+            \end{table}%
+         
+            \begin{table}[H]
+              \centering
+              \caption{Cubicación y pesos sísmicos losas.}
+                \resizebox{\textwidth}{!}{ 
+                \begin{tabular}{ccccc|c|c|c|c|c|}
+                \hline
+                \multicolumn{1}{|p{5.39em}|}{\textbf{Losa}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Espesor (m)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Área losa interior (m2)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Descuento viga (m2)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Área losa interior final (m2)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Área estacionamientos (m2)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Peso Hormigón (T)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{Peso Enlucido+SL (T)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{SC (T)}} &
+                  \multicolumn{1}{p{5.39em}|}{\textbf{PSl Losa (T)}}
+                  \bigstrut\\
+                \hline
+                \multicolumn{1}{|c|}{24} &
+                  \multicolumn{1}{c|}{0,16} &
+                  \multicolumn{1}{c|}{68,70} &
+                  \multicolumn{1}{c|}{26,37} &
+                  42,33 &
+                  0 &
+                  27,48 &
+                  4,87 &
+                  13,74 &
+                  46,09
+                  \bigstrut[t]\\
+                \multicolumn{1}{|c|}{4-23} &
+                  \multicolumn{1}{c|}{0,16} &
+                  \multicolumn{1}{c|}{410,20} &
+                  \multicolumn{1}{c|}{15,17} &
+                  395,03 &
+                  0 &
+                  164,08 &
+                  45,43 &
+                  82,04 &
+                  291,55
+                  \\
+                \multicolumn{1}{|c|}{3} &
+                  \multicolumn{1}{c|}{0,16} &
+                  \multicolumn{1}{c|}{410,70} &
+                  \multicolumn{1}{c|}{14,93} &
+                  395,77 &
+                  0 &
+                  164,28 &
+                  45,51 &
+                  82,14 &
+                  291,93
+                  \\
+                \multicolumn{1}{|c|}{2} &
+                  \multicolumn{1}{c|}{0,16} &
+                  \multicolumn{1}{c|}{177,55} &
+                  \multicolumn{1}{c|}{26,77} &
+                  150,77 &
+                  255,93 &
+                  173,39 &
+                  17,34 &
+                  86,70 &
+                  277,42
+                  \\
+                \multicolumn{1}{|c|}{1} &
+                  \multicolumn{1}{c|}{0,17} &
+                  \multicolumn{1}{c|}{205,29} &
+                  \multicolumn{1}{c|}{38,33} &
+                  166,96 &
+                  514,18 &
+                  305,77 &
+                  19,20 &
+                  143,89 &
+                  468,86
+                  \bigstrut[b]\\
+                \hline
+                 &
+                   &
+                   &
+                   &
+                   &
+                  TOTAL &
+                  3952,55 &
+                  995,50 &
+                  1967,28 &
+                  6915,32
+                  \bigstrut\\
+            \cline{6-10}    \end{tabular}}%
+              \label{Pesoslosa}%
+            \end{table}%
+
+          
+        \item Cubicaciones Muros y Tabiques\\
+        Para la determinación de los pesos sísmicos de muros y tabiques en cada piso se obtienen los siguientes resultados:
+        
+        \begin{table}[H]
+          \centering
+          \caption{Cubicaciones y pesos sísmicos de muros.}
+          \resizebox{\textwidth}{!}{ 
+            \begin{tabular}{cccccc|c|c|c|c|}
+            \hline
+            \multicolumn{1}{|c|}{\textbf{Piso}} &
+              \multicolumn{1}{c|}{\textbf{ex (m)}} &
+              \multicolumn{1}{c|}{\textbf{ey (m)}} &
+              \multicolumn{1}{c|}{\textbf{Lx (m)}} &
+              \multicolumn{1}{c|}{\textbf{Ly (m)}} &
+              \textbf{A planta muro (m2)} &
+              \textbf{Área Estuco (m2)} &
+              \textbf{Peso Hormigón Muro (T)} &
+              \textbf{Peso Estuco (T)} &
+              \textbf{Peso Muro + estuco(T)}
+              \bigstrut\\
+            \hline
+            \multicolumn{1}{|c|}{24} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{26,92} &
+              \multicolumn{1}{c|}{17,6} &
+              8,90 &
+              2,25 &
+              51,20 &
+              0,11 &
+              51,31
+              \bigstrut[t]\\
+            \multicolumn{1}{|c|}{8-23} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{54,48} &
+              \multicolumn{1}{c|}{58,86} &
+              22,67 &
+              5,69 &
+              130,34 &
+              0,28 &
+              130,63
+              \\
+            \multicolumn{1}{|c|}{7} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{54,48} &
+              \multicolumn{1}{c|}{58,86} &
+              25,39 &
+              5,69 &
+              146,00 &
+              0,28 &
+              146,29
+              \\
+            \multicolumn{1}{|c|}{6} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{54,48} &
+              \multicolumn{1}{c|}{58,86} &
+              28,34 &
+              5,70 &
+              162,93 &
+              0,28 &
+              163,21
+              \\
+            \multicolumn{1}{|c|}{5} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{54,48} &
+              \multicolumn{1}{c|}{58,86} &
+              28,34 &
+              5,70 &
+              162,93 &
+              0,28 &
+              163,21
+              \\
+            \multicolumn{1}{|c|}{4} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{54,48} &
+              \multicolumn{1}{c|}{58,86} &
+              28,34 &
+              5,70 &
+              162,93 &
+              0,28 &
+              163,21
+              \\
+            \multicolumn{1}{|c|}{3} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{58,32} &
+              \multicolumn{1}{c|}{58,86} &
+              29,30 &
+              5,89 &
+              168,45 &
+              0,29 &
+              168,74
+              \\
+            \multicolumn{1}{|c|}{2} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,3} &
+              \multicolumn{1}{c|}{65,35} &
+              \multicolumn{1}{c|}{50,48} &
+              31,48 &
+              5,82 &
+              181,02 &
+              0,29 &
+              181,31
+              \\
+            \multicolumn{1}{|c|}{1} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,3} &
+              \multicolumn{1}{c|}{69,98} &
+              \multicolumn{1}{c|}{54,98} &
+              33,99 &
+              6,28 &
+              195,44 &
+              0,31 &
+              195,75
+              \\
+            \multicolumn{1}{|c|}{-1} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,3} &
+              \multicolumn{1}{c|}{78,44} &
+              \multicolumn{1}{c|}{61,53} &
+              38,07 &
+              7,03 &
+              218,90 &
+              0,35 &
+              219,25
+              \bigstrut[b]\\
+            \hline
+             &
+               &
+               &
+               &
+               &
+               &
+              \textbf{Total} &
+              \textbf{3535,24} &
+              \textbf{7,06} &
+              \textbf{3542,29}
+              \bigstrut\\
+        \cline{7-10}    \end{tabular}}%
+          \label{muros}%
+        \end{table}%
+
+        \begin{table}[H]
+          \centering
+          \caption{Cubicaciones y pesos sísmicos tabiques.}
+          \resizebox{\textwidth}{!}{ 
+            \begin{tabular}{ccccc|c|c|}
+            \hline
+            \multicolumn{1}{|c|}{\textbf{Piso}} &
+              \multicolumn{1}{c|}{\textbf{ex (m)}} &
+              \multicolumn{1}{c|}{\textbf{ey (m)}} &
+              \multicolumn{1}{c|}{\textbf{Lx (m)}} &
+              \textbf{Ly (m)} &
+              \textbf{Área tabiques (m2)} &
+              \textbf{Peso Tabique (T)}
+              \bigstrut\\
+            \hline
+            \multicolumn{1}{|c|}{24} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{10,25} &
+              8,7 &
+              3,79 &
+              0,379
+              \bigstrut[t]\\
+            \multicolumn{1}{|c|}{8-23} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{60,46} &
+              39,19 &
+              19,93 &
+              1,993
+              \\
+            \multicolumn{1}{|c|}{7} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{60,46} &
+              39,19 &
+              19,93 &
+              1,993
+              \\
+            \multicolumn{1}{|c|}{6} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{0,2} &
+              \multicolumn{1}{c|}{60,46} &
+              39,19 &
+              19,93 &
+              1,993
+              \\
+            \multicolumn{1}{|c|}{5} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{60,46} &
+              39,19 &
+              24,91 &
+              2,49
+              \\
+            \multicolumn{1}{|c|}{4} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{60,46} &
+              39,19 &
+              24,91 &
+              2,49
+              \\
+            \multicolumn{1}{|c|}{3} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{60,46} &
+              39,19 &
+              24,91 &
+              2,49
+              \\
+            \multicolumn{1}{|c|}{2} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,3} &
+              \multicolumn{1}{c|}{36,07} &
+              38,7 &
+              20,63 &
+              2,06
+              \\
+            \multicolumn{1}{|c|}{1} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,3} &
+              \multicolumn{1}{c|}{38,11} &
+              31,64 &
+              19,02 &
+              1,90
+              \\
+            \multicolumn{1}{|c|}{-1} &
+              \multicolumn{1}{c|}{0,25} &
+              \multicolumn{1}{c|}{0,3} &
+              \multicolumn{1}{c|}{22,62} &
+              16,9 &
+              10,73 &
+              1,07
+              \bigstrut[b]\\
+            \hline
+             &
+               &
+               &
+               &
+               &
+              \textbf{Total} &
+              \textbf{48,76}
+              \bigstrut\\
+        \cline{6-7}    \end{tabular}}%
+          \label{tabiques}%
+        \end{table}%
+        
+        \item Cubicaciones Vigas\\
+        Para la determinación de los pesos sísmicos de vigas en cada piso se obtienen los siguientes resultados:
+        
+        \begin{table}[H]
+          \centering
+          \caption{Cubicaciones y Pesos Sísmicos de vigas.}
+          \resizebox{\textwidth}{!}{
+            \begin{tabular}{ccc|c|c|c|c|}
+            \hline
+            \multicolumn{1}{|c|}{\textbf{Piso}} &
+              \multicolumn{1}{c|}{\textbf{Volumen vigas (m3)}} &
+              \textbf{Área estuco (m2)} &
+              \textbf{Volumen Estuco (m3)} &
+              \textbf{Peso Hormigón Vigas (T)} &
+              \textbf{Peso Estuco Vigas (T)} &
+              \textbf{Peso Total (T)}
+              \bigstrut\\
+            \hline
+            \multicolumn{1}{|c|}{24} &
+              \multicolumn{1}{c|}{23,73} &
+              242,60 &
+              6,07 &
+              59,33 &
+              12,13 &
+              71,46
+              \bigstrut[t]\\
+            \multicolumn{1}{|c|}{4-23} &
+              \multicolumn{1}{c|}{14,77} &
+              150,72 &
+              3,77 &
+              36,92 &
+              7,54 &
+              44,46
+              \\
+            \multicolumn{1}{|c|}{3} &
+              \multicolumn{1}{c|}{14,55} &
+              148,52 &
+              3,71 &
+              36,38 &
+              7,43 &
+              43,81
+              \\
+            \multicolumn{1}{|c|}{2} &
+              \multicolumn{1}{c|}{16,18} &
+              56,52 &
+              1,41 &
+              40,45 &
+              2,83 &
+              43,27
+              \\
+            \multicolumn{1}{|c|}{1} &
+              \multicolumn{1}{c|}{19,74} &
+              41,16 &
+              1,03 &
+              49,35 &
+              2,06 &
+              51,41
+              \bigstrut[b]\\
+            \hline
+             &
+               &
+               &
+              \textbf{TOTAL} &
+              \textbf{923,96} &
+              \textbf{175,16} &
+              \textbf{1099,13}
+              \bigstrut\\
+        \cline{4-7}    \end{tabular}}%
+          \label{vigas}%
+        \end{table}%
+
+    \end{itemize}
+   
+\newpage 
+\section{Planilla resumen}
+
+A continuación se entrega un resumen de las cubicaciones anteriores con los parámetros más relevantes.
+
+\begin{table}[H]
+  \centering
+   \caption{Planilla resumen de cubicaciones.}
+    \begin{adjustbox}{angle=90}
+    \resizebox{1\textwidth}{!}{
+    \begin{tabular}{|ccccccccccccc|}
+    \hline
+    \multicolumn{1}{|p{3em}}{\textbf{Losa}} & \textbf{Altura (m)} & \textbf{Área losa (m2)} & \textbf{Xg losa (m)} & \textbf{Yg losa (m)} & \textbf{I polar (m4)} & \textbf{Ps losa (T)} & \textbf{P vigas (T)} & \textbf{P muros (T)} & \textbf{Ps nivel (T)} & \boldmath{}\textbf{M tras (T $\cdot$ s2/m)}\unboldmath{} & \boldmath{}\textbf{M rot (T $\cdot$ s2$\cdot$ m)}\unboldmath{} & \textbf{q (T/m2)} \bigstrut\\
+    \hline
+    24    & 2.46  & 42.33 & 19.07 & 15.60 & 726.26 & 37.64 & 71.46 & 51.69 & 201.25 & 20.536 & 352.36 & 2.93 \bigstrut[t]\\
+    \textit{23} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{22} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{21} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{20} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{19} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{18} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{17} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{16} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{15} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{14} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{13} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{12} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{11} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{10} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{9} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{8} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 435.97 & 44.486 & 4260.82 & 1.06 \\
+    \textit{7} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 132.62 & 452.26 & 46.149 & 4420.06 & 1.10 \\
+    \textit{6} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 165.20 & 468.80 & 47.837 & 4581.73 & 1.14 \\
+    \textit{5} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 165.70 & 469.05 & 47.862 & 4584.16 & 1.14 \\
+    \textit{4} & 2.46  & 395.03 & 15.95 & 16.26 & 37835.55 & 258.89 & 44.46 & 165.70 & 471.81 & 48.144 & 4611.18 & 1.15 \\
+    3     & 2.46  & 395.77 & 15.95 & 16.26 & 37835.55 & 259.27 & 43.81 & 171.23 & 480.38 & 49.018 & 4686.09 & 1.17 \\
+    2     & 2.46  & 406.70 & 10.25 & 20.00 & 55075.84 & 241.57 & 43.27 & 183.37 & 475.35 & 48.505 & 6568.66 & 1.10 \\
+    1     & 2.47  & 681.13 & 16.41 & 19.81 & 94413.26 & 410.11 & 51.41 & 197.65 & 670.51 & 68.419 & 9483.75 & 0.93 \bigstrut[b]\\
+    \hline
+    \end{tabular}
+    }
+    \end{adjustbox}
+ \label{plresumen}%
+\end{table}
+
+\newpage
+\section{Comentarios y conclusiones}
+
+%- Resultados por piso para valor de q promedio resultante, respecto de valor Edificios Chilenos.
+%- Comentar que función cumple el centro de gravedad de la losa.
+%- Uso estucos en la actualidad.
+\begin{itemize}
+    \item Es posible observar en la tabla resumen \ref{plresumen} que los cortes promedio por pisos son parecidos a los vistos en clase, el cual oscila entre 1 y 1.1 $T/m^2$ para edificios habitacionales Chilenos de hormigón armado. Un caso interesante es el corte obtenido en el nivel -1 (losa piso 1), el cual dio un corte bajo 1, esto dado la gran área que posee dicha planta.
+    \item El Estuco es uno de los revestimientos finales más usados para embellecer muros y techos; consiste en una masa o pasta muy fina compuesto de un material base: cal, yeso o cemento que se mezcla con otros materiales como polvo de mármol etc. \\
+    Como recomendación de un fabricante de estuco (Drymix) se debe emplear el material en dos capas no mayores a 1.5cm cada una sobre los muros.\\
+    Existen muchos tipos de estucos, cada uno utilizado según lo que se requiera. Hay estucos interiores, exteriores y especiales, todos ellos con, compuestos adicionales, espesores tipos y cantidad de manos necesarias distintas. % creepypasta esa wea
+    % \item Centro de gravedad de la losa.
+\end{itemize}
+    
+% FIN DEL DOCUMENTO
+\end{document}
