@@ -1,0 +1,7 @@
+- modificar losa ultima
+- releases vigas
+- mesh muros
+- aplicar cargas
+
+
+INFORME DISEÑO SÍSMICO
