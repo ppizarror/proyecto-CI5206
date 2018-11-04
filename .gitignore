@@ -21,6 +21,7 @@
 *.ebk
 *.tlog
 *.ico
+*.EDBx
 
 # Archivos resultado de ETABS
 *.K*
