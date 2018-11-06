@@ -12,4 +12,6 @@ ty = 0.757;
 espectro_elastico(categoria, zona, suelo, 10, true, 3, true);
 
 %% Crea el espectro inelastico
-% espectro_inelastico(categoria, zona, suelo, tx, ty, r0, 10, true, 5);
+hold on;
+grid minor;
+espectro_inelastico(categoria, zona, suelo, tx, ty, r0, 10, true, 3);
