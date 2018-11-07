@@ -1,0 +1,157 @@
+\documentclass[]{article}
+
+% Importa librerías
+\usepackage[utf8]{inputenc} 
+\usepackage[spanish,es-nosectiondot,es-lcroman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{floatrow}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{csquotes}
+
+% Configura código fuente
+\lstset{literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ 
+	backgroundcolor=\color{white},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	commentstyle=\color{mygreen},
+	deletekeywords={...},
+	escapeinside={\%*}{*)},
+	extendedchars=true,
+	frame=single,
+	keepspaces=true,
+	keywordstyle=\color{blue},
+	language=Octave,
+	morekeywords={*,...},
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\tiny\color{mygray},
+	rulecolor=\color{black},
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	stringstyle=\color{mymauve},
+	tabsize=2,
+	title=\lstname
+}
+\renewcommand{\lstlistingname}{Código}
+
+% Configuraciones enlaces
+\hypersetup{
+	hidelinks,
+	colorlinks=true,
+	citecolor=black,
+	linkcolor=black,
+	urlcolor=magenta
+}
+\def\addindextobookmarks {false}   % Añade el índice a los marcadores del pdf
+\def\cfgbookmarksopenlevel {1}     % Nivel marcadores en pdf (1:secciones)
+\def\cfgpdfbookmarkopen {true}     % Expande marcadores del nivel configurado
+\def\cfgpdfcenterwindow {true}     % Centra ventana del lector al abrir el pdf
+\def\cfgpdfcopyright {}            % Establece el copyright del documento
+\def\cfgpdfdisplaydoctitle {true}  % Muestra título del informe en visor
+\def\cfgpdffitwindow {false}       % Ajusta la ventana del lector tamaño pdf
+\def\cfgpdfmenubar {true}          % Muestra el menú del lector
+\def\cfgpdfpagemode {OneColumn}    % Modo de página (OneColumn,SinglePage)
+\def\cfgpdfpageview {FitH}         % Fit,FitH,FitV,FitR,FitB,FitBH,FitBV
+\def\cfgpdfsecnumbookmarks {true}  % Número de la sec. en marcadores del pdf
+\def\cfgpdftoolbar {true}          % Muestra barra de herramientas lector pdf
+\def\cfgshowbookmarkmenu {false}   % Muestra menú marcadores al abrir el pdf
+\def\pdfcompileversion {7}         % Versión mínima del pdf compilado (1.x)
+\hypersetup{
+	bookmarksopen={\cfgpdfbookmarkopen},
+	bookmarksopenlevel={\cfgbookmarksopenlevel},
+	bookmarkstype={toc},
+	pdfcenterwindow={\cfgpdfcenterwindow},
+	pdfcreator={LaTeX},
+	pdfdisplaydoctitle={\cfgpdfdisplaydoctitle},
+	pdffitwindow={\cfgpdffitwindow},
+	pdflang={es-CL},
+	pdfmenubar={\cfgpdfmenubar},
+	pdfpagelayout={\cfgpdfpagemode},
+	pdfpagemode={UseOutlines},
+	pdfproducer={Template-Informe | (Pablo Pizarro R.) ppizarror.com},
+	pdfremotestartview={Fit},
+	pdfstartpage={1},
+	pdfstartview={\cfgpdfpageview},
+	pdftoolbar={\cfgpdftoolbar},
+	pdfview={\cfgpdfpageview}
+}
+
+% Definición de funciones
+\newcommand{\underequal}[2]{
+	\ensuremath{\underbrace{#1}_{\mathclap{#2}}}
+}
+\newcommand{\pow}[2]{
+	\ensuremath{{#1}^{#2}}
+}
+\newcommand{\lpow}[2]{
+	\ensuremath{{#1}_{#2}}
+}
+\newenvironment{references}{
+	\begingroup
+	\section{Referencias}
+	\renewcommand{\section}[2]{}
+	\begin{thebibliography}{99}
+	}
+	{
+	\end{thebibliography}
+	\endgroup
+}
+\newcommand{\quotes}[1]{\enquote*{#1}}
+
+% Otras configuraciones
+\decimalpoint
+
+% Opening
+\title{Capiteles de losas}
+\author{Grupo N1, Mauricio Leal, Pablo Pizarro, Ignacio Yáñez}
+
+% Inicia el documento
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Punteo de la presentación, definición y ejemplos de aplicación de los capiteles de losas.
+\end{abstract}
+
+\begin{itemize}
+	\item Definición elemento estructural
+	\item Historia
+	\item Ejemplos de aplicación
+	\item Recomendaciones de diseño
+	\item Normativa
+	\item Ventajas y desventajas
+	\item Alternativas
+	\item Referencias
+\end{itemize}
+
+\end{document}
