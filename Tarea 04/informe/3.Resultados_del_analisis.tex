@@ -1,0 +1,215 @@
+\newpage
+\section{Resultados del Análisis Estructural}
+% 4 Calculo Factor corrección R*, para sismo X e Y [Pablo]
+% 5 Chequear Masa equivalente mayor 90% en las dos direcciones. Imprimir tabla respectiva. [Pablo]
+% TABLA MAGICA
+% 6 Imprimir tablas: [Pablo]
+% - Cortes basales
+% - Periodos y participación de masas
+% - Deformaciones del centro de masa
+% 7 Coeficientes Sísmicos Max y Min. [Pablo]
+% 8 Coeficientes Sísmicos para X e Y. [Pablo]
+
+\subsection{Cálculo factor corrección R*}
+
+Al calcular los períodos fundamentales de la estructura en los ejes traslacionales $x$ e $y$ se obtuvo los factores de reducción $R*_x$ y $R*_y$ del pseudo-espectro de aceleración mostrados en la Tabla \ref{tab:factores-reduccion-r}. Posteriormente al obtener el corte basal en ambos ejes se calcularon los factores $f_x$ e $f_y$ para mayorar los $R*$ de cada eje.
+
+\begin{table}[H]
+  \centering
+  \caption{Factores de corrección $R*$.}
+  \begin{tabular}{ccccc}
+    \hline
+    \textbf{Eje} & \textbf{R*} & \textbf{1/R* [g] (scale factor)} & \textbf{f} & \textbf{R* mayorado} \bigstrut\\
+    \hline
+    x     & 10.579 & 0.927 & 3.076 & 2.851 \bigstrut[t]\\
+    y     & 10.003 & 0.980 & 2.435 & 2.387 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{tab:factores-reduccion-r}
+\end{table}
+
+Los factores $R*$ mayorados fueron usados para definir los casos sísmicos en ETABS.
+
+\begin{images}{Factores de mayoración del espectro en ETABS.}
+    \addimage{sisx}{width=7cm}{Sismo en x.}
+    \addimage{sisy}{width=7cm}{Sismo en y.}
+\end{images}
+
+\newpage
+\subsection{Resultados valores por dirección x/y}
+
+A partir del método modal espectral se obtuvieron los siguientes valores por cada eje X e Y :
+
+\begin{table}[H]
+  \centering
+  \caption{Valores por dirección X del sismo.}
+  \begin{tabular}{lrl}
+    \hline
+    \textbf{Sismo X} & \multicolumn{1}{c}{\textbf{Valor}} & \multicolumn{1}{c}{\textbf{Unidad}} \bigstrut\\
+    \hline
+    Peso sísmico & 11434.22 & [Tonf] \bigstrut[t]\\
+    Corte Basal Mínimo & 705.80 & [Tonf] \\
+    Corte Basal Máximo & 1482.18 & [Tonf] \\
+    Período Predominante & 1.112 & [s] \\
+    $R^*$ & 10.579 & [-] \\
+    Factor de Mayoración & 3.076 & [-] \\
+    Factor de Minoración & 1.000 & [-] \\
+    Corte Basal Efectivo & 705.61 & [Tonf] \\
+    Momento Volcante & 20305.03 & [Tonf-m] \\
+    Brazo de Palanca & 28.78 & [m] \\
+    Desplazamiento Último ($\delta ux=1.3Sd$) & 0.09  & [cm] \bigstrut[b]\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Valores por dirección Y del sismo.}
+  \begin{tabular}{lrl}
+    \hline
+    \textbf{Sismo Y} & \multicolumn{1}{c}{\textbf{Valor}} & \multicolumn{1}{c}{\textbf{Unidad}} \bigstrut\\
+    \hline
+    Peso sísmico & 11434.22 & [Tonf] \bigstrut[t]\\
+    Corte Basal Mínimo & 705.80 & [Tonf] \\
+    Corte Basal Máximo & 1482.18 & [Tonf] \\
+    Período Predominante & 0.744 & [s] \\
+    $R^*$ & 10.003 & [-] \\
+    Factor de Mayoración & 2.435 & [-] \\
+    Factor de Minoración & 1.000 & [-] \\
+    Corte Basal Efectivo & 705.90 & [Tonf] \\
+    Momento Volcante & 24152.00 & [Tonf-m] \\
+    Brazo de Palanca & 34.21 & [m] \\
+    Desplazamiento Último ($\delta ux=1.3Sd$) & 0.06  & [cm] \bigstrut[b]\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\newpage
+\subsection{Tablas de resultados}
+
+\subsubsection{Periodos y participación de masas}
+
+En la Tabla \ref{tabla-periodo-participacion} se detallan los períodos obtenidos para los modos en los cuales se alcanzó un 90\% de masa en las direcciones de análisis.
+
+\begin{longtable}{cccccccc}
+\caption{Períodos y participación de masas.}\label{tabla-periodo-participacion}\\
+\hline
+\multicolumn{1}{|c}{\textbf{Modo}} & \textbf{T [s]} & \textbf{\% Mx} & \textbf{\% My} & \textbf{\% Rz} & \textbf{\% \boldmath{}\textbf{$\sum$}\unboldmath{}Mx} & \textbf{\% \boldmath{}\textbf{$\sum$}\unboldmath{}My} & \textbf{\% \boldmath{}\textbf{$\sum$}\unboldmath{}Rz} \bigstrut\\
+\hline
+\endfirsthead
+\hline
+\multicolumn{1}{|c}{\textbf{Modo}} & \textbf{T (s)} & \textbf{\% Mx} & \textbf{\% My} & \textbf{\% Rz} & \textbf{\% \boldmath{}\textbf{$\sum$}\unboldmath{}Mx} & \textbf{\% \boldmath{}\textbf{$\sum$}\unboldmath{}My} & \textbf{\% \boldmath{}\textbf{$\sum$}\unboldmath{}Rz} \bigstrut\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+1     & 1.315 & 4.54  & 5.42  & 45.52 & 4.54  & 5.42  & 45.52 \\
+    2     & 1.112 & 55.52 & 0.78  & 1.95  & 60.06 & 6.20  & 47.47 \\
+    3     & 0.744 & 0.03  & 56.05 & 6.66  & 60.08 & 62.24 & 54.13 \\
+    4     & 0.382 & 0.45  & 1.06  & 8.75  & 60.54 & 63.30 & 62.89 \\
+    5     & 0.272 & 15.40 & 0.13  & 0.06  & 75.94 & 63.43 & 62.95 \\
+    6     & 0.216 & 0.08  & 12.12 & 1.33  & 76.02 & 75.55 & 64.28 \\
+    7     & 0.185 & 0.01  & 0.70  & 3.62  & 76.03 & 76.25 & 67.90 \\
+    8     & 0.124 & 5.66  & 0.11  & 0.04  & 81.69 & 76.36 & 67.94 \\
+    9     & 0.111 & 0.16  & 0.00  & 2.55  & 81.85 & 76.36 & 70.50 \\
+    10    & 0.107 & 0.11  & 5.11  & 0.08  & 81.96 & 81.48 & 70.58 \\
+    11    & 0.077 & 1.33  & 0.00  & 1.06  & 83.29 & 81.48 & 71.64 \\
+    12    & 0.073 & 1.94  & 0.32  & 0.71  & 85.23 & 81.79 & 72.35 \\
+    13    & 0.07  & 0.00  & 0.00  & 0.02  & 85.23 & 81.80 & 72.37 \\
+    14    & 0.069 & 0.25  & 2.83  & 0.14  & 85.48 & 84.63 & 72.50 \\
+    15    & 0.067 & 0.00  & 0.00  & 0.01  & 85.49 & 84.63 & 72.52 \\
+    16    & 0.056 & 0.05  & 0.04  & 1.39  & 85.53 & 84.67 & 73.91 \\
+    17    & 0.052 & 0.00  & 0.02  & 0.00  & 85.54 & 84.68 & 73.91 \\
+    18    & 0.052 & 2.04  & 0.33  & 0.05  & 87.57 & 85.01 & 73.96 \\
+    19    & 0.049 & 0.00  & 0.01  & 0.01  & 87.58 & 85.02 & 73.97 \\
+    20    & 0.049 & 0.41  & 1.75  & 0.08  & 87.99 & 86.76 & 74.05 \\
+    21    & 0.048 & 0.00  & 0.00  & 0.03  & 87.99 & 86.77 & 74.08 \\
+    22    & 0.046 & 0.00  & 0.00  & 0.00  & 87.99 & 86.77 & 74.08 \\
+    23    & 0.043 & 0.01  & 0.07  & 1.39  & 88.00 & 86.84 & 75.47 \\
+    24    & 0.04  & 0.15  & 0.01  & 0.00  & 88.15 & 86.85 & 75.47 \\
+    25    & 0.039 & 1.03  & 0.47  & 0.00  & 89.18 & 87.32 & 75.48 \\
+    26    & 0.038 & 0.68  & 1.04  & 0.03  & 89.86 & 88.37 & 75.50 \\
+    27    & 0.035 & 0.09  & 0.08  & 1.47  & 89.95 & 88.45 & 76.97 \\
+    28    & 0.035 & 0.03  & 0.00  & 0.02  & 89.99 & 88.45 & 76.99 \\
+    29    & 0.033 & 0.04  & 0.00  & 0.02  & 90.02 & 88.46 & 77.01 \\
+    30    & 0.032 & 0.15  & 0.85  & 0.00  & 90.18 & 89.30 & 77.01 \\
+    31    & 0.031 & 0.39  & 0.21  & 0.07  & 90.57 & 89.52 & 77.07 \\
+    32    & 0.031 & 0.64  & 0.05  & 0.02  & 91.21 & 89.57 & 77.09 \\
+    33    & 0.03  & 0.23  & 0.00  & 0.38  & 91.43 & 89.57 & 77.47 \\
+    34    & 0.029 & 0.22  & 0.08  & 1.04  & 91.65 & 89.65 & 78.50 \\
+    35    & 0.029 & 0.00  & 0.00  & 0.00  & 91.65 & 89.65 & 78.50 \\
+    36    & 0.028 & 0.00  & 1.08  & 0.01  & 91.65 & 90.73 & 78.52 \\
+    37    & 0.027 & 0.07  & 0.01  & 0.06  & 91.72 & 90.73 & 78.57 \\
+    38    & 0.026 & 0.90  & 0.00  & 0.02  & 92.62 & 90.74 & 78.59 \\
+    39    & 0.026 & 0.03  & 0.06  & 0.16  & 92.65 & 90.80 & 78.75 \\
+    40    & 0.025 & 0.26  & 0.10  & 1.11  & 92.91 & 90.90 & 79.85 \\
+    41    & 0.025 & 0.00  & 0.00  & 0.00  & 92.91 & 90.90 & 79.86 \\
+    42    & 0.025 & 0.02  & 0.34  & 0.00  & 92.93 & 91.24 & 79.86 \\
+    43    & 0.024 & 0.00  & 0.01  & 0.01  & 92.93 & 91.25 & 79.86 \\
+    44    & 0.024 & 0.01  & 0.73  & 0.02  & 92.94 & 91.99 & 79.89 \\
+    45    & 0.022 & 0.00  & 0.00  & 0.02  & 92.94 & 91.99 & 79.91 \\
+    46    & 0.022 & 0.00  & 0.22  & 1.15  & 92.94 & 92.20 & 81.06 \\
+    47    & 0.022 & 0.87  & 0.15  & 0.27  & 93.81 & 92.35 & 81.33 \\
+    48    & 0.022 & 0.27  & 0.06  & 0.04  & 94.08 & 92.42 & 81.37 \\
+    49    & 0.021 & 0.04  & 1.30  & 0.12  & 94.12 & 93.71 & 81.48 \\
+    50    & 0.021 & 0.00  & 0.02  & 0.00  & 94.12 & 93.73 & 81.49 \\
+    51    & 0.02  & 0.00  & 0.00  & 0.01  & 94.12 & 93.74 & 81.50 \\
+    52    & 0.02  & 0.02  & 0.32  & 1.33  & 94.14 & 94.06 & 82.83 \\
+    53    & 0.02  & 0.01  & 0.01  & 0.13  & 94.15 & 94.06 & 82.95 \\
+    54    & 0.02  & 0.87  & 0.01  & 0.04  & 95.02 & 94.07 & 83.00 \\
+    55    & 0.019 & 0.03  & 1.48  & 0.32  & 95.05 & 95.55 & 83.31 \\
+    56    & 0.018 & 0.00  & 0.01  & 0.42  & 95.05 & 95.56 & 83.73 \\
+    57    & 0.018 & 0.00  & 0.00  & 0.00  & 95.05 & 95.56 & 83.73 \\
+    58    & 0.018 & 0.07  & 0.28  & 1.23  & 95.11 & 95.84 & 84.97 \\
+    59    & 0.017 & 0.80  & 0.01  & 0.00  & 95.92 & 95.84 & 84.97 \\
+    60    & 0.017 & 0.02  & 1.00  & 0.28  & 95.94 & 96.85 & 85.25 \\
+    61    & 0.016 & 0.01  & 0.00  & 1.24  & 95.95 & 96.85 & 86.49 \\
+    62    & 0.016 & 0.79  & 0.00  & 0.07  & 96.75 & 96.85 & 86.56 \\
+    63    & 0.016 & 0.00  & 0.44  & 0.37  & 96.75 & 97.29 & 86.92 \\
+    64    & 0.015 & 0.00  & 0.01  & 0.41  & 96.75 & 97.30 & 87.34 \\
+    65    & 0.015 & 0.26  & 0.02  & 0.56  & 97.01 & 97.32 & 87.90 \\
+    66    & 0.015 & 0.63  & 0.00  & 0.39  & 97.63 & 97.32 & 88.29 \\
+    67    & 0.014 & 0.00  & 0.16  & 0.24  & 97.64 & 97.48 & 88.53 \\
+    68    & 0.014 & 0.44  & 0.10  & 0.43  & 98.08 & 97.58 & 88.96 \\
+    69    & 0.014 & 0.31  & 0.11  & 0.84  & 98.38 & 97.69 & 89.80 \\
+    70    & 0.013 & 0.01  & 0.00  & 0.24  & 98.39 & 97.69 & 90.04 \\
+\hline
+\end{longtable}
+
+\newpage
+\subsubsection{Cortes basales}
+
+La tabla de cortes basales (Tabla \ref{tabla-cortes-basales}) fue obtenida a partir del resultado \textit{Story forces} de ETABS considerando un espectro sísmico inelástico \footnote{Reducido por el factor $1/R*$.}.
+
+\begin{table}[H]
+  \centering
+  \caption{Cortes basales.}
+  \resizebox{1\textwidth}{!}{
+  
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{Combinación} & \textbf{P [tonf]} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{Vx [tonf]} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{Vy [tonf]} & \textbf{T [tonf-m]} & \textbf{Mx [tonf-m]} & \textbf{My [tonf-m]} \bigstrut\\
+    \hline
+    PP    & 11041.9 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & 0.0   & 185690.8 & -175463.3 \bigstrut[t]\\
+    SC    & 2885.7 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & 0.0   & 50485.4 & -44740.7 \\
+    SX Max & 0.0   & \cellcolor[rgb]{ .949,  .949,  .949}705.6 & \cellcolor[rgb]{ .949,  .949,  .949}85.4 & 12791.9 & 2422.1 & 20305.0 \\
+    SY Max & 0.0   & \cellcolor[rgb]{ .949,  .949,  .949}71.5 & \cellcolor[rgb]{ .949,  .949,  .949}705.9 & 14354.7 & 24152.0 & 2140.1 \\
+    PPSC  & 13927.6 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & 0.0   & 236176.2 & -220204.0 \\
+    C1    & 15458.7 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & 0.0   & 259967.1 & -245648.6 \\
+    C2    & 17867.3 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & \cellcolor[rgb]{ .949,  .949,  .949}0.0 & 0.0   & 303605.6 & -282141.1 \\
+    C3 Max & 9937.7 & \cellcolor[rgb]{ .949,  .949,  .949}987.9 & \cellcolor[rgb]{ .949,  .949,  .949}119.6 & 17908.7 & 170512.6 & -129489.9 \\
+    C4 Max & 9937.7 & \cellcolor[rgb]{ .949,  .949,  .949}987.9 & \cellcolor[rgb]{ .949,  .949,  .949}119.6 & 17908.7 & 170512.6 & -129489.9 \\
+    C5 Max & 9937.7 & \cellcolor[rgb]{ .949,  .949,  .949}100.1 & \cellcolor[rgb]{ .949,  .949,  .949}988.3 & 20096.5 & 200934.5 & -154920.9 \\
+    C6 Max & 9937.7 & \cellcolor[rgb]{ .949,  .949,  .949}100.1 & \cellcolor[rgb]{ .949,  .949,  .949}988.3 & 20096.5 & 200934.5 & -154920.9 \\
+    C7 Max & 16136.0 & \cellcolor[rgb]{ .949,  .949,  .949}987.9 & \cellcolor[rgb]{ .949,  .949,  .949}119.6 & 17908.7 & 276705.2 & -226869.6 \\
+    C8 Max & 16136.0 & \cellcolor[rgb]{ .949,  .949,  .949}987.9 & \cellcolor[rgb]{ .949,  .949,  .949}119.6 & 17908.7 & 276705.2 & -226869.6 \\
+    C9 Max & 16136.0 & \cellcolor[rgb]{ .949,  .949,  .949}100.1 & \cellcolor[rgb]{ .949,  .949,  .949}988.3 & 20096.5 & 307127.1 & -252300.5 \\
+    C10 Max & 16136.0 & \cellcolor[rgb]{ .949,  .949,  .949}100.1 & \cellcolor[rgb]{ .949,  .949,  .949}988.3 & 20096.5 & 307127.1 & -252300.5 \\
+    ENVC Max & 17867.3 & \cellcolor[rgb]{ .949,  .949,  .949}987.9 & \cellcolor[rgb]{ .949,  .949,  .949}988.3 & 20096.5 & 307127.1 & -129489.9 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+  \label{tabla-cortes-basales}
+\end{table}

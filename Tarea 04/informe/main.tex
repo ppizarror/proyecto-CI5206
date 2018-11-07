@@ -1,0 +1,124 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      6.0.6 (30/10/2018)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R. @ppizarror
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelinforme {Modelo sísmico}
+\def\temaatratar {Proyecto de Hormigón Armado - Entrega N°4}
+
+\def\autordeldocumento {Grupo N1}
+\def\nombredelcurso {Proyecto de Hormigón Armado}
+\def\codigodelcurso {CI5206-2}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de Ingeniería Civil}
+\def\imagendepartamento {dic}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\tablaintegrantes {
+\begin{tabular}{ll}
+	Integrantes:
+	& \begin{tabular}[t]{@{}l@{}}
+		Mauricio Leal V. \\
+		Pablo Pizarro R. \\
+		Ignacio Yáñez G.
+	\end{tabular} \\
+	Profesor:
+	& \begin{tabular}[t]{@{}l@{}}
+		Juan Mendoza V.
+	\end{tabular} \\
+	Auxiliar:
+	& \begin{tabular}[t]{@{}l@{}}
+		Felipe Andrade T.
+	\end{tabular} \\
+	& \\
+	\multicolumn{2}{l}{Fecha de entrega: 07 de Noviembre de 2018} \\
+	\multicolumn{2}{l}{\localizacionuniversidad}
+\end{tabular}}{
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/env/imports}
+
+% IMPORTACIÓN DE FUNCIONES Y ENTORNOS
+\input{lib/cmd/all}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/style/all}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/cfg/init}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\input{lib/page/portrait} % Se puede borrar
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/cfg/page}
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\input{lib/page/index} % Se puede borrar
+
+% CONFIGURACIONES FINALES
+\input{lib/cfg/final}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+% 1 Información general edificio: zona, masa, peso, suelo, Periodos fundamentales de la estructura, aceleración. [Mauro] [OK]
+\input{1.informacion_general_edificio.tex}
+
+% 2 Espectro Nch433 para Edificio 
+% 3 Factor R y R0, materiales 
+\input{2.Parametros_de_diseno.tex} % [Pablo] [OK]
+
+% 4 Calculo Factor corrección R*, para sismo X e Y [Pablo]
+% 5 Chequear Masa equivalente mayor 90% en las dos direcciones. Imprimir tabla respectiva. [Pablo]
+% TABLA MAGICA
+% 6 Imprimir tablas: [Pablo]
+% - Cortes basales
+% - Periodos y participación de masas
+% - Deformaciones del centro de masa
+% 7 Coeficientes Sísmicos Max y Min. [Pablo]
+% 8 Coeficientes Sísmicos para X e Y. [Pablo]
+\input{3.Resultados_del_analisis.tex}
+
+% 9 Cortes basales Max y Min [Mauro] [OK]
+% 10 Cortes basales X e Y [Mauro] [OK]
+% 11 Control de deformaciones en las dos direcciones drift piso [Nacho] [OK]
+% Tabla deformación máxima --> 1.3Sd [Pablo]
+\input{4.Cortes_basales_y_control_de_deformaciones.tex}
+
+% 12 Verificación de Rigidez H/T [Mauro] [OK]
+% 13 Indicador acoplamiento MATRIZ [Nacho] [OK]
+\input{5.Indicadores_de_rigidez_y_acoplamiento.tex}
+
+% 14 Entrega modelo sísmico funcionando. [OK]
+% 15 Conclusiones y Comentarios para al menos: Deformaciones, Rigidez, Acoplamiento, Cortes basales
+% - concluir drift piso < 0.002
+% - periodo torsional, concluir FT suelo roca, poca amplificacion, respuesta periodo similar
+% - 
+\input{6.Comentarios_y_conclusiones.tex}
+
+% FIN DEL DOCUMENTO
+\end{document}
