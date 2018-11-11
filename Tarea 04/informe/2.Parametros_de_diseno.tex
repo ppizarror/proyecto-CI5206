@@ -1,0 +1,170 @@
+\newpage
+
+% 2 Espectro Nch433 para Edificio
+% 3 Factor R y R0, materiales
+\section{Parámetros de Diseño}
+
+\subsection{Espectro de diseño NCh 433}
+
+El espectro de diseño elástico se construyó a partir de los datos del suelo (tipo A), de la ubicación del edificio (Antofagasta, zona sísmica 3) y del uso (Residencial, categoría II). \\
+
+La Figura \ref{fig-espectro-elastico} ilustra el espectro elástico utilizado.
+
+\insertimage[\label{fig-espectro-elastico}]{espectro}{width=10cm}{Espectro elástico.}
+
+Dado que el suelo de fundación de la estructura es de buena calidad (roca, tipo A) se puede considerar que no existe un contraste de impedancias alto con la roca basal, ello implica que el factor de amplificación del desplazamiento en superficie es similar a 1. Así, el espectro funciona como una envolvente de pseudoaceleraciones de los posibles sismos.
+
+\subsection{Estructuración}
+
+El tipo de estructuración es del tipo muro y losa de Hormigón Armado (H.A.); En este sentido el muro tiene la función de transmitir cargas tipo gravitacionales (compresión) a las fundaciones y resistir cargas cortantes, tracciones y compresiones por flexión en en caso de un sismo. Las losas por otra parte tributan las cargas al sistema de muros. \\
+
+De acuerdo a lo estipulado en la NCh433 Tabla 5.1 y Tabla 6.1 se tienen los siguientes parámetros de modificación de acuerdo al tipo de estructuración, en donde $R$ y $R_o$ corresponden a factores de reducción e $I$ es el nivel de importancia de la estructura.
+
+\begin{table}[H]
+  \centering
+  \caption{Parámetros de diseño sísmico dado la estructuración.}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Parámetro} & \textbf{Valor} \bigstrut\\
+    \hline
+    R     & 7 \bigstrut\\
+    \hline
+    $R_o$ & 11 \bigstrut\\
+    \hline
+    I     & 1 \bigstrut\\
+    \hline
+    \end{tabular}%
+\end{table}%
+
+El espesor de muros se calculó en base a una resistencia de corte admisible promedio de $\tau$=7 $kgf/cm2$, corregida por efectos de deformación sísmica considerando el espectro elástico; en la Tabla \ref{tabla-densidades-muro} se detalla la densidad de muros obtenida en cada eje.
+
+\begin{table}[H]
+  \centering
+  \caption{Densidad de muros.}
+  \begin{tabular}{ccccc}
+    \hline
+    \textbf{N° piso} & \textbf{ex [m]} & \textbf{ey [m]} & \textbf{Densidad muro x} & \textbf{Densidad muro y} \bigstrut\\
+    \hline
+    23    & 0.2   & 0.2   & 0.028 & 0.030 \bigstrut[t]\\
+    22    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    21    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    20    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    19    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    18    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    17    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    16    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    15    & 0.2   & 0.2   & 0.028 & 0.030 \\
+    14    & 0.2   & 0.2   & 0.034 & 0.037 \\
+    13    & 0.25  & 0.25  & 0.034 & 0.037 \\
+    12    & 0.25  & 0.25  & 0.034 & 0.037 \\
+    11    & 0.25  & 0.25  & 0.034 & 0.037 \\
+    10    & 0.25  & 0.25  & 0.034 & 0.037 \\
+    9     & 0.25  & 0.25  & 0.034 & 0.037 \\
+    8     & 0.25  & 0.25  & 0.034 & 0.037 \\
+    7     & 0.25  & 0.25  & 0.034 & 0.037 \\
+    6     & 0.25  & 0.25  & 0.034 & 0.037 \\
+    5     & 0.25  & 0.25  & 0.034 & 0.037 \\
+    4     & 0.25  & 0.25  & 0.034 & 0.037 \\
+    3     & 0.25  & 0.25  & 0.037 & 0.037 \\
+    2     & 0.25  & 0.25  & 0.041 & 0.038 \\
+    1     & 0.25  & 0.3   & 0.043 & 0.041 \\
+    -1    & 0.25  & 0.3   & 0.029 & 0.027 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{tabla-densidades-muro}
+\end{table}
+
+En los últimos años la densidad de muros se ha concentrado entre 0.02 y 0.035, obteniendo un buen desempeño en la estructura, por tanto, como se puede observar en la tabla anterior, en todos los pisos se obtuvo una densidad de muros superior al 0.02 y muy cercana a los 0.035 sugeridos.
+
+\newpage
+\subsection{Materiales}
+
+\begin{itemize}
+    \item \textbf{Hormigón}
+    
+    Se hará uso de tres tipos de hormigones para el edificio, H-20, H-30 y H-35. Esto se eligió en base a un requerimiento mínimo de resistencia a fuerzas axiales (peso), considerando la siguiente relación:
+    
+    \insertequationanum{N_u \geq 0.35 \cdot f'_c \cdot A_g}
+    
+    En donde $N_u$ corresponde a la resistencia última a compresión, $f'c$ la resistencia a compresión del hormigón y $A_g$ el área gruesa de la sección de muros resistente. Dado lo anterior se construyó la Tabla \ref{tab-g-horm-piso} para verificar el tipo de hormigón. En promedio se obtuvo un 70\% de factor de utilización.
+    
+\begin{table}[H]
+  \centering
+  \caption{Definición del tipo de hormigón para cada piso.}
+  \begin{tabular}{|c|cc|c|c|c|}
+    \hline
+    \textbf{N° piso} & \textbf{Peso} & \textbf{Peso acum} & \boldmath{}\textbf{$f'c$}\unboldmath{} & \boldmath{}\textbf{$N_u$}\unboldmath{} & \boldmath{}\textbf{$N_u$}\unboldmath{} \bigstrut\\
+    \hline
+    23    & 530.45 & 530.45 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 11\% \bigstrut[t]\\
+    22    & 435.97 & 966.41 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 20\% \\
+    21    & 435.97 & 1402.38 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 29\% \\
+    20    & 435.97 & 1838.35 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 39\% \\
+    19    & 435.97 & 2274.31 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 48\% \\
+    18    & 435.97 & 2710.28 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 57\% \\
+    17    & 435.97 & 3146.25 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 66\% \\
+    16    & 435.97 & 3582.21 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 75\% \\
+    15    & 435.97 & 4018.18 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 84\% \\
+    14    & 452.51 & 4470.69 & \cellcolor[rgb]{ .816,  .808,  .808}20 & 4760.3 & 94\% \\
+    13    & 469.05 & 4939.74 & \cellcolor[rgb]{ .651,  .651,  .651}30 & 8925.5 & 55\% \\
+    12    & 469.05 & 5408.79 & \cellcolor[rgb]{ .651,  .651,  .651}30 & 8925.5 & 61\% \\
+    11    & 469.05 & 5877.84 & \cellcolor[rgb]{ .651,  .651,  .651}30 & 8925.5 & 66\% \\
+    10    & 469.05 & 6346.89 & \cellcolor[rgb]{ .651,  .651,  .651}30 & 8925.5 & 71\% \\
+    9     & 469.05 & 6815.94 & \cellcolor[rgb]{ .651,  .651,  .651}30 & 8925.5 & 76\% \\
+    8     & 469.05 & 7284.99 & \cellcolor[rgb]{ .651,  .651,  .651}30 & 8925.5 & 82\% \\
+    7     & 469.05 & 7754.04 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 10413.1 & 74\% \\
+    6     & 469.05 & 8223.09 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 10413.1 & 79\% \\
+    5     & 469.05 & 8692.14 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 10413.1 & 83\% \\
+    4     & 469.05 & 9161.19 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 10413.1 & 88\% \\
+    3     & 471.81 & 9633.00 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 10413.1 & 93\% \\
+    2     & 480.38 & 10113.38 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 10765.9 & 94\% \\
+    1     & 475.35 & 10588.73 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 11569.5 & 92\% \\
+    -1    & 670.51 & 11259.24 & \cellcolor[rgb]{ .502,  .502,  .502}35 & 12491.0 & 90\% \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{tab-g-horm-piso}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Tensiones admisibles y características de hormigones a utilizar.}
+  \begin{tabular}{cccccc}
+    \hline
+    \textbf{\textbf{Grado}} & \boldmath{}\textbf{\textbf{$\rho\  [tonf/m^3]$}}\unboldmath{} & \boldmath{}\textbf{\textbf{$f'c\  [Mpa]$}}\unboldmath{} & \boldmath{}\textbf{\textbf{$E\  [Mpa]$}}\unboldmath{} & \boldmath{}\textbf{\textbf{$\nu\  [-]$}}\unboldmath{} & \boldmath{}\textbf{\textbf{$G\  [Mpa]$}}\unboldmath{} \bigstrut\\
+    \hline
+    H20   & 2.5   & 20    & 21019.04 & 0.2   & 8757.93 \bigstrut[t]\\
+    H30   & 2.5   & 30    & 25742.96 & 0.2   & 10726.23 \\
+    H35   & 2.5   & 35    & 27805.57 & 0.2   & 11585.66 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{tab:addlabel}
+\end{table}
+
+\item \textbf{Acero}\\
+    Se considera un acero ASTM-A36 como acero estructural y de refuerzo, el cual posee las siguientes características:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Tensiones admisibles y características del acero a utilizar.}
+      \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Grado} &
+          \boldmath{}\textbf{$F_{y} \ [tonf/cm^2]$} &
+          \boldmath{}\textbf{$F_{u} \ [tonf/cm^2]$} &
+          \boldmath{}\textbf{$E \ [tonf/cm^2]$} &
+          \boldmath{}\textbf{$\nu \ [-]$} &
+          \boldmath{}\textbf{$G \ [tonf/cm^2]$}
+          \bigstrut\\
+        \hline
+        A36 &
+          2,53 &
+          4,08 &
+          2100 &
+          0,29 &
+          787,44
+          \bigstrut\\
+        \hline
+        \end{tabular}}%
+    \end{table}% 
+
+\end{itemize}

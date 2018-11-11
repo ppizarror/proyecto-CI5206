@@ -1,0 +1,1041 @@
+\newpage
+\section{Cortes Basales y Control de Deformaciones}
+
+    \subsection{Cortes basales}
+    
+        De acuerdo a lo indicado en el punto 6.2.3 de la NCh433, se determinan los cortes basales máximos y mínimos mostrados a continuación:
+        
+        \begin{table}[H]
+            \centering
+            \caption{Cortes basales máximo y mínimo.}
+                \begin{tabular}{cc}
+                    \hline
+                          & \textbf{Cortes basal norma [tonf]} \bigstrut\\
+                    \hline
+                    $Q_{min}$ & 705,800 \bigstrut[t]\\
+                    $Q_{max}$ & 1482,180 \bigstrut[b]\\
+                    \hline
+                \end{tabular}%
+            \label{cortex_max_min}%
+        \end{table}%
+        
+        Del modelo se determina el corte basal efectivo. En la primera iteración este resultó ser menor al mínimo por lo que se corrigió el espectro, resultando finalmente lo mostrado en la siguiente tabla:
+        
+        \begin{table}[htbp]
+          \centering
+          \caption{Cortes basales efectivos.}
+            \begin{tabular}{cc}
+            \toprule
+                  & \textbf{Corte efectivo [tonf]} \\
+            \midrule
+            $Q_x$ & 705,613 \\
+            $Q_y$ & 705,897 \\
+            \bottomrule
+            \end{tabular}%
+          \label{cortes}%
+        \end{table}%
+
+    \newpage
+    \subsection{Control de deformaciones}
+    A continuación, se muestran los desplazamientos entre pisos, sin considerar el efecto del factor de reducción, considerando la losa como un elemento completamente rígido. Se debe tener en consideración que este valor no puede superar $0.001 \cdot H_{entrepiso}$.
+    
+    \begin{table}[H]
+  \centering
+  \caption{Verificación de drifts utlizando centro de masa, sismo y desplazamiento en eje X. }
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{cccccccc}
+    \hline
+    \multicolumn{1}{c}{\textbf{Story}} &
+      \multicolumn{1}{c}{\textbf{UX [m]}} &
+      \multicolumn{1}{c}{\textbf{X [m]}} &
+      \multicolumn{1}{c}{\textbf{Y [m]}} &
+      \multicolumn{1}{c}{\textbf{Z [m]}} &
+      \multicolumn{1}{c}{\textbf{Drift [-]}} &
+      \multicolumn{1}{c}{\textbf{Admisible [-]}} &
+      \multicolumn{1}{c}{\textbf{Porcentaje [\%]}}
+      \bigstrut\\
+    \hline
+    Cubierta &
+      0,123 &
+      18,610 &
+      15,900 &
+      63,38 &
+      - &
+      - &
+      -
+      \bigstrut[t]\\
+    24 &
+      0,118 &
+      19,870 &
+      16,364 &
+      61,33 &
+      0,002 &
+      0,0021 &
+      121,6
+      \\
+    23 &
+      0,112 &
+      16,314 &
+      16,339 &
+      58,88 &
+      0,002 &
+      0,0025 &
+      91,4
+      \\
+    22 &
+      0,107 &
+      16,053 &
+      16,409 &
+      56,43 &
+      0,002 &
+      0,0025 &
+      93,3
+      \\
+    21 &
+      0,101 &
+      16,053 &
+      16,409 &
+      53,98 &
+      0,002 &
+      0,0025 &
+      93,5
+      \\
+    20 &
+      0,095 &
+      16,053 &
+      16,409 &
+      51,53 &
+      0,002 &
+      0,0025 &
+      94,8
+      \\
+    19 &
+      0,090 &
+      16,053 &
+      16,409 &
+      49,08 &
+      0,002 &
+      0,0025 &
+      95,9
+      \\
+    18 &
+      0,084 &
+      16,053 &
+      16,409 &
+      46,63 &
+      0,002 &
+      0,0025 &
+      96,7
+      \\
+    17 &
+      0,078 &
+      16,053 &
+      16,409 &
+      44,18 &
+      0,002 &
+      0,0025 &
+      97,1
+      \\
+    16 &
+      0,072 &
+      16,053 &
+      16,409 &
+      41,73 &
+      0,002 &
+      0,0025 &
+      97,2
+      \\
+    15 &
+      0,066 &
+      16,053 &
+      16,409 &
+      39,28 &
+      0,002 &
+      0,0025 &
+      96,9
+      \\
+    14 &
+      0,061 &
+      16,053 &
+      16,409 &
+      36,83 &
+      0,002 &
+      0,0025 &
+      96,2
+      \\
+    13 &
+      0,055 &
+      16,053 &
+      16,409 &
+      34,38 &
+      0,002 &
+      0,0025 &
+      95,2
+      \\
+    12 &
+      0,049 &
+      16,053 &
+      16,409 &
+      31,93 &
+      0,002 &
+      0,0025 &
+      93,1
+      \\
+    11 &
+      0,044 &
+      16,053 &
+      16,409 &
+      29,48 &
+      0,002 &
+      0,0025 &
+      91,5
+      \\
+    10 &
+      0,038 &
+      16,053 &
+      16,409 &
+      27,03 &
+      0,002 &
+      0,0025 &
+      89,5
+      \\
+    9 &
+      0,033 &
+      16,053 &
+      16,409 &
+      24,58 &
+      0,002 &
+      0,0025 &
+      87,2
+      \\
+    8 &
+      0,028 &
+      16,053 &
+      16,409 &
+      22,13 &
+      0,002 &
+      0,0025 &
+      84,2
+      \\
+    7 &
+      0,023 &
+      16,062 &
+      16,420 &
+      19,68 &
+      0,002 &
+      0,0025 &
+      80,4
+      \\
+    6 &
+      0,019 &
+      16,070 &
+      16,430 &
+      17,23 &
+      0,002 &
+      0,0025 &
+      74,9
+      \\
+    5 &
+      0,015 &
+      16,070 &
+      16,430 &
+      14,78 &
+      0,002 &
+      0,0025 &
+      70,6
+      \\
+    4 &
+      0,011 &
+      16,072 &
+      16,437 &
+      12,33 &
+      0,002 &
+      0,0025 &
+      65,6
+      \\
+    3 &
+      0,007 &
+      16,070 &
+      16,430 &
+      9,88 &
+      0,001 &
+      0,0025 &
+      59,4
+      \\
+    2 &
+      0,004 &
+      16,176 &
+      16,550 &
+      7,43 &
+      0,001 &
+      0,0025 &
+      51,8
+      \\
+    1 &
+      0,002 &
+      11,555 &
+      19,840 &
+      4,98 &
+      0,001 &
+      0,0025 &
+      39,3
+      \\
+    -1 &
+      0,000 &
+      15,476 &
+      19,695 &
+      2,5 &
+      0,001 &
+      0,0025 &
+      21,4
+      \bigstrut[b]\\
+    \hline
+  \end{tabular}}
+  \label{sxCMD}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Verificación de drifts utlizando centro de masa, sismo y desplazamiento en eje Y.}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{cccccccc}
+    \hline
+    \multicolumn{1}{c}{\textbf{Story}} &
+      \multicolumn{1}{c}{\textbf{UY [m]}} &
+      \multicolumn{1}{c}{\textbf{X [m]}} &
+      \multicolumn{1}{c}{\textbf{Y [m]}} &
+      \multicolumn{1}{c}{\textbf{Z [m]}} &
+      \multicolumn{1}{c}{\textbf{Drift [-]}} &
+      \multicolumn{1}{c}{\textbf{Admisible [-]}} &
+      \multicolumn{1}{c}{\textbf{Porcentaje [\%]}}
+      \bigstrut\\
+    \hline
+    Cubierta &
+      0,0754 &
+      18,610 &
+      15,900 &
+      63,38 &
+      - &
+      - &
+      -
+      \bigstrut[t]\\
+    24 &
+      0,0778 &
+      19,870 &
+      16,364 &
+      61,33 &
+      -0,001 &
+      0,00205 &
+      57,1
+      \\
+    23 &
+      0,0709 &
+      16,314 &
+      16,339 &
+      58,88 &
+      0,003 &
+      0,00245 &
+      115,5
+      \\
+    22 &
+      0,0684 &
+      16,053 &
+      16,409 &
+      56,43 &
+      0,001 &
+      0,00245 &
+      41,3
+      \\
+    21 &
+      0,0657 &
+      16,053 &
+      16,409 &
+      53,98 &
+      0,001 &
+      0,00245 &
+      45,1
+      \\
+    20 &
+      0,0628 &
+      16,053 &
+      16,409 &
+      51,53 &
+      0,001 &
+      0,00245 &
+      47,8
+      \\
+    19 &
+      0,0598 &
+      16,053 &
+      16,409 &
+      49,08 &
+      0,001 &
+      0,00245 &
+      50,4
+      \\
+    18 &
+      0,0566 &
+      16,053 &
+      16,409 &
+      46,63 &
+      0,001 &
+      0,00245 &
+      52,9
+      \\
+    17 &
+      0,0533 &
+      16,053 &
+      16,409 &
+      44,18 &
+      0,001 &
+      0,00245 &
+      55,2
+      \\
+    16 &
+      0,0499 &
+      16,053 &
+      16,409 &
+      41,73 &
+      0,001 &
+      0,00245 &
+      57,3
+      \\
+    15 &
+      0,0463 &
+      16,053 &
+      16,409 &
+      39,28 &
+      0,001 &
+      0,00245 &
+      59,1
+      \\
+    14 &
+      0,0427 &
+      16,053 &
+      16,409 &
+      36,83 &
+      0,001 &
+      0,00245 &
+      60,6
+      \\
+    13 &
+      0,0390 &
+      16,053 &
+      16,409 &
+      34,38 &
+      0,002 &
+      0,00245 &
+      61,9
+      \\
+    12 &
+      0,0353 &
+      16,053 &
+      16,409 &
+      31,93 &
+      0,002 &
+      0,00245 &
+      61,5
+      \\
+    11 &
+      0,0316 &
+      16,053 &
+      16,409 &
+      29,48 &
+      0,002 &
+      0,00245 &
+      61,9
+      \\
+    10 &
+      0,0278 &
+      16,053 &
+      16,409 &
+      27,03 &
+      0,002 &
+      0,00245 &
+      62,1
+      \\
+    9 &
+      0,0241 &
+      16,053 &
+      16,409 &
+      24,58 &
+      0,002 &
+      0,00245 &
+      61,7
+      \\
+    8 &
+      0,0205 &
+      16,053 &
+      16,409 &
+      22,13 &
+      0,001 &
+      0,00245 &
+      60,8
+      \\
+    7 &
+      0,0169 &
+      16,062 &
+      16,420 &
+      19,68 &
+      0,001 &
+      0,00245 &
+      59,0
+      \\
+    6 &
+      0,0137 &
+      16,070 &
+      16,430 &
+      17,23 &
+      0,001 &
+      0,00245 &
+      54,8
+      \\
+    5 &
+      0,0105 &
+      16,070 &
+      16,430 &
+      14,78 &
+      0,001 &
+      0,00245 &
+      52,2
+      \\
+    4 &
+      0,0076 &
+      16,072 &
+      16,437 &
+      12,33 &
+      0,001 &
+      0,00245 &
+      48,8
+      \\
+    3 &
+      0,0049 &
+      16,070 &
+      16,430 &
+      9,88 &
+      0,001 &
+      0,00245 &
+      44,1
+      \\
+    2 &
+      0,0027 &
+      16,176 &
+      16,550 &
+      7,43 &
+      0,001 &
+      0,00245 &
+      37,6
+      \\
+    1 &
+      0,0009 &
+      11,555 &
+      19,840 &
+      4,98 &
+      0,001 &
+      0,00245 &
+      30,2
+      \\
+    -1 &
+      0,0002 &
+      15,476 &
+      19,695 &
+      2,5 &
+      0,000 &
+      0,00248 &
+      11,2
+      \bigstrut[b]\\
+    \hline
+  \end{tabular}}
+  \label{syCMD}
+\end{table}
+
+%poner texto
+Por otro lado, utilizando la información directa de los Story Drifts obtenidos del modelo, los cuales no usan el supuesto de losa rigida, se comparan los drifts con su deformación admisible considerando este último como $0.002 \cdot H_{entrepiso}$.
+\begin{table}[H]
+  \centering
+  \caption{Verificación de drifts utlizando deformaciones máximas y sismo en eje X.}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{ccccccc}
+    \hline
+    \multicolumn{1}{c}{\textbf{Story}} &
+      \multicolumn{1}{c}{\textbf{X [m]}} &
+      \multicolumn{1}{c}{\textbf{Y [m]}} &
+      \multicolumn{1}{c}{\textbf{Z [m]}} &
+      \multicolumn{1}{c}{\textbf{Drift [-]}} &
+      \multicolumn{1}{c}{\textbf{Admisible [-]}} &
+      \multicolumn{1}{c}{\textbf{Porcentaje [\%]}}
+      \bigstrut\\
+    \hline
+    Cubierta &
+      20,63 &
+      17 &
+      63,38 &
+      0,002 &
+      - &
+      -
+      \bigstrut[t]\\
+    24 &
+      16,59 &
+      20,65 &
+      61,33 &
+      0,002 &
+      0,0041 &
+      60,3
+      \\
+    23 &
+      17,21 &
+      31,83 &
+      58,88 &
+      0,003 &
+      0,0049 &
+      69,4
+      \\
+    22 &
+      11,14 &
+      32,43 &
+      56,43 &
+      0,004 &
+      0,0049 &
+      73,6
+      \\
+    21 &
+      11,14 &
+      32,43 &
+      53,98 &
+      0,004 &
+      0,0049 &
+      77,0
+      \\
+    20 &
+      11,14 &
+      32,43 &
+      51,53 &
+      0,004 &
+      0,0049 &
+      80,0
+      \\
+    19 &
+      11,14 &
+      32,43 &
+      49,08 &
+      0,004 &
+      0,0049 &
+      82,5
+      \\
+    18 &
+      11,14 &
+      32,43 &
+      46,63 &
+      0,004 &
+      0,0049 &
+      84,4
+      \\
+    17 &
+      11,14 &
+      32,43 &
+      44,18 &
+      0,004 &
+      0,0049 &
+      85,5
+      \\
+    16 &
+      11,14 &
+      32,43 &
+      41,73 &
+      0,004 &
+      0,0049 &
+      86,0
+      \\
+    15 &
+      11,14 &
+      32,43 &
+      39,28 &
+      0,004 &
+      0,0049 &
+      85,8
+      \\
+    14 &
+      11,14 &
+      32,43 &
+      36,83 &
+      0,004 &
+      0,0049 &
+      84,8
+      \\
+    13 &
+      11,14 &
+      32,43 &
+      34,38 &
+      0,004 &
+      0,0049 &
+      82,2
+      \\
+    12 &
+      11,14 &
+      32,43 &
+      31,93 &
+      0,004 &
+      0,0049 &
+      81,1
+      \\
+    11 &
+      11,14 &
+      32,43 &
+      29,48 &
+      0,004 &
+      0,0049 &
+      79,9
+      \\
+    10 &
+      11,14 &
+      32,43 &
+      27,03 &
+      0,004 &
+      0,0049 &
+      78,4
+      \\
+    9 &
+      11,14 &
+      32,43 &
+      24,58 &
+      0,004 &
+      0,0049 &
+      76,4
+      \\
+    8 &
+      11,14 &
+      32,43 &
+      22,13 &
+      0,004 &
+      0,0049 &
+      73,5
+      \\
+    7 &
+      11,14 &
+      32,43 &
+      19,68 &
+      0,003 &
+      0,0049 &
+      69,5
+      \\
+    6 &
+      11,14 &
+      32,43 &
+      17,23 &
+      0,003 &
+      0,0049 &
+      64,9
+      \\
+    5 &
+      11,14 &
+      32,43 &
+      14,78 &
+      0,003 &
+      0,0049 &
+      58,8
+      \\
+    4 &
+      11,14 &
+      32,43 &
+      12,33 &
+      0,002 &
+      0,0049 &
+      50,7
+      \\
+    3 &
+      20,3 &
+      0 &
+      9,88 &
+      0,002 &
+      0,0049 &
+      39,9
+      \\
+    2 &
+      15,79 &
+      1,36 &
+      7,43 &
+      0,002 &
+      0,0049 &
+      31,1
+      \\
+    1 &
+      22,95 &
+      7,7 &
+      4,98 &
+      0,001 &
+      0,0049 &
+      19,5
+      \\
+    -1 &
+      21,04 &
+      39,44 &
+      2,5 &
+      0,000 &
+      0,0050 &
+      2,5
+      \bigstrut[b]\\
+    \hline
+  \end{tabular}}
+  \label{sxDD}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Verificación de drifts utlizando deformaciones máximas y sismo en eje Y.}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{ccccccc}
+    \hline
+    \multicolumn{1}{c}{\textbf{Story}} &
+      \multicolumn{1}{c}{\textbf{X [m]}} &
+      \multicolumn{1}{c}{\textbf{Y [m]}} &
+      \multicolumn{1}{c}{\textbf{Z [m]}} &
+      \multicolumn{1}{c}{\textbf{Drift [-]}} &
+      \multicolumn{1}{c}{\textbf{Admisible [-]}} &
+      \multicolumn{1}{c}{\textbf{Porcentaje [\%]}}
+      \bigstrut\\
+    \hline
+    Cubierta &
+      16,59 &
+      17 &
+      63,38 &
+      0,001 &
+      - &
+      -
+      \bigstrut[t]\\
+    24 &
+      16,59 &
+      20,65 &
+      61,33 &
+      0,001 &
+      0,0041 &
+      24,4
+      \\
+    23 &
+      9,03 &
+      21,9 &
+      58,88 &
+      0,001 &
+      0,0049 &
+      26,2
+      \\
+    22 &
+      9,03 &
+      21,9 &
+      56,43 &
+      0,001 &
+      0,0049 &
+      27,9
+      \\
+    21 &
+      22,95 &
+      17 &
+      53,98 &
+      0,001 &
+      0,0049 &
+      30,0
+      \\
+    20 &
+      22,95 &
+      12,7 &
+      51,53 &
+      0,002 &
+      0,0049 &
+      32,6
+      \\
+    19 &
+      22,95 &
+      17 &
+      49,08 &
+      0,002 &
+      0,0049 &
+      34,8
+      \\
+    18 &
+      22,95 &
+      17 &
+      46,63 &
+      0,002 &
+      0,0049 &
+      36,7
+      \\
+    17 &
+      22,95 &
+      17 &
+      44,18 &
+      0,002 &
+      0,0049 &
+      38,2
+      \\
+    16 &
+      22,95 &
+      17 &
+      41,73 &
+      0,002 &
+      0,0049 &
+      39,4
+      \\
+    15 &
+      22,95 &
+      17 &
+      39,28 &
+      0,002 &
+      0,0049 &
+      40,1
+      \\
+    14 &
+      22,95 &
+      17 &
+      36,83 &
+      0,002 &
+      0,0049 &
+      40,2
+      \\
+    13 &
+      22,95 &
+      17 &
+      34,38 &
+      0,002 &
+      0,0049 &
+      38,4
+      \\
+    12 &
+      22,95 &
+      17 &
+      31,93 &
+      0,002 &
+      0,0049 &
+      38,3
+      \\
+    11 &
+      22,95 &
+      12,7 &
+      29,48 &
+      0,002 &
+      0,0049 &
+      38,2
+      \\
+    10 &
+      22,95 &
+      17 &
+      27,03 &
+      0,002 &
+      0,0049 &
+      38,1
+      \\
+    9 &
+      22,95 &
+      17 &
+      24,58 &
+      0,002 &
+      0,0049 &
+      37,7
+      \\
+    8 &
+      22,95 &
+      17 &
+      22,13 &
+      0,002 &
+      0,0049 &
+      37,0
+      \\
+    7 &
+      22,95 &
+      17 &
+      19,68 &
+      0,002 &
+      0,0049 &
+      35,7
+      \\
+    6 &
+      22,95 &
+      17 &
+      17,23 &
+      0,002 &
+      0,0049 &
+      34,3
+      \\
+    5 &
+      22,95 &
+      17 &
+      14,78 &
+      0,002 &
+      0,0049 &
+      32,4
+      \\
+    4 &
+      22,95 &
+      17 &
+      12,33 &
+      0,001 &
+      0,0049 &
+      29,6
+      \\
+    3 &
+      22,95 &
+      17 &
+      9,88 &
+      0,001 &
+      0,0049 &
+      25,3
+      \\
+    2 &
+      17,21 &
+      0,7 &
+      7,43 &
+      0,001 &
+      0,0049 &
+      22,3
+      \\
+    1 &
+      22,95 &
+      9,62 &
+      4,98 &
+      0,001 &
+      0,0049 &
+      14,5
+      \\
+    -1 &
+      31,19 &
+      1,36 &
+      2,5 &
+      0,000 &
+      0,00496 &
+      1,9
+      \bigstrut[b]\\
+    \hline
+  \end{tabular}}
+  \label{syDD}
+\end{table}
+
+\newpage
+\subsection{Gráficos de respuesta}
+
+\subsubsection{Corte por piso}
+
+\begin{images}[\label{corte-piso}]{Cortes por piso.}
+\addimage{corte-sismox}{width=7cm}{Sismo x.}
+\addimage{corte-sismoy}{width=7cm}{Sismo y.}
+\end{images}
+
+\subsubsection{Momento volcante}
+
+\begin{images}{Momento volcante por piso.}
+\addimage{momento-sismox}{width=7cm}{Sismo x.}
+\addimage{momento-sismoy}{width=7cm}{Sismo y.}
+\end{images}
+
+\newpage
+\subsubsection{Desplazamiento entre piso}
+
+\begin{images}{Desplazamiento entre piso.}
+\addimage{despl-sismox}{width=7cm}{Sismo x.}
+\addimage{despl-sismoy}{width=7cm}{Sismo y.}
+\end{images}
+
+\subsubsection{Drift entre piso}
+
+\begin{images}{Drift entre piso.}
+\addimage{drift-sismox}{width=7cm}{Sismo x.}
+\addimage{drift-sismoy}{width=7cm}{Sismo y.}
+\end{images}

@@ -17,7 +17,6 @@
 *.blg
 
 # Archivos ETABS
-*.$et
 *.ebk
 *.tlog
 *.ico

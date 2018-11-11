@@ -1,0 +1,18 @@
+\newpage
+\section{Comentarios y Conclusiones}
+
+En cuanto al período predominante se obtuvo un primer modo torsional, si bien esto no es lo deseable hay que destacar que el período obtenido está lejos del período en que el suelo presenta mayores aceleraciones (el cual es cercano a los 0.2s), por tanto el contenido de frecuencias de un sismo no proporcionará energía suficiente a la estructura para excitar un modo torsional. Por otro lado en cuanto al período en $X$ e $Y$ se obtuvieron igualmente períodos altos en comparación a la zona de amplificación, lo cual es deseable dado que la mayor masa del edificio se tributará en periodos para los cuales la estructura recibe menos energía (aceleración).
+    
+\insertimage{periodos}{width=12cm}{Períodos de los primeros períodos junto al espectro de aceleraciones reducido.}
+
+Para lograr el 90\% de masa trasladada en cada dirección de análisis se necesitó de un total de 70 modos, esto conversa muy bien con la hipótesis de diseño inicial la cual consideró un diafragma rígido, requiriendo así de un total de tres grados de libertad por cada piso para representar los desplazamientos de la estructura ($u_x$, $u_y$ desplazamientos horizontales en planta y $\theta$ ángulo de giro) sin mayores diferencias con la realidad.  Así, teóricamente con un total de $3 \cdot 23 = 69$ modos se logra un buen nivel de confianza, resultado muy cercano al obtenido en la práctica. \\
+
+Con respecto a los desplazamientos obtenidos por piso, se puede apreciar como estos son mayores por efecto del sismo en el eje $X$. Lo anterior se debe a la baja inercia que posee la estructura en este eje en comparación con el eje $Y$. Sin embargo, es posible apreciar que estos desplazamientos son menores que los admisibles o solicitados por norma.
+
+Los casos puntuales de los pisos más superiores donde esto no se cumple es prácticamente por la condición de apoyo libre que existe a nivel de la cubierta. \\
+    
+Dado que los factores de acoplamiento obtenidos en la Tabla \ref{IndAcpl} son mayores o iguales que lo indicado en la norma, se puede concluir que no habrá efecto de acoplamiento entre los modos obtenidos. \\
+
+Al analizar los gráficos de distribución del cortante por piso (Figuras \ref{corte-piso}.a y \ref{corte-piso}.b) es posible observar que en cuanto al sismo en el eje $Y$ la distribución es relativamente homogénea, ello significa que el corte se tributa de igual manera en cada piso, por tanto en dicho eje la rigidez (dado el hormigón y espesor de muros elegidos) fue la adecuada. \\
+
+Distinto es en el caso del sismo en x, en donde en los pisos intermedios de la estructura (concretamente entre el 17 y el 12) toman poco corte, tributándolo a los pisos inferiores de la estructura. Esto indica que dichos pisos en ese eje resultaron muy rígidos, disminuyendo por tanto la distorsión angular (Mayor módulo de rigidez, mayor módulo de corte, menor distorsión angular a un mismo desplazamiento), tomando así menos corte dado la relación $\tau = G \cdot \gamma$. Una posible solución es disminuir el espesor de los muros, verificando que dicho cambio no afecte al drift entre pisos.
