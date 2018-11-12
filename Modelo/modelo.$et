@@ -1,4 +1,4 @@
-$ File C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.$et saved 11-11-2018 21:54:37
+$ File C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.$et saved 12-11-2018 0:06:51
  
 $ PROGRAM INFORMATION
   PROGRAM  "ETABS 2016"  VERSION "16.2.1"  
@@ -6903,6 +6903,7 @@ $ AREA ASSIGNS
   AREAASSIGN  "F13"  "2"  SECTION "LOSA16G35"  CARDINALPOINT "TOP"  TRANSFORMSTIFFNESSFOROFFSETS "No"  
   AREAASSIGN  "F40"  "2"  SECTION "LOSA16G35"  CARDINALPOINT "TOP"  TRANSFORMSTIFFNESSFOROFFSETS "No"  
   AREAASSIGN  "F32"  "1"  SECTION "LOSA16G35"  OBJMESHTYPE "DEFAULT"  CARDINALPOINT "TOP"  TRANSFORMSTIFFNESSFOROFFSETS "No"  
+  AREAASSIGN  "F40"  "-1"  SECTION "LOSA17G35"  OBJMESHTYPE "DEFAULT"  CARDINALPOINT "TOP"  TRANSFORMSTIFFNESSFOROFFSETS "No"  
 
 $ LOAD PATTERNS
   LOADPATTERN "PP"  TYPE  "Dead"  SELFWEIGHT  1
@@ -8204,6 +8205,9 @@ ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\Pablo\Google Drive\Trabajos\P
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 11-11-2018 19:01:59
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 11-11-2018 20:40:15
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 11-11-2018 21:54:36
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 11-11-2018 22:49:54
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 11-11-2018 23:23:40
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 12-11-2018 0:06:51
   ENDCOMMENTS  
 
   END
