@@ -1,4 +1,4 @@
-$ File C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.$et saved 12-11-2018 14:44:09
+$ File C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.$et saved 12-11-2018 16:19:09
  
 $ PROGRAM INFORMATION
   PROGRAM  "ETABS 2016"  VERSION "16.2.1"  
@@ -8072,6 +8072,8 @@ $ CONCRETE SLAB DESIGN PREFERENCES
 
 $ DIMENSION LINES
   DIMLINE DEFAULTSYSTEM G1
+  DIMLINE GX1 653,1496 GY1 669,2913 GX2 653,1496 GY2 582,6772 PX1 640,1496 PY1 669,2913 PX2 640,1496 PY2 582,6772 
+  DIMLINE GX1 653,1496 GY1 669,2913 GX2 812,2047 GY2 669,2913 PX1 653,1496 PY1 695,2913 PX2 812,2047 PY2 695,2913 
 
 $ TABLE SETS
 
@@ -8211,6 +8213,8 @@ ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.y
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 12-11-2018 1:45:43
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 12-11-2018 14:44:05
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 12-11-2018 14:44:09
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 12-11-2018 16:19:04
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\ignac\Google Drive (ignacio.yanez.g@ug.uchile.cl)\Universidad\Semestre 12 Primavera 2018\proyecto de hormigon\proyecto-CI5206\Modelo\modelo.EDB at 12-11-2018 16:19:08
   ENDCOMMENTS  
 
   END
