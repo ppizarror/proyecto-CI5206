@@ -1,0 +1,122 @@
+\newpage 
+\section{Análisis de losas}
+
+    La metodología de análisis de cada losa es la siguiente:
+        \begin{itemize}
+            \item Definir dimensiones: lado corto, lado largo y espesor.
+            \item Con el parámetro $\epsilon$, si este es menor a 2, determinar los valores de \texttt{mx}, \texttt{my}, \texttt{mex} y \texttt{mey}, los parámetros \texttt{k} y de alternancia de carga $\Delta x$ y $\Delta y$, de las tablas de Czerny y Marcus. Si $\epsilon$ es mayor a 2, se siguen las recomendaciones para franja de losa, mostradas en la figura \ref{franja_losa}.
+            \item Una vez determinado el parámetro $\phi$ se puede determinar el espesor mínimo que debiera cumplir la losa, considerando el coeficiente de uso ($\lambda$) correspondiente, y se verifica si se encuentra bajo el escogido previamente. 
+            \item Se determinan la sobrecarga según el uso y el peso propio dado por su espesor y peso adicional, y se mayoran para determinar la carga de diseño. Esta se multiplica por el área (se suponen todas las losas rectangulares) para determinar el valor de \texttt{Ku}.
+            \item Se determinan los momentos máximos, tanto positivos como negativos, a partir de los valores de las tablas o con las recomendaciones de franja de losa, según sea el caso.
+            Se consideran el efecto de la alternancia de carga en los momentos positivos y el aumento de armaduras por torsión.
+            \item Realizando un análisis de flexión simple se determina el área de acero requerida. En caso de ser menor al área mínima se usa esta última, si no se escoge la armadura correspondiente al área calculada.
+        \end{itemize}
+        
+    \insertimage[\label{franja_losa} ]{franja_losa}{width=13cm}{Recomendaciones para franjas de losa.}
+    
+    \newpage
+    A continuación se muestran dos ejemplos de cálculo, para una losa rectangular y una franja, respectivamente. 
+    
+    \begin{table}[H]
+      \centering
+      \caption{Ejemplo de análisis losa regular: losa N° 0101.}
+        \resizebox{.7\textwidth}{!}{
+        \begin{tabular}{cccp{8.215em}c}
+            \hline
+            \multicolumn{2}{c}{\textbf{N° Losa}} &       & \multicolumn{2}{c}{\textbf{0101}} \bigstrut\\
+            \hline
+            \multicolumn{2}{c}{\textbf{Dimensiones Losa}} &       & \multicolumn{2}{c}{\textbf{Momentos últimos}} \bigstrut\\
+            \cline{1-2}\cline{4-5}    \boldmath{}\textbf{$L_x [m]$}\unboldmath{} & 5     &       & \multicolumn{1}{c}{\boldmath{}\textbf{Mx $[kgf \cdot m/m]$}\unboldmath{}} & 968,5 \bigstrut[t]\\
+            \boldmath{}\textbf{$L_y [m]$}\unboldmath{} & 5,33  &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 1,86 \\
+            \boldmath{}\textbf{$e_{min} [cm]$}\unboldmath{} & 10    &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,026 \\
+            \textbf{Cond. apoyo} & 6     &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 1,68 \bigstrut[b]\\
+            \cline{4-5}          &       &       & \textbf{Fs} & \boldmath{}\textbf{$\phi8@16$}\unboldmath{} \bigstrut\\
+            \cline{1-2}\cline{4-5}    \multicolumn{2}{c}{\textbf{Parámetros}} &       & \multicolumn{1}{c}{} &  \bigstrut\\
+            \cline{1-2}    \boldmath{}\textbf{$\epsilon$}\unboldmath{} & 1,1   &       & \multicolumn{1}{c}{\boldmath{}\textbf{My $[kgf \cdot m/m]$}\unboldmath{}} & 740,6 \bigstrut[t]\\
+            \textbf{k} & 0,55  &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 1,42 \\
+            \boldmath{}\textbf{$\lambda$}\unboldmath{} & 35    &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,020 \\
+            \textbf{mx} & 1     &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 1,29 \bigstrut[b]\\
+            \cline{4-5}    \textbf{my} & 50,7  &       & \textbf{Fi} & \boldmath{}\textbf{$\phi8@16$}\unboldmath{} \bigstrut\\
+            \cline{4-5}    \textbf{mex} & 66,3  &       & \multicolumn{1}{c}{} &  \bigstrut[t]\\
+            \textbf{mey} & 18,8  &       & \multicolumn{1}{c}{\boldmath{}\textbf{Mex $[kgf \cdot m/m]$}\unboldmath{}} & 2239,7 \\
+            \boldmath{}\textbf{$\Delta x$}\unboldmath{} & 20,3  &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 4,31 \\
+            \boldmath{}\textbf{$\Delta y$}\unboldmath{} & 1,05  &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,061 \\
+                  &       &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 3,89 \bigstrut[b]\\
+            \cline{1-2}\cline{4-5}    \multicolumn{2}{c}{\textbf{Cargas}} &       & \textbf{F'+} & \boldmath{}\textbf{$\phi10@20$}\unboldmath{} \bigstrut\\
+            \cline{1-2}\cline{4-5}    \boldmath{}\textbf{SC $[kgf/m^2]$}\unboldmath{} & 500   &       & \multicolumn{1}{c}{} &  \bigstrut[t]\\
+            \boldmath{}\textbf{$PP_{losa} [kgf/m^2]$}\unboldmath{} & 425   &       & \multicolumn{1}{c}{\boldmath{}\textbf{Mey $[kgf \cdot m/m]$}\unboldmath{}} & 2074,2 \\
+            \boldmath{}\textbf{$PP_t [kgf/m^2]$}\unboldmath{} & 650   &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 3,99 \\
+            \boldmath{}\textbf{$q_u [kgf/m^2]$}\unboldmath{} & 1580  &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,056 \\
+            \boldmath{}\textbf{Ku $[kgf \cdot m/m]$}\unboldmath{} & 42107,0 &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 3,6 \bigstrut[b]\\
+            \cline{4-5}    \boldmath{}\textbf{$\alpha$}\unboldmath{} & 0,16  &       & \textbf{F'-} & \boldmath{}\textbf{$\phi8@14$}\unboldmath{} \bigstrut\\
+            \hline
+        \end{tabular}%
+        }
+        \label{analisis0101}%
+    \end{table}%    
+    
+    \begin{table}[H]
+      \centering
+      \caption{Ejemplo de análisis franja de losa: losa N° 114.}
+        \resizebox{.7\textwidth}{!}{
+        \begin{tabular}{cccp{8.215em}c}
+            \hline
+            \multicolumn{2}{c}{\textbf{N° Losa}} &       & \multicolumn{2}{c}{\textbf{114}} \bigstrut\\
+            \hline
+            \multicolumn{2}{c}{\textbf{Dimensiones Losa}} &       & \multicolumn{2}{c}{\textbf{Momentos últimos}} \bigstrut\\
+            \cline{1-2}\cline{4-5}    \boldmath{}\textbf{$L_x [m]$}\unboldmath{} & 1,4   &       & \multicolumn{1}{c}{\boldmath{}\textbf{Mx $[kgf \cdot m/m]$}\unboldmath{}} & 160,3 \bigstrut[t]\\
+            \boldmath{}\textbf{$L_y [m]$}\unboldmath{} & 9,2   &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,33 \\
+            \boldmath{}\textbf{$e_{min} [cm]$}\unboldmath{} & 4     &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,005 \\
+            \textbf{Cond. apoyo} & 6     &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,3 \bigstrut[b]\\
+            \cline{4-5}          &       &       & \textbf{Fs} & \boldmath{}\textbf{$\phi8@17$}\unboldmath{} \bigstrut\\
+            \cline{1-2}\cline{4-5}    \multicolumn{2}{c}{\textbf{Parámetros}} &       & \multicolumn{1}{c}{} &  \bigstrut\\
+            \cline{1-2}    \boldmath{}\textbf{$\epsilon$}\unboldmath{} & 6,6   &       & \multicolumn{1}{c}{\boldmath{}\textbf{My $[kgf \cdot m/m]$}\unboldmath{}} & 0 \bigstrut[t]\\
+            \textbf{k} & 0,58  &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,00 \\
+            \boldmath{}\textbf{$\lambda$}\unboldmath{} & 47    &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,000 \\
+            \textbf{mx} & Franja de losa &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0 \bigstrut[b]\\
+            \cline{4-5}    \textbf{my} & Franja de losa &       & \textbf{Fi} & \boldmath{}\textbf{$\phi8@17$}\unboldmath{} \bigstrut\\
+            \cline{4-5}    \textbf{mex} & Franja de losa &       & \multicolumn{1}{c}{} &  \bigstrut[t]\\
+            \textbf{mey} & Franja de losa &       & \multicolumn{1}{c}{\boldmath{}\textbf{Mex $[kgf \cdot m/m]$}\unboldmath{}} & 227,0 \\
+            \boldmath{}\textbf{$\Delta x$}\unboldmath{} & Franja de losa &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,47 \\
+            \boldmath{}\textbf{$\Delta y$}\unboldmath{} & Franja de losa &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,007 \\
+                  &       &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,43 \bigstrut[b]\\
+            \cline{1-2}\cline{4-5}    \multicolumn{2}{c}{\textbf{Cargas}} &       & \textbf{F'+} & \boldmath{}\textbf{$\phi8@17$}\unboldmath{} \bigstrut\\
+            \cline{1-2}\cline{4-5}    \boldmath{}\textbf{SC $[kgf/m^2]$}\unboldmath{} & 400   &       & \multicolumn{1}{c}{} &  \bigstrut[t]\\
+            \boldmath{}\textbf{$PP_{losa} [kgf/m^2]$}\unboldmath{} & 400   &       & \multicolumn{1}{c}{\boldmath{}\textbf{Mey $[kgf \cdot m/m]$}\unboldmath{}} & 155,7 \\
+            \boldmath{}\textbf{$PP_t [kgf/m^2]$}\unboldmath{} & 625   &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,32 \\
+            \boldmath{}\textbf{$q_u [kgf/m^2]$}\unboldmath{} & 1390  &       & \multicolumn{1}{c}{\textbf{a [cm/m]}} & 0,005 \\
+            \boldmath{}\textbf{Ku $[kgf \cdot m/m]$}\unboldmath{} & 17903,2 &       & \multicolumn{1}{c}{\boldmath{}\textbf{As $[cm^2/m]$}\unboldmath{}} & 0,29 \bigstrut[b]\\
+            \cline{4-5}    \boldmath{}\textbf{$\alpha$}\unboldmath{} & 0,14  &       & \textbf{F'-} & \boldmath{}\textbf{$\phi8@17$}\unboldmath{} \bigstrut\\
+            \hline
+        \end{tabular}%
+        }
+      \label{analisis114}%
+    \end{table}%
+    
+    Para la interacción entre losas se comparan los momentos negativos en el eje correspondiente y se ponderan, con distintos factores según la diferencia entre ellos. Con esto se determina un momento último que usa para diseñar los suples mediante un análisis de flexión simple.
+    
+    A continuación se muestra un ejemplo del cálculo realizado para la interacción entre las losas 0101 y 0107:
+    
+    \begin{table}[H]
+      \centering
+      \caption{Ejemplo de análisis de interacción entre losas 0101 y 0102.}
+        \resizebox{.5\textwidth}{!}{
+        \begin{tabular}{ccc}
+        \hline
+        Losas  & \multicolumn{2}{c}{0101-0102} \bigstrut\\
+        \hline
+        Ejes  & y     & y \bigstrut[t]\\
+        Me [kgf*m/m] & 2074,2 & 2171,0 \\
+        Dif [\%] & \multicolumn{2}{c}{4,5\%} \\
+        Mu $[kgf \cdot m/m]$ & \multicolumn{2}{c}{1910,4} \\
+        As $[cm^2/m]$ & \multicolumn{2}{c}{3,7} \\
+        a [cm/m] & \multicolumn{2}{c}{0,1} \\
+        As $[cm^2/m]$ & \multicolumn{2}{c}{3,3} \bigstrut[b]\\
+        \hline
+        F'    & \multicolumn{2}{c}{$\phi10@23$} \bigstrut\\
+        \hline
+        \end{tabular}%
+        }
+      \label{interaccion0101-0102}%
+    \end{table}%
+    

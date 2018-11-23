@@ -1,0 +1,100 @@
+\newpage
+\section{Deformaciones máximas por piso}
+Teniendo en consideración lo estipulado por la tabla 9.5 (b) de la Norma ACI 318S-05:
+
+\insertimage[]{img/deformacionesACI}{width=16cm}{Deflexión máxima admisible}
+
+Se presenta la siguiente tabla resumen con las deformaciones máximas por piso, donde la deformación elástica de la losa más desfavorable se considera como la diferencia entre la formación máxima y mínima. La deformación por fluencia lenta, o creep, se considera como el triple de la deformación elástica máxima.
+
+\begin{table}[H]
+  \centering
+  \caption{Deformaciones máximas por piso en losas más desfavorables.}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{cccccccc}
+    \hline
+    \textbf{Nivel} &
+      \textbf{N° Losa} &
+      \multicolumn{1}{p{5.335em}}{\boldmath{}\textbf{$\Delta z_{max} [cm]$}\unboldmath{}} &
+      \multicolumn{1}{p{5.335em}}{\boldmath{}\textbf{$\Delta z_{min} [cm]$}\unboldmath{}} &
+      \multicolumn{1}{p{5.335em}}{\boldmath{}\textbf{$\Delta_{elast} [cm]$}\unboldmath{}} &
+      \multicolumn{1}{p{5.335em}}{\boldmath{}\textbf{$\Delta_{creep} [cm]$}\unboldmath{}} &
+      \multicolumn{1}{p{5.335em}}{\boldmath{}\textbf{$\Delta_{adm}  [cm]$}\unboldmath{}} &
+      \multicolumn{1}{p{4.055em}}{\textbf{Estado}}
+      \bigstrut\\
+        \hline
+        -1 &      0124  &      -0,5417 &      -0,0175 &      0,52 &      1,57 &      4,58 &      OK      \bigstrut[t]\\
+        1 &      108    &      -0,5310 &      -0,0891 &     0,44 &      1,33 &      3,08 &      OK      \\
+        2 &      204-215 &      -0,3245 &      -0,0868 &      0,24 &      0,71 &      1,26 &      OK      \\
+        3 &      304-315 &      -0,3420 &      -0,1172 &      0,22 &      0,67 &      1,26 &      OK      \\
+        4 &      404-415 &      -0,3777 &      -0,1453 &      0,23 &      0,70 &      1,26 &      OK      \\
+        5 &      504-515 &      -0,4095 &      -0,1730 &      0,24 &      0,71 &      1,26 &      OK      \\
+        6 &      604-615 &      -0,4402 &      -0,1989 &      0,24 &      0,72 &      1,26 &      OK      \\
+        7 &      704-715 &      -0,4689 &      -0,2237 &      0,25 &      0,74 &      1,26 &      OK      \\
+        8 &      804-815 &      -0,5064 &      -0,2486 &      0,26 &      0,77 &      1,26 &      OK      \\
+        9 &      904-915 &      -0,5332 &      -0,2720 &      0,26 &      0,78 &      1,26 &      OK      \\
+        10 &      1004-1015 &      -0,5581 &      -0,2937 &      0,26 &      0,79 &      1,26 &      OK      \\
+        11 &      1104-1115 &      -0,5810 &      -0,3137 &      0,27 &      0,80 &      1,26 &      OK      \\
+        12 &      1204-1215 &      -0,6019 &      -0,3320 &      0,27 &      0,81 &      1,26 &      OK      \\
+        13 &      1304-1315 &      -0,6216 &      -0,3487 &      0,27 &      0,82 &      1,26 &      OK      \\
+        14 &      1404-1415 &      -0,6549 &      -0,3718 &      0,28 &      0,85 &      1,26 &      OK      \\
+        15 &      1504-1515 &      -0,6784 &      -0,3922 &      0,29 &      0,86 &      1,26 &      OK      \\
+        16 &      1604-1615 &      -0,6990 &      -0,4103 &      0,29 &      0,87 &      1,26 &      OK      \\
+        17 &      1704-1715 &      -0,7169 &      -0,4260 &      0,29 &      0,87 &      1,26 &      OK      \\
+        18 &      1804-1815 &      -0,7320 &      -0,4392 &      0,29 &      0,88 &      1,26 &      OK      \\
+        19 &      1904-1915 &      -0,7442 &      -0,4501 &      0,29 &      0,88 &      1,26 &      OK      \\
+        20 &      2004-2015 &      -0,7537 &      -0,4585 &      0,30 &      0,89 &      1,26 &      OK      \\
+        21 &      2104-2115 &      -0,7605 &      -0,4647 &      0,30 &      0,89 &      1,26 &      OK      \\
+        22 &      2204-2215 &      -0,7643 &      -0,4680 &      0,30 &      0,89 &      1,26 &      OK      \\
+        23 &      2315 &      -0,7698 &      -0,6369 &      0,13 &      0,40 &      0,84 &      OK      \\
+        24 &      2404 &      -0,5075 &      -0,4537 &      0,05 &      0,16 &      1,61 &      OK      \\
+        CU &      CU01 &      -0,4778 &      -0,4360 &      0,04 &      0,13 &      1,22 &      OK      \bigstrut[b]\\
+        \hline
+      \end{tabular}
+      }
+      \label{deflosas}
+    \end{table}
+
+\newpage
+
+A continuación se muestran los esquemas de deformaciones verticales de las losas de cada nivel:
+
+\begin{images}[\label{imagenmultiple1}]{Deformaciones piso -1 al 5.}
+    \addimage{img/Deformaciones/-1}{width=6.5cm}{nivel -1.}
+    \addimage{img/Deformaciones/1}{width=6.5cm}{nivel 1.}
+    \addimage{img/Deformaciones/2}{width=6.5cm}{nivel 2.}
+    \addimage{img/Deformaciones/3}{width=6.5cm}{nivel 3.}
+    \addimage{img/Deformaciones/4}{width=6.5cm}{nivel 4.}
+    \addimage{img/Deformaciones/6}{width=6.5cm}{nivel 5.}
+\end{images}
+
+\begin{images}[\label{imagenmultiple2}]{Deformaciones piso 6 al 11.}
+    \addimage{img/Deformaciones/6}{width=6.5cm}{nivel 6.}
+    \addimage{img/Deformaciones/7}{width=6.5cm}{nivel 7.}
+    \addimage{img/Deformaciones/8}{width=6.5cm}{nivel 8.}
+    \addimage{img/Deformaciones/9}{width=6.5cm}{nivel 9.}
+    \addimage{img/Deformaciones/10}{width=6.5cm}{nivel 10.}
+    \addimage{img/Deformaciones/11}{width=6.5cm}{nivel 11.}
+\end{images}
+
+\begin{images}[\label{imagenmultiple3}]{Deformaciones piso 12 al 17.}
+    \addimage{img/Deformaciones/12}{width=6.5cm}{nivel 12.}
+    \addimage{img/Deformaciones/13}{width=6.5cm}{nivel 13.}
+    \addimage{img/Deformaciones/14}{width=6.5cm}{nivel 14.}
+    \addimage{img/Deformaciones/15}{width=6.5cm}{nivel 15.}
+    \addimage{img/Deformaciones/16}{width=6.5cm}{nivel 16.}
+    \addimage{img/Deformaciones/17}{width=6.5cm}{nivel 17.}
+\end{images}
+
+\begin{images}[\label{imagenmultiple4}]{Deformaciones piso 18 al 23.}
+    \addimage{img/Deformaciones/18}{width=6.5cm}{nivel 18.}
+    \addimage{img/Deformaciones/19}{width=6.5cm}{nivel 19.}
+    \addimage{img/Deformaciones/20}{width=6.5cm}{nivel 20.}
+    \addimage{img/Deformaciones/21}{width=6.5cm}{nivel 21.}
+    \addimage{img/Deformaciones/22}{width=6.5cm}{nivel 22.}
+    \addimage{img/Deformaciones/23}{width=6.5cm}{nivel 23.}
+\end{images}
+
+\begin{images}[\label{imagenmultiple5}]{Deformaciones piso 24 a cubierta.}
+    \addimage{img/Deformaciones/24}{width=6.5cm}{nivel 24.}
+    \addimage{img/Deformaciones/Cubierta}{width=6.5cm}{Cubierta.}
+\end{images}

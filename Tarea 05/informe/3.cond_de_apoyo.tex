@@ -1,0 +1,268 @@
+\newpage
+\section{Determinación de losas a diseñar y condiciones de apoyo} 
+A continuación, se dan a conocer las losas a diseñar por piso, junto con sus condiciones de apoyo, numeración y otros parámetros relevantes a considerar para su posterior diseño.
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losas nivel -1.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+        \hline
+        0101 &      5 &      5,33 &      17 &      6 &      500 &      G35      \bigstrut[t]\\
+        0102 &      5 &      7,2 &      17 &      6 &      500 &      G35      \\
+        0103 &      5 &      7,2 &      17 &      6 &      500 &      G35      \\
+        0104 &      5 &      7,89 &      17 &      6 &      500 &      G35      \\
+        0105 &      4,45 &      5 &      17 &      6 &      500 &      G35      \\
+        0106 &      3,6 &      5 &      17 &      6 &      500 &      G35      \\
+        0107 &      5,33 &      5,54 &      17 &      6 &      500 &      G35      \\
+        0108 &      5,54 &      7,2 &      17 &      6 &      500 &      G35      \\
+        0109 &      5,54 &      7,2 &      17 &      6 &      500 &      G35      \\
+        0110 &      5,54 &      12,34 &      17 &      6 &      500 &      G35      \\
+        0111 &      3,6 &      5,54 &      17 &      6 &      500 &      G35      \\
+        0112 &      6,05 &      9,34 &      17 &      6 &      400 &      G35      \\
+        0113 &      4,65 &      5,6 &      17 &      6 &      400 &      G35      \\
+        0114 &      4,65 &      5,6 &      17 &      6 &      500 &      G35      \\
+        0115 &      6,05 &      9,49 &      17 &      6 &      500 &      G35      \\
+        0116 &      4,45 &      10,5 &      17 &      6 &      500 &      G35      \\
+        0117 &      3,6 &      10,5 &      17 &      6 &      500 &      G35      \\
+        0118 &      7,16 &      11,34 &      17 &      6 &      400 &      G35      \\
+        0119 &      1,4 &      11,2 &      17 &      6 &      400 &      G35      \\
+        0120 &      2,1 &      4,04 &      17 &      5b &      400 &      G35      \\
+        0121 &      2,9 &      6,36 &      17 &      6 &      400 &      G35      \\
+        0122 &      4,25 &      6,36 &      17 &      6 &      500 &      G35      \\
+        0123 &      6,49 &      7,16 &      17 &      6 &      500 &      G35      \\
+        0124 &      8,24 &      18,54 &      17 &      6 &      500 &      G35      \\
+        0125 &      5 &      8,24 &      17 &      6 &      500 &      G35      \\
+        0126 &      5,52 &      8,24 &      17 &      6 &      500 &      G35      \\
+        0127 &      7,09 &      10,15 &      17 &      6 &      500 &      G35      \\
+        0128 &      3,6 &      10,15 &      17 &      6 &      500 &      G35      \\
+        0129 &      2,32 &      4,3 &      17 &      6 &      400 &      G35      \bigstrut[b]\\
+        \hline
+      \end{tabular}
+      \label{losas-1}
+    \end{table}
+
+\newpage
+
+El siguiente esquema muestra la disposición de las losas en el modelo ETABS:
+
+\insertimage[]{img/Losa-1}{width=10cm}{Disposición de losas en el nivel -1.}
+
+\newpage
+
+Para el nivel 1 se tendrá:
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losas nivel 1.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+    \hline
+        101 &      5 &      5,33 &      16 &      5a &      500 &      G35      \bigstrut[t]\\
+        102 &      5 &      7,2 &      16 &      6 &      500 &      G35      \\
+        103 &      5 &      7,2 &      16 &      6 &      500 &      G35      \\
+        104 &      5 &      7,89 &      16 &      6 &      500 &      G35      \\
+        105 &      4,93 &      5,33 &      16 &      4 &      500 &      G35      \\
+        106 &      5,54 &      7,2 &      16 &      6 &      500 &      G35      \\
+        107 &      5,54 &      7,2 &      16 &      6 &      500 &      G35      \\
+        108 &      5,54 &      7,89 &      16 &      6 &      500 &      G35      \\
+        109 &      5,54 &      4,45 &      16 &      5b &      500 &      G35      \\
+        110 &      4,65 &      5,6 &      16 &      6 &      400 &      G35      \\
+        111 &      4,65 &      5,6 &      16 &      6 &      500 &      G35      \\
+        112 &      6,05 &      9,49 &      16 &      6 &      500 &      G35      \\
+        113 &      2 &      2,825 &      16 &      4 &      400 &      G35      \\
+        114 &      1,4 &      9,2 &      16 &      6 &      400 &      G35      \\
+        115 &      2,9 &      6,36 &      16 &      6 &      400 &      G35      \\
+        116 &      5 &      5,02 &      16 &      6 &      200 &      G35      \\
+        117 &      5,82 &      6,49 &      16 &      6 &      200 &      G35      \\
+        118 &      1,34 &      7,01 &      16 &      2a &      300 &      G35      \\
+        119 &      2,1 &      4,04 &      16 &      5b &      400 &      G35      \\
+        120 &      2,32 &      4,3 &      16 &      6 &      400 &      G35      \\
+        121 &      1,6 &      6,05 &      16 &      5b &      400 &      G35      \bigstrut[b]\\
+        \hline
+      \end{tabular}
+      \label{losas1}
+    \end{table}
+
+\newpage
+
+El siguiente esquema muestra la disposición de las losas en el modelo ETABS:
+\insertimage[]{img/losa1}{width=10cm}{Disposición de losas en el nivel 1.}
+
+\newpage
+
+Para el nivel 2 se tendrá:
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losas nivel 2.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+    \hline
+    201 &      6,05 &      10 &      16 &      6 &      200 &      G35      \bigstrut[t]\\
+    202 &      4,65 &      5,6 &      16 &      6 &      200 &      G35      \\
+    203 &      4,65 &      5,6 &      16 &      6 &      200 &      G35      \\
+    204 &      6,05 &      7,89 &      16 &      6 &      200 &      G35      \\
+    205 &      5,82 &      6,96 &      16 &      6 &      200 &      G35      \\
+    206 &      5 &      5,02 &      16 &      6 &      200 &      G35      \\
+    207 &      2,1 &      4,04 &      16 &      5b &      400 &      G35      \\
+    208 &      1,4 &      11,2 &      16 &      6 &      400 &      G35      \\
+    209 &      2,9 &      6,36 &      16 &      6 &      400 &      G35      \\
+    210 &      5 &      5,02 &      16 &      6 &      200 &      G35      \\
+    211 &      5,82 &      6,49 &      16 &      6 &      200 &      G35      \\
+    212 &      1,51 &      5,33 &      16 &      2a &      300 &      G35      \\
+    213 &      1,51 &      5,6 &      16 &      5b &      300 &      G35      \\
+    214 &      1,51 &      5,6 &      16 &      5b &      300 &      G35      \\
+    215 &      1,51 &      5,25 &      16 &      2a &      300 &      G35      \\
+    216 &      1,04 &      3,83 &      16 &      2a &      300 &      G35      \\
+    217 &      1,04 &      3,83 &      16 &      2a &      300 &      G35      \\
+    218 &      1,34 &      7,01 &      16 &      2a &      300 &      G35      \\
+    219 &      1,34 &      7,09 &      16 &      2a &      300 &      G35      \\
+    220 &      0,74 &      3,83 &      16 &      2a &      300 &      G35      \\
+    221 &      0,7 &      3,83 &      16 &      2a &      300 &      G35      \\
+    222 &      2,32 &      4,3 &      16 &      5b &      400 &      G35      \bigstrut[b]\\
+    \hline
+      \end{tabular}
+      \label{losas2}
+    \end{table}
+
+\newpage
+
+El siguiente esquema muestra la disposición de las losas en el modelo ETABS:
+
+\insertimage[]{img/losa2}{width=9cm}{Disposición de losas en el nivel 2.}
+
+\newpage
+
+Para el nivel 3 al 22 se tendrán las siguientes características en común, teniendo solo una variación del tipo de hormigón ( H35 desde nivel 3 al 7, H30 desde nivel 8 al 13 y H20 desde el nivel 14 al 22):
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losas desde nivel 3 al 22.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+    \hline
+    (3-22)01 &      6,05 &      10 &      16 &      6 &      200 &      G35,30,20      \bigstrut[t]\\
+    (3-22)02 &      4,65 &      5,6 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)03 &      4,65 &      5,6 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)04 &      6,05 &      7,89 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)05 &      5,82 &      6,96 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)06 &      5 &      5,02 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)07 &      2,1 &      4,04 &      16 &      5b &      400 &      G35,30,20      \\
+    (3-22)08 &      1,4 &      11,2 &      16 &      6 &      400 &      G35,30,20      \\
+    (3-22)09 &      2,9 &      6,36 &      16 &      6 &      400 &      G35,30,20      \\
+    (3-22)10 &      5 &      5,02 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)11 &      5,82 &      6,49 &      16 &      6 &      200 &      G35,30,20      \\
+    (3-22)12 &      1,51 &      5,33 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)13 &      1,51 &      5,6 &      16 &      5b &      300 &      G35,30,20      \\
+    (3-22)14 &      1,51 &      5,6 &      16 &      5b &      300 &      G35,30,20      \\
+    (3-22)15 &      1,51 &      5,25 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)16 &      1,04 &      3,83 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)17 &      1,04 &      3,83 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)18 &      1,34 &      7,01 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)19 &      1,34 &      7,09 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)20 &      0,74 &      3,83 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)21 &      0,7 &      3,83 &      16 &      2a &      300 &      G35,30,20      \\
+    (3-22)22 &      2,32 &      4,3 &      16 &      5b &      400 &      G35,30,20      \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{losas322}
+\end{table}
+
+\newpage
+
+El siguiente esquema muestra la disposición de las losas en el modelo ETABS para el nivel 3, el cual se repite en el resto de los pisos:
+
+\insertimage[]{img/losa3}{width=9cm}{Disposición de losas en el nivel 3.}
+
+\newpage
+
+Para el nivel 23 se tendrá:
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losas del nivel 23.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+    \hline
+    2301 &      6,05 &      10 &      16 &      6 &      100 &      G20      \bigstrut[t]\\
+    2302 &      4,65 &      5,6 &      16 &      6 &      100 &      G20      \\
+    2303 &      4,65 &      5,6 &      16 &      6 &      100 &      G20      \\
+    2304 &      6,05 &      7,89 &      16 &      6 &      100 &      G20      \\
+    2305 &      5,82 &      6,96 &      16 &      6 &      100 &      G20      \\
+    2306 &      5 &      5,02 &      16 &      6 &      100 &      G20      \\
+    2307 &      2,1 &      4,04 &      16 &      5b &      100 &      G20      \\
+    2308 &      1,4 &      11,2 &      16 &      6 &      100 &      G20      \\
+    2309 &      2,9 &      6,36 &      16 &      6 &      100 &      G20      \\
+    2310 &      5 &      5,02 &      16 &      6 &      100 &      G20      \\
+    2311 &      5,82 &      6,49 &      16 &      6 &      100 &      G20      \\
+    2312 &      1,51 &      9,1 &      16 &      2a &      100 &      G20      \\
+    2313 &      1,51 &      5,6 &      16 &      5b &      100 &      G20      \\
+    2314 &      1,51 &      5,6 &      16 &      5b &      100 &      G20      \\
+    2315 &      1,51 &      8,93 &      16 &      2a &      100 &      G20      \\
+    2316 &      1,04 &      3,83 &      16 &      4 &      100 &      G20      \\
+    2317 &      1,04 &      3,83 &      16 &      4 &      100 &      G20      \\
+    2318 &      1,34 &      10,69 &      16 &      2a &      100 &      G20      \\
+    2319 &      1,34 &      10,86 &      16 &      2a &      100 &      G20      \\
+    2320 &      0,74 &      3,83 &      16 &      4 &      100 &      G20      \\
+    2321 &      0,7 &      3,83 &      16 &      4 &      100 &      G20      \\
+    2322 &      2,32 &      4,3 &      16 &      5b &      100 &      G20      \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{losas23}
+\end{table}
+
+\newpage
+
+El siguiente esquema muestra la disposición de las losas en el modelo ETABS:
+
+\insertimage[]{img/losa23}{width=9cm}{Disposición de losas en el nivel 23.}
+
+\newpage
+
+Para el nivel 24 se tendrá:
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losas del nivel 24.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+    \hline
+    2401 &      2,1 &      4,04 &      16 &      5a &      100 &      G20      \bigstrut[t]\\
+    2402 &      2,32 &      4,3 &      16 &      6 &      100 &      G20      \\
+    2403 &      2,9 &      6,36 &      16 &      6 &      100 &      G20      \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  \label{losas24}
+\end{table}
+
+El siguiente esquema muestra la disposición de las losas en el modelo ETABS:
+
+\insertimage[]{img/losa24}{width=10cm}{Disposición de losas en el nivel 24.}
+
+\newpage
+Para la cubierta se tendrá:
+
+\begin{table}[H]
+  \centering
+  \caption{Características de losa de cubierta.}
+  \begin{tabular}{ccccccc}
+    \hline
+    \textbf{N° Losa} &      \textbf{Lx (m)} &      \textbf{Ly (m)} &      \textbf{e (cm)} &      \textbf{Caso} &      \textbf{SC $(kgf/m^2)$} &      \textbf{Tipo H.}      \bigstrut\\
+    \hline
+    CU &      2,2 &      4,04 &      16 &      6 &      100 &      G20      \bigstrut\\
+    \hline
+  \end{tabular}
+  \label{losacu}
+\end{table}
+
+
+El siguiente esquema muestra la disposición de la losa en el modelo ETABS:
+
+\insertimage[]{img/losacubierta}{width=10cm}{Disposición de losa en la cubierta.}

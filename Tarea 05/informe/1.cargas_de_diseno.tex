@@ -1,0 +1,43 @@
+\section{Determinación de cargas de diseño.}
+
+    A continuación se presentan las cargas a considerar en el diseño:
+    
+    \begin{table}[htbp]
+      \centering
+      \caption{Cargas de peso propio.}
+        \begin{tabular}{cc}
+        \hline
+        \textbf{Elemento} & \boldmath{}\textbf{Peso Propio $[kgf/m^2]$}\unboldmath{} \bigstrut\\
+        \hline
+        \boldmath{}\textbf{$PP_{Tabique}$}\unboldmath{} & \textbf{100} \bigstrut[t]\\
+        \textit{$\gamma_{yeso} [kgf/m2 \cdot cm]$} & \textit{10} \\
+        \textit{$e_{yeso} [cm]$} & \textit{2,5} \\
+        \boldmath{}\textbf{$PP_{Yeso}$}\unboldmath{} & \textbf{25} \\
+        $\gamma_{sl} [kgf/m2 \cdot cm]$ & 20 \\
+        $e_{sl} [cm]$ & 5 \\
+        \boldmath{}\textbf{$PP_{Sobrelosa}$}\unboldmath{} & \textbf{100} \bigstrut[b]\\
+        \hline
+        \boldmath{}\textbf{$PP_{adic}$}\unboldmath{} & \textbf{225} \bigstrut\\
+        \hline
+        \end{tabular}%
+      \label{peso_propio}%
+    \end{table}%
+
+    \begin{table}[htbp]
+      \centering
+      \caption{Sobrecargas.}
+        \begin{tabular}{cc}
+        \hline
+        Ocupación & Sobrecargas $[kgf/m^2]$ \bigstrut\\
+        \hline
+        Habitacional & 200 \bigstrut[t]\\
+        Área común y escalera & 400 \\
+        Balcones & 300 \\
+        Autos & 500 \\
+        Techo & 100 \bigstrut[b]\\
+        \hline
+        \end{tabular}%
+      \label{sobrecarga}%
+    \end{table}%
+    
+    A esto se agrega el peso propio de cada losa y, luego de mayorar las cargas, se obtienen las solicitaciones ($qu$) en cada elemento.

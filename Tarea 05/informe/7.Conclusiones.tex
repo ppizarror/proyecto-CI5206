@@ -1,0 +1,23 @@
+\newpage
+
+\section{Comentarios}
+
+\begin{itemize}
+    \item Se puede ver que si bien las deformaciones máximas en los niveles inferiores (-1 y 1) son del orden de \texttt{1,5 cm}, estas no exceden al máximo permitido por la norma ya que se dan en losas de estacionamiento, bajo las cuales no existen elementos no estructurales, como tabiques, que puedan resultar dañados. 
+    
+    A diferencias de lo ocurrido en los niveles superiores, donde la deformación máxima se da en la zona adyacente a los balcones. Aquí podría afectar el correcto desempeño de elementos no estructurales, como las ventanas, por lo que el límite permitido es menor, pero aún así no es excedido.
+    
+    \item Para la elección de armaduras, una vez determinada es área de acero requerida para resistir la flexión de la losa, se dio prioridad a mantener constante el diámetro de barras, aumentando la separación entre estas. Esto para, en un caso hipotético, facilitar la construcción.
+    
+    En cuanto a la armadura negativa, en franjas de losas, como el pasillo que une los departamentos, se optó por uniformar el diseño. Para ello se consideraron suples que atraviesan por completo el pasillo por su lado menor, escogiéndose la sección de acero mayor para garantizar la resistencia en ambas interacciones entre losas.
+    
+    Si bien, para efectos del modelo, las losas de balcones se consideraron separadas de las losas de los departamentos, al no disponer de un elemento que materialice esa división, como un muro o viga, estas en la práctica resultan ser continuas. Es por eso que no se dispusieron suples en dicha interfaz.
+    
+    Cabe destacar que, se coloca doble malla en los pisos cítricos, es decir, hasta el nivel 2. 
+    
+    Por último, con respecto a la armadura de refuerzo, se dispone en zonas como dinteles, el perímetro de la caja del ascensor y en los shafts, usando siempre un $F=F'= \phi 2 @ 12$.
+    
+    \item Las armaduras mínimas están directamente ligadas al espesor de la losa, es por eso que se obtienen valores distintos para el nivel -1 y el resto, en que el espesor se mantiene uniforme en \texttt{16 cm}.
+    
+    Si bien, al realizarse el cálculo más detallado de estos espesores mínimos se obtuvieron valores menores a los determinados en etapas previas, de pre-diseño, se optó por conservarlos ya que se encuentran dentro del rango usual de espesores acostumbrado en los edificios chilenos.
+\end{itemize} 
