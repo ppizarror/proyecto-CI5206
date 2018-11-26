@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+$ File C:\Users\Pablo\Google Drive\Trabajos\Proyecto de Hormigón Armado\proyecto-CI5206\Modelo\modelo.$et saved 26-11-2018 2:17:38
+=======
 $ File E:\Ramos Ingenieria\12° Semestre\Proyecto de Hormigón Armado\Modelo\modelo.$et saved 26/11/2018 02:18:59 a. m.
+>>>>>>> ec51d66d966506375cfd65c83b0107ad2509136c
  
 $ PROGRAM INFORMATION
   PROGRAM  "ETABS 2016"  VERSION "16.2.1"  
@@ -8245,7 +8249,11 @@ ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\Pablo\Google Drive\Trabajos\P
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\Pablo\Google Drive\Trabajos\Proyecto de Hormigón Armado\proyecto-CI5206\Modelo\modelo.EDB at 25-11-2018 3:17:18
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\Pablo\Google Drive\Trabajos\Proyecto de Hormigón Armado\proyecto-CI5206\Modelo\modelo.EDB at 25-11-2018 4:18:39
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\Pablo\Google Drive\Trabajos\Proyecto de Hormigón Armado\proyecto-CI5206\Modelo\modelo.EDB at 25-11-2018 18:28:45
+<<<<<<< HEAD
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\Pablo\Google Drive\Trabajos\Proyecto de Hormigón Armado\proyecto-CI5206\Modelo\modelo.EDB at 26-11-2018 2:17:37
+=======
 ETABS 2016 Ultimate  16.2.1 File saved as E:\Ramos Ingenieria\12° Semestre\Proyecto de Hormigón Armado\Modelo\modelo.EDB at 26/11/2018 02:18:59 a. m.
+>>>>>>> ec51d66d966506375cfd65c83b0107ad2509136c
   ENDCOMMENTS  
 
   END
