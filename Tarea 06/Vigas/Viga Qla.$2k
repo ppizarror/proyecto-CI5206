@@ -13,7 +13,12 @@ TABLE:  "CASE - MODAL 1 - GENERAL"
    Case=MODAL   ModeType=Eigen   MaxNumModes=12   MinNumModes=1   EigenShift=0   EigenCutoff=0   EigenTol=1E-09   AutoShift=Yes
  
 TABLE:  "CASE - STATIC 1 - LOAD ASSIGNMENTS"
-   Case=DEAD   LoadType="Load pattern"   LoadName=DEAD   LoadSF=1
+   Case=DEAD   LoadType="Load pattern"   LoadName=PP   LoadSF=1
+   Case=SC   LoadType="Load pattern"   LoadName=SC   LoadSF=1
+ 
+TABLE:  "COMBINATION DEFINITIONS"
+   ComboName=COMB1   ComboType="Linear Add"   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.2   SteelDesign=None   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=786773d2-def5-436f-8931-cf7189917cde
+   ComboName=COMB1   CaseName=SC   ScaleFactor=1.6
  
 TABLE:  "CONNECTIVITY - FRAME"
    Frame=1   JointI=1   JointJ=2   IsCurved=No   GUID=e0ff309f-19aa-4354-b941-eb9742f3986b
@@ -46,6 +51,64 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=4   DesignProc="From Material"
    Frame=5   DesignProc="From Material"
    Frame=6   DesignProc="From Material"
+ 
+TABLE:  "FRAME LOADS - DISTRIBUTED"
+   Frame=1   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.51   AbsDistA=0   AbsDistB=255   FOverLA=0   FOverLB=10.5   GUID=f47a8e2f-e475-4cc3-9822-2e2f13c15b82
+   Frame=1   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.51   RelDistB=1   AbsDistA=255   AbsDistB=500   FOverLA=10.5   FOverLB=0   GUID=324a1e8d-804d-4d92-b302-17a4c9e919d1
+   Frame=1   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.51   AbsDistA=0   AbsDistB=255   FOverLA=0   FOverLB=12.35   GUID=83edb57a-9316-45a0-b2c6-af30959cfef9
+   Frame=1   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.51   RelDistB=1   AbsDistA=255   AbsDistB=500   FOverLA=12.35   FOverLB=0   GUID=6a3a0f60-86a0-42d1-813f-1122db85d81e
+   Frame=1   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.504   AbsDistA=0   AbsDistB=252   FOverLA=0   FOverLB=12.75   GUID=63bd508f-f7ad-414a-a2cf-9ee05848845e
+   Frame=1   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.504   RelDistB=1   AbsDistA=252   AbsDistB=500   FOverLA=12.75   FOverLB=0   GUID=4e03cb7e-116f-474c-a77e-78e0c2f2837a
+   Frame=1   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.504   AbsDistA=0   AbsDistB=252   FOverLA=0   FOverLB=10.84   GUID=2df68938-eb88-4b82-9e99-af66992191b9
+   Frame=1   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.504   RelDistB=1   AbsDistA=252   AbsDistB=500   FOverLA=10.84   FOverLB=0   GUID=1b239370-b208-4401-a714-08db761f8ef3
+   Frame=2   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.390666666666667   AbsDistA=0   AbsDistB=293   FOverLA=0   FOverLB=14.9   GUID=2e15283f-8cee-4ab6-bf22-15fcedeaa77d
+   Frame=2   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.390666666666667   RelDistB=0.612   AbsDistA=293   AbsDistB=459   FOverLA=14.9   FOverLB=14.35   GUID=c8a91e7d-7bf0-4b8b-8002-f51790a4c571
+   Frame=2   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.612   RelDistB=1   AbsDistA=459   AbsDistB=750   FOverLA=14.35   FOverLB=0   GUID=be8eeb7e-ebc2-4e65-b48a-ce29b1a236ca
+   Frame=2   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.390666666666667   AbsDistA=0   AbsDistB=293   FOverLA=0   FOverLB=12.67   GUID=c511d5b7-f265-4ac0-a9da-aa1c9cea9012
+   Frame=2   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.390666666666667   RelDistB=0.612   AbsDistA=293   AbsDistB=459   FOverLA=12.67   FOverLB=12.2   GUID=6b8e9725-32ff-44d4-a2ad-74846b01007e
+   Frame=2   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.612   RelDistB=1   AbsDistA=459   AbsDistB=750   FOverLA=12.2   FOverLB=0   GUID=d17bdc8f-121c-4f7e-8d8f-c81e93b096e3
+   Frame=2   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.334666666666667   AbsDistA=0   AbsDistB=251   FOverLA=0   FOverLB=12.35   GUID=fe345bd7-47c1-458a-b1ba-cca201e6db9b
+   Frame=2   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.334666666666667   RelDistB=0.668   AbsDistA=251   AbsDistB=501   FOverLA=12.35   FOverLB=12.55   GUID=08d7ff02-bb7b-4183-9901-3e5359898e3a
+   Frame=2   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.668   RelDistB=1   AbsDistA=501   AbsDistB=750   FOverLA=12.55   FOverLB=0   GUID=f6acb644-dd47-4515-9008-85f7d6e2fe2c
+   Frame=2   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.334666666666667   AbsDistA=0   AbsDistB=251   FOverLA=0   FOverLB=10.5   GUID=4b4f951d-4c55-43c2-a50b-82508a7268a4
+   Frame=2   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.334666666666667   RelDistB=0.668   AbsDistA=251   AbsDistB=501   FOverLA=10.5   FOverLB=12.35   GUID=db711c4c-7400-4b46-8c19-266637e5fda1
+   Frame=2   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.668   RelDistB=1   AbsDistA=501   AbsDistB=750   FOverLA=12.35   FOverLB=0   GUID=26e59050-f153-4657-afd3-4cf93f026eda
+   Frame=3   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.333333333333333   AbsDistA=0   AbsDistB=250   FOverLA=0   FOverLB=12.4   GUID=59b3ee3e-46ce-4ebf-b0c7-120104672748
+   Frame=3   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.333333333333333   RelDistB=0.666666666666667   AbsDistA=250   AbsDistB=500   FOverLA=12.4   FOverLB=12.7   GUID=60484f88-82cd-4762-9fa6-2eefd3bf0241
+   Frame=3   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.666666666666667   RelDistB=1   AbsDistA=500   AbsDistB=750   FOverLA=12.7   FOverLB=0   GUID=4fd50765-e577-49a4-a892-4c90d378a46b
+   Frame=3   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.333333333333333   AbsDistA=0   AbsDistB=250   FOverLA=0   FOverLB=10.54   GUID=f96b46a0-b634-44cd-aa97-46bd8006b26c
+   Frame=3   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.333333333333333   RelDistB=0.666666666666667   AbsDistA=250   AbsDistB=500   FOverLA=10.54   FOverLB=10.8   GUID=021de9d1-0680-4753-8ccd-25dc5229978f
+   Frame=3   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.666666666666667   RelDistB=1   AbsDistA=500   AbsDistB=750   FOverLA=10.8   FOverLB=0   GUID=0d85aba2-1b03-4351-a971-6c80220dc791
+   Frame=3   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.373333333333333   AbsDistA=0   AbsDistB=280   FOverLA=0   FOverLB=12.07   GUID=3710b109-6e43-4d42-8390-3b0ef2a5eccc
+   Frame=3   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.373333333333333   RelDistB=0.589333333333333   AbsDistA=280   AbsDistB=442   FOverLA=12.07   FOverLB=12.92   GUID=5cbc2596-46e4-4700-be14-ba6be14f6bb0
+   Frame=3   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.589333333333333   RelDistB=1   AbsDistA=442   AbsDistB=750   FOverLA=12.92   FOverLB=0   GUID=29fff699-6636-44a1-9a79-7a5f2c365eab
+   Frame=3   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.373333333333333   AbsDistA=0   AbsDistB=280   FOverLA=0   FOverLB=14.2   GUID=4169e692-04c9-4d97-94ba-561c8a5d0708
+   Frame=3   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.373333333333333   RelDistB=0.589333333333333   AbsDistA=280   AbsDistB=442   FOverLA=14.2   FOverLB=15.2   GUID=b41842d2-99a6-454c-8650-ebbed6834773
+   Frame=3   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.589333333333333   RelDistB=1   AbsDistA=442   AbsDistB=750   FOverLA=15.2   FOverLB=0   GUID=d6fb2176-2295-4f61-9af8-a69e1fd59cd9
+   Frame=4   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.364   AbsDistA=0   AbsDistB=273   FOverLA=0   FOverLB=14.25   GUID=c2cd0f50-617a-41f3-8913-2848fa3e8bd5
+   Frame=4   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.364   RelDistB=1   AbsDistA=273   AbsDistB=750   FOverLA=14.25   FOverLB=14.2   GUID=4436f03d-d691-4c91-871d-df69a173a158
+   Frame=4   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.364   AbsDistA=0   AbsDistB=273   FOverLA=0   FOverLB=12.07   GUID=fb485fda-0578-4b2b-bf2e-20f04b7f9613
+   Frame=4   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.364   RelDistB=1   AbsDistA=273   AbsDistB=750   FOverLA=12.07   FOverLB=12.11   GUID=a5fab283-e9af-4aa6-83e1-a431e27d59d7
+   Frame=4   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.664   AbsDistA=0   AbsDistB=498   FOverLA=0   FOverLB=10.63   GUID=b2f3cbbe-1673-45e6-89ce-6c1e507516a3
+   Frame=4   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.336   RelDistB=1   AbsDistA=252   AbsDistB=750   FOverLA=10.84   FOverLB=0   GUID=59d1cdda-dce8-4a62-b857-207d91bc1959
+   Frame=4   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.664   AbsDistA=0   AbsDistB=498   FOverLA=0   FOverLB=12.5   GUID=32bdcf33-aae5-4fb6-80fb-b6af99a85d52
+   Frame=4   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.336   RelDistB=1   AbsDistA=252   AbsDistB=750   FOverLA=12.75   FOverLB=0   GUID=be75d06c-2ab3-4413-88a0-f3491f2c371a
+   Frame=5   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.503432494279176   AbsDistA=0   AbsDistB=220   FOverLA=0   FOverLB=9.31   GUID=25ab38dd-f698-4024-ac7d-aa735efa1729
+   Frame=5   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.503432494279176   RelDistB=1   AbsDistA=220   AbsDistB=437   FOverLA=9.31   FOverLB=0   GUID=1aed751d-9779-4688-b5f5-65b9d2ecc012
+   Frame=5   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.503432494279176   AbsDistA=0   AbsDistB=220   FOverLA=0   FOverLB=10.95   GUID=081d79a7-49fd-4701-86ce-3ce2b714bdec
+   Frame=5   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.503432494279176   RelDistB=1   AbsDistA=220   AbsDistB=437   FOverLA=10.95   FOverLB=0   GUID=95c4e4e4-1db9-4f82-bb4c-f898a47387d4
+   Frame=5   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.340961098398169   AbsDistA=0   AbsDistB=149   FOverLA=0   FOverLB=12.11   GUID=7080e634-e1ee-4dd8-bbcf-3f133fb836df
+   Frame=5   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.340961098398169   RelDistB=1   AbsDistA=149   AbsDistB=437   FOverLA=12.11   FOverLB=12.11   GUID=1e8e0087-daa2-416d-8449-367de5c13171
+   Frame=5   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.340961098398169   AbsDistA=0   AbsDistB=149   FOverLA=0   FOverLB=14.25   GUID=0291b518-b05d-4573-a79f-3bf652b2afbf
+   Frame=5   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.340961098398169   RelDistB=1   AbsDistA=149   AbsDistB=437   FOverLA=14.25   FOverLB=14.25   GUID=01590dc2-79d2-46eb-8197-ea6dcde8d53d
+   Frame=6   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.513119533527697   AbsDistA=0   AbsDistB=176   FOverLA=0   FOverLB=11.77   GUID=7de9cd02-3a29-4feb-8ac6-14a855df5e6e
+   Frame=6   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.513119533527697   RelDistB=1   AbsDistA=176   AbsDistB=343   FOverLA=11.77   FOverLB=0   GUID=bd9051c9-227c-4126-934b-9373802ed3e8
+   Frame=6   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.513119533527697   AbsDistA=0   AbsDistB=176   FOverLA=0   FOverLB=13.85   GUID=a66621c1-ac34-410f-868f-43a843f37ed5
+   Frame=6   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.513119533527697   RelDistB=1   AbsDistA=176   AbsDistB=343   FOverLA=13.85   FOverLB=0   GUID=84bd63eb-70f3-4591-a731-f599e5b84065
+   Frame=6   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.518950437317784   AbsDistA=0   AbsDistB=178   FOverLA=0   FOverLB=8.85   GUID=922fc8da-e6ab-44bf-b341-7907ac2f913c
+   Frame=6   LoadPat=SC   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.518950437317784   RelDistB=1   AbsDistA=178   AbsDistB=343   FOverLA=8.85   FOverLB=0   GUID=35c126c0-6837-49cf-9c4c-90a485f172f7
+   Frame=6   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0   RelDistB=0.518950437317784   AbsDistA=0   AbsDistB=178   FOverLA=0   FOverLB=7.52   GUID=30f0d701-4176-4a22-a724-f29510c6eed9
+   Frame=6   LoadPat=PP   CoordSys=GLOBAL   Type=Force   Dir=Gravity   DistType=RelDist   RelDistA=0.518950437317784   RelDistB=1   AbsDistA=178   AbsDistB=343   FOverLA=7.52   FOverLB=0   GUID=3b063e00-764f-49ce-bd71-d9c87e066bbd
  
 TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=1   Transfer=Yes
@@ -140,10 +203,12 @@ TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
  
 TABLE:  "LOAD CASE DEFINITIONS"
    Case=DEAD   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Dead   DesActOpt="Prog Det"   DesignAct=Non-Composite   AutoType=None   RunCase=Yes   GUID=11ceef2d-fee1-462b-a197-1b1587e3517e
-   Case=MODAL   Type=LinModal   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Other   DesActOpt="Prog Det"   DesignAct=Other   AutoType=None   RunCase=Yes   GUID=8e50c065-16c8-40a4-b96f-ebd4be613ec6
+   Case=MODAL   Type=LinModal   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Other   DesActOpt="Prog Det"   DesignAct=Other   AutoType=None   RunCase=No   GUID=8e50c065-16c8-40a4-b96f-ebd4be613ec6
+   Case=SC   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=Live   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes   GUID=86a33551-bcc2-490f-ad14-64cdc1b7e6e1
  
 TABLE:  "LOAD PATTERN DEFINITIONS"
-   LoadPat=DEAD   DesignType=Dead   SelfWtMult=1   GUID=2bf7ebdc-714b-453b-8dbc-47e8223ebcb1
+   LoadPat=PP   DesignType=Dead   SelfWtMult=1   GUID=2bf7ebdc-714b-453b-8dbc-47e8223ebcb1
+   LoadPat=SC   DesignType=Live   SelfWtMult=0   GUID=32aadea5-6260-4dc7-bdb4-10e291b9171b
  
 TABLE:  "MASS SOURCE"
    MassSource=MSSSRC1   Elements=Yes   Masses=Yes   Loads=No   IsDefault=Yes
@@ -197,6 +262,14 @@ TABLE:  "OPTIONS - COLORS - OUTPUT"
    DeviceType="Color Printer"   Contour1=13107400   Contour2=6553828   Contour3=Red   Contour4=16639   Contour5=Orange   Contour6=43775   Contour7=54527   Contour8=Yellow   Contour9=65408   Contour10=Green   Contour11=8453888 _
         Contour12=Cyan   Contour13=16755200   Contour14=16733440   Contour15=Blue   Transpare=0   Ratio1=Cyan   Ratio2=Green   Ratio3=Yellow   Ratio4=Orange   Ratio5=Red   RatioNotD=Gray4   RatioNotC=Red   RatioVal1=0.5   RatioVal2=0.7 _
         RatioVal3=0.9   RatioVal4=1   DFillPos=Blue   DFillNeg=Red   DFillRPos=Green   DFillRNeg=Green
+ 
+TABLE:  "OVERWRITES - CONCRETE DESIGN - ACI 318-14"
+   Frame=1   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
+   Frame=2   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
+   Frame=3   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
+   Frame=4   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
+   Frame=5   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
+   Frame=6   DesignSect="Program Determined"   FrameType="Program Determined"   RLLF=0   XLMajor=0   XLMinor=0   XKMajor=0   XKMinor=0   CmMajor=0   CmMinor=0   DnsMajor=0   DnsMinor=0   DsMajor=0   DsMinor=0
  
 TABLE:  "PREFERENCES - ALUMINUM DESIGN - AA-ASD 2000"
    THDesign=Envelopes   FrameType="Moment Frame"   SRatioLimit=1   MaxIter=1   LatFact=1.33333333333333   UseLatFact=No   Bridge=No
