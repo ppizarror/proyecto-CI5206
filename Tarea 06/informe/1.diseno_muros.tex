@@ -1,0 +1,248 @@
+\newpage
+\section{Diseño de muros}
+
+\subsection{Metodología de cálculo}
+
+En la presente trabajo se busca calcular la armadura de los muros de cinco ejes del edificio: Eje 6, 11, 13, G entre 3 y 6 y el eje I. \\
+
+Para cada uno de los muros de dichos ejes se obtuvieron las fuerzas de diseño desde ETABS y se calculó la armadura horizontal requerida utilizando dos métodos de resistencia al corte\footnote{Método aproximado y método propuesto por el código de diseño para concreto estructural ACI 318.},  para obtener la armadura vertical y las puntas de muro se utilizaron los diagramas de interacción P-M. Adicionalmente se comprueba la resistencia a compresión y el requisito de esbeltez.
+
+\subsubsection{Obtención de fuerzas solicitantes de cada muro}
+
+Para obtener las fuerzas que actúan sobre cada uno de los muros a diseñar (P, Q, M) se hace uso de la herramienta ETABS. En ella se define un \textit{pier} en cada uno de los muros a analizar, considerando siempre que se requieren dos pier o más si es que el muro presenta discontinuidades en un mismo piso para un eje estudiado. \\
+
+La Figura \ref{piers} ilustra un esquema de asignación de \textit{pier} en los muros modelados en ETABS. A modo de simplificar el análisis numérico se asignó una etiqueta distinta para cada muro, en el caso que no cambie en altura el pier es el mismo para todos los pisos.
+
+\insertimage[\label{piers}]{pier}{width=15cm}{Ejemplo de asignación de pier en ETABS, eje G.}
+
+\newpage
+\subsubsection{Comprobación resistencia a compresión y requisito esbeltez}
+
+Si $H$ corresponde a la altura libre de muro y $e$ su ancho se busca que la esbeltez, definida por $\frac{H}{16}$, sea mayor o igual a $e$:
+
+\insertequation{e \geq \frac{H}{16}}
+
+En el caso que lo anterior no se cumpla sólo se puede modificar el ancho del muro $e$, dado que la altura libre es un dato fijo. En cualquier caso todos los muros analizados cumplieron satisfactoriamente con el requisito de esbeltez. \\
+
+Para la resistencia a compresión se comprobó que la carga última $N_u$ fuese menor o igual que la resistencia a la compresión:
+
+\insertequation{N_u \leq 0.35 f'c \cdot A_c}
+
+\subsubsection{Cálculo armadura de corte horizontal}
+
+Para calcular la armadura de corte horizontal requerida se utilizó tanto la fórmula aproximada como el método de ACI para obtener el área mínima de acero requerida en la sección para lograr la resistencia.
+
+\begin{itemize}
+    \item \textbf{Fórmula aproximada}: Suponiendo que el acero toma el cien por ciento del corte, obtenido como la suma de los valores absolutos de las fuerzas de corte producto de las cargas de servicio, se busca un $A_e$ área de acero con tal de satisfacer:
+    
+    \insertgather{Q = \abs{Q_{Peso\ propio}} + \abs{Q_{Sobrecarga}} + \abs{Q_{Sismico}} \\\tau = \frac{Q}{A} \\ A_e = \frac{\tau \cdot 100 \cdot e}{2 \sigma_e}}
+    
+    En donde $\tau$ es la tensión de corte media en el muro ($kgf$/$cm^2$), $A$ el área de la sección transversal del muro, $A_e$ el área transversal por metro de ancho, considerando dos capas de acero ($cm^2$), $e$ el espesor del muro y $\sigma_e$ la tensión de corte admisible del acero, que para el caso puntual del presente trabajo $\sigma_e = 2800$ ($kgf$/$cm^2$).
+    
+    \item \textbf{Método ACI}: Para este caso el cálculo de la armadura de corte se basa en una suma de resistencias contribuídas por el hormigón y el acero. En este sentido se considera que la resistencia al corte proporcionada por la sección de hormigón corresponde a:
+    
+    \insertequation{V_c = 0.17\lambda \sqrt{f'c} h d}
+    
+    En donde $h$ es el espesor del muro, $d=0.8l_w$, $l_w$ el largo del muro y $\lambda$=1. Una vez conocido $V_c$ se calcula $V_s$ como el necesario para cumplir el requisito de resistencia:
+    
+    \insertequation{V_s = \frac{V_u}{\phi} - V_c}
+    
+    En donde $V_u$ se calcula considerando una combinación de las cargas puras de diseño obtenidas mediante ETABS (piers):
+    
+    \insertequation{V_u = 1.2 Q_{pp} + 1.0 Q_{sc} + 1.4 Q_{sismo}}
+    
+    De esta manera, se obtiene el diámetro de la enfierradura con tal de cumplir:
+    
+    \insertequation{V_s = \frac{A_v \cdot f_y \cdot d}{s} = \frac{A_v \cdot f_y \cdot 0.8l_w}{s} \leq 0.66 \sqrt{f'c} b_w d}
+    
+    Una vez obtenido $V_c$ y $V_s$ se debe verificar que $V_u$ no exceda:
+    
+    \insertequation{V_n = A_{cv} \cdot \bigg( \alpha_c \lambda \sqrt{f'c}  + \rho_t f_y\bigg)}
+    
+    En donde $\rho_t = \frac{A_v}{s\cdot e}$, $\alpha_c$ coeficiente que es 0.25 para $h_w/l_w \leq1.5$, 0.15 para $h_w/l_w = 2.0$ y varía linealmente entre 0.25 y 0.17 para $h_w/l_w$ entre 1.5 y 2.0.
+\end{itemize}
+
+\subsubsection{Cálculo armadura vertical y puntas de muro}
+
+Para cada uno de los muros se graficó en un diagrama de interacción P-M, de mismo $f'c$ que el muro de análisis, el estado de carga de cada una de las combinaciones. Luego la cuantía $\rho$ de las puntas de muro corresponde a aquella envolvente de todos los puntos, $\rho_w$ la cuantía de la armadura vertical corresponde a la cuantía con la que fué diseñado el diagrama. \\
+
+Los diagramas se obtuvieron digitalizando los gráficos propuestos por el libro \textit{Manual de Cálculo de Hormigón Armado} de GERDAU AZA. La Figura \ref{pm} ilustra un diagrama digitalizado, cada una de las curvas simboliza una cuantía de punta $\rho$ diferente, variada entre 1\% y 8\%.
+
+\insertimage[\label{pm}]{pm}{width=10cm}{Diagrama de interacción P-M, $\rho_w$=0.0025, $f'c$=30MPa}
+
+\subsection{Resultados obtenidos}
+
+\begin{table}[H]
+  \centering
+  \caption{Resultado armaduras muros eje 6.}
+  \itemresize{1.0}{
+  \begin{tabular}{P{0.8cm}cP{0.9cm}P{1.5cm}P{0.8cm}P{0.8cm}P{0.8cm}P{0.8cm}P{1.3cm}P{1.1cm}P{1.1cm}P{1.1cm}P{1cm}P{1cm}P{1.3cm}}
+    \hline
+    \textbf{PISO} & \textbf{MURO} & \textbf{NPIER} & \textbf{EJE SISMO} & \textbf{$f'c$ (MPa)} & \textbf{e (cm)} & \textbf{L (cm)} & \textbf{H (cm)} & \textbf{N (tonf)} & \textbf{PP (tonf)} & \textbf{SC (tonf)} & \textbf{QS (tonf)} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.H} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.V} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{PUNTA} \bigstrut\\
+    \hline
+    -1    & EJE 6.C-D & 1     & X     & 35    & 25    & 178   & 230   & 487.81 & 1.78  & 0.51  & 4.05  & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@14 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \bigstrut[t]\\
+    -1    & EJE 6.C-E & 2     & X     & 35    & 25    & 227   & 230   & 422.11 & 18.19 & 4.55  & 14.89 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@14 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    1     & EJE 6.C-G & 3     & X     & 35    & 25    & 625   & 230   & 1051.10 & 7.51  & 7.46  & 131.33 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@14 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    3     & EJE 6.B-E & 5     & X     & 35    & 25    & 636   & 230   & 963.78 & 37.86 & 7.90  & 61.93 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    8     & EJE 6.B-E & 5     & X     & 30    & 25    & 636   & 230   & 767.57 & 6.99  & 1.37  & 59.73 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    15    & EJE 6.B-E & 5     & X     & 20    & 20    & 636   & 230   & 406.09 & 5.70  & 1.24  & 44.63 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    23    & EJE 6.B-E & 5     & X     & 20    & 20    & 636   & 230   & 33.09 & 3.99  & 0.52  & 23.14 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+  \label{tablamuros1}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Resultado armaduras muros eje 11.}
+  \itemresize{1.0}{
+  \begin{tabular}{P{0.8cm}cP{0.9cm}P{1.5cm}P{0.8cm}P{0.8cm}P{0.8cm}P{0.8cm}P{1.3cm}P{1.1cm}P{1.1cm}P{1.1cm}P{1cm}P{1cm}P{1.3cm}}
+    \hline
+    \textbf{PISO} & \textbf{MURO} & \textbf{NPIER} & \textbf{EJE SISMO} & \textbf{$f'c$ (MPa)} & \textbf{e (cm)} & \textbf{L (cm)} & \textbf{H (cm)} & \textbf{N (tonf)} & \textbf{PP (tonf)} & \textbf{SC (tonf)} & \textbf{QS (tonf)} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.H} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.V} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{PUNTA} \bigstrut\\
+    \hline
+    -1    & EJE 11.C-E & 6     & X     & 35    & 25    & 485   & 230   & 1076.19 & 14.05 & 4.38  & 24.04 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \bigstrut[t]\\
+    1     & EJE 11.C-G & 6     & X     & 35    & 25    & 485   & 230   & 1069.67 & 11.60 & 6.96  & 47.22 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    3     & EJE 11.B-E & 8     & X     & 35    & 25    & 636   & 230   & 999.28 & 35.60 & 7.72  & 62.26 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    8     & EJE 11.B-E & 8     & X     & 30    & 25    & 636   & 230   & 800.88 & 6.05  & 1.38  & 71.47 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \\
+    15    & EJE 11.B-E & 8     & X     & 20    & 20    & 636   & 230   & 423.45 & 4.79  & 1.17  & 50.25 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    23    & EJE 11.B-E & 8     & X     & 20    & 20    & 636   & 230   & 30.51 & 8.89  & 2.09  & 15.57 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Resultado armaduras muros eje 13.}
+  \itemresize{1.0}{
+  \begin{tabular}{P{0.8cm}cP{0.9cm}P{1.5cm}P{0.8cm}P{0.8cm}P{0.8cm}P{0.8cm}P{1.3cm}P{1.1cm}P{1.1cm}P{1.1cm}P{1cm}P{1cm}P{1.3cm}}
+    \hline
+    \textbf{PISO} & \textbf{MURO} & \textbf{NPIER} & \textbf{EJE SISMO} & \textbf{$f'c$ (MPa)} & \textbf{e (cm)} & \textbf{L (cm)} & \textbf{H (cm)} & \textbf{N (tonf)} & \textbf{PP (tonf)} & \textbf{SC (tonf)} & \textbf{QS (tonf)} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.H} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.V} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{PUNTA} \bigstrut\\
+    \hline
+    -1    & EJE 13.H-L & 9     & X     & 35    & 25    & 489   & 230   & 663.53 & 26.75 & 2.05  & 21.93 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \bigstrut[t]\\
+    1     & EJE 13.H-K & 10    & X     & 35    & 25    & 345   & 230   & 613.06 & 11.75 & 3.17  & 31.83 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    3     & EJE 13.B-E & 11    & X     & 35    & 25    & 345   & 230   & 556.23 & 14.33 & 3.24  & 34.75 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    8     & EJE 13.B-E & 11    & X     & 30    & 25    & 345   & 230   & 409.58 & 4.47  & 1.19  & 16.45 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    15    & EJE 13.B-E & 11    & X     & 20    & 20    & 345   & 230   & 216.55 & 4.81  & 1.38  & 12.90 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \\
+    23    & EJE 13.B-E & 11    & X     & 20    & 20    & 345   & 230   & 17.46 & 6.21  & 1.30  & 2.35  & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Resultado armaduras muros eje G entre 3 y 6.}
+  \itemresize{1.0}{
+  \begin{tabular}{P{0.8cm}cP{0.9cm}P{1.5cm}P{0.8cm}P{0.8cm}P{0.8cm}P{0.8cm}P{1.3cm}P{1.1cm}P{1.1cm}P{1.1cm}P{1cm}P{1cm}P{1.3cm}}
+    \hline
+    \textbf{PISO} & \textbf{MURO} & \textbf{NPIER} & \textbf{EJE SISMO} & \textbf{$f'c$ (MPa)} & \textbf{e (cm)} & \textbf{L (cm)} & \textbf{H (cm)} & \textbf{N (tonf)} & \textbf{PP (tonf)} & \textbf{SC (tonf)} & \textbf{QS (tonf)} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.H} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.V} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{PUNTA} \bigstrut\\
+    \hline
+    -1    & EJE G.3-7 & 12    & Y     & 35    & 30    & 640   & 230   & 734.48 & 32.54 & 6.50  & 41.38 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@13 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$25 \bigstrut[t]\\
+    1     & EJE G.3-6 & 20    & Y     & 35    & 30    & 440   & 230   & 656.99 & 3.98  & 2.12  & 68.11 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@13 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    3     & EJE G.3-6 & 21    & Y     & 35    & 25    & 460   & 230   & 637.07 & 28.10 & 7.15  & 77.52 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@13 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    8     & EJE G.3-6 & 21    & Y     & 30    & 25    & 460   & 230   & 459.45 & 3.15  & 0.76  & 67.50 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$22 \\
+    15    & EJE G.3-6 & 21    & Y     & 20    & 20    & 460   & 230   & 282.73 & 3.45  & 0.93  & 54.00 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@17 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$18 \\
+    23    & EJE G.3-6 & 21    & Y     & 20    & 20    & 460   & 230   & 37.50 & 1.43  & 2.44  & 12.76 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$18 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Resultado armaduras muros eje I.}
+  \itemresize{1.0}{
+  \begin{tabular}{P{0.8cm}cP{0.9cm}P{1.5cm}P{0.8cm}P{0.8cm}P{0.8cm}P{0.8cm}P{1.3cm}P{1.1cm}P{1.1cm}P{1.1cm}P{1cm}P{1cm}P{1.3cm}}
+    \hline
+    \textbf{PISO} & \textbf{MURO} & \textbf{NPIER} & \textbf{EJE SISMO} & \textbf{$f'c$ (MPa)} & \textbf{e (cm)} & \textbf{L (cm)} & \textbf{H (cm)} & \textbf{N (tonf)} & \textbf{PP (tonf)} & \textbf{SC (tonf)} & \textbf{QS (tonf)} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.H} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{M.V} & \cellcolor[rgb]{ .949,  .949,  .949}\textbf{PUNTA} \bigstrut\\
+    \hline
+    -1    & EJE I.7-9 & 23    & X     & 35    & 30    & 230   & 230   & 461.95 & 0.11  & 0.31  & 10.11 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@13 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \bigstrut[t]\\
+    1     & EJE I.7-9 & 23    & Y     & 35    & 30    & 230   & 230   & 440.11 & 2.40  & 0.64  & 8.04  & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@13 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$10@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \\
+    3     & EJE I.7-9 & 23    & X     & 35    & 25    & 230   & 230   & 390.08 & 0.67  & 0.69  & 11.85 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \\
+    8     & EJE I.7-9 & 23    & X     & 30    & 25    & 230   & 230   & 269.69 & 1.28  & 1.03  & 5.76  & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@16 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \\
+    15    & EJE I.7-9 & 23    & Y     & 20    & 20    & 230   & 230   & 150.19 & 1.30  & 1.03  & 5.03  & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \\
+    23    & EJE I.7-9 & 23    & Y     & 20    & 20    & 230   & 230   & 45.16 & 4.05  & 1.98  & 5.37  & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}$\phi$8@20 & \cellcolor[rgb]{ .949,  .949,  .949}2$\phi$16 \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+  \label{tablamuros5}
+\end{table}
+
+A continuación se ilustran los diagramas de interacción obtenidos para cada uno de los muros considerando los ditintos $f'c$ de cada piso. Se puede observar que con la mínima cuantía $\rho=1$\% se logra obtener una envolvente para todos los puntos (P,M).
+
+\begin{images}{Diagramas de interacción P-M obtenidos.}
+    \addimage{pmfc20}{width=9.8cm}{Diagrama de interacción P-M, $f'c=20$MPa, cuantía vertical $\rho_w$=0.0025.}
+    \addimage{pmfc30}{width=9.8cm}{Diagrama de interacción P-M, $f'c=30$MPa, cuantía vertical $\rho_w$=0.0025.}
+    \addimage{pmfc35}{width=9.8cm}{Diagrama de interacción P-M, $f'c=35$MPa, cuantía vertical $\rho_w$=0.0025.}
+\end{images}
+
+\subsection{Resistencias a compresión de cada muro}
+
+\begin{table}[H]
+  \centering
+  \caption{Resistencias a compresión de los muros, representado como un factor de utilización para las cargas $N$ solicitantes.}
+  \itemresize{0.6}{
+  \begin{tabular}{ccccc}
+    \hline
+    \textbf{EJE} & \textbf{PISO} & \textbf{MURO} & \textbf{NPIER} & \textbf{FU COMPRESIÓN (\%)} \bigstrut\\
+    \hline
+    \multicolumn{1}{c}{\multirow{7}[2]{*}{\begin{sideways}EJE 6\end{sideways}}} & -1    & EJE 6.C-D & 1     & 88\% \bigstrut[t]\\
+          & -1    & EJE 6.C-E & 2     & 60\% \\
+          & 1     & EJE 6.C-G & 3     & 54\% \\
+          & 3     & EJE 6.B-E & 5     & 49\% \\
+          & 8     & EJE 6.B-E & 5     & 45\% \\
+          & 15    & EJE 6.B-E & 5     & 45\% \\
+          & 23    & EJE 6.B-E & 5     & 4\% \bigstrut[b]\\
+    \hline
+    \multicolumn{1}{c}{\multirow{6}[2]{*}{\begin{sideways}EJE 11\end{sideways}}} & -1    & EJE 11.C-E & 6     & 71\% \bigstrut[t]\\
+          & 1     & EJE 11.C-E & 6     & 71\% \\
+          & 3     & EJE 11.B-E & 8     & 50\% \\
+          & 8     & EJE 11.B-E & 8     & 47\% \\
+          & 15    & EJE 11.B-E & 8     & 47\% \\
+          & 23    & EJE 11.B-E & 8     & 3\% \bigstrut[b]\\
+    \hline
+    \multicolumn{1}{c}{\multirow{6}[2]{*}{\begin{sideways}EJE 13\end{sideways}}} & -1    & EJE 13.H-L & 9     & 43\% \bigstrut[t]\\
+          & 1     & EJE 13.H-K & 10    & 57\% \\
+          & 3     & EJE 13.B-E & 11    & 52\% \\
+          & 8     & EJE 13.B-E & 11    & 44\% \\
+          & 15    & EJE 13.B-E & 11    & 44\% \\
+          & 23    & EJE 13.B-E & 11    & 4\% \bigstrut[b]\\
+    \hline
+    \multicolumn{1}{c}{\multirow{6}[2]{*}{\begin{sideways}EJE C\end{sideways}}} & -1    & EJE G.3-7 & 12    & 31\% \bigstrut[t]\\
+          & 1     & EJE G.3-6 & 20    & 40\% \\
+          & 3     & EJE G.3-6 & 21    & 44\% \\
+          & 8     & EJE G.3-6 & 21    & 37\% \\
+          & 15    & EJE G.3-6 & 21    & 43\% \\
+          & 23    & EJE G.3-6 & 21    & 6\% \bigstrut[b]\\
+    \hline
+    \multicolumn{1}{c}{\multirow{6}[2]{*}{\begin{sideways}EJE I\end{sideways}}} & -1    & EJE I.7-9 & 23    & 54\% \bigstrut[t]\\
+          & 1     & EJE I.7-9 & 23    & 51\% \\
+          & 3     & EJE I.7-9 & 23    & 54\% \\
+          & 8     & EJE I.7-9 & 23    & 44\% \\
+          & 15    & EJE I.7-9 & 23    & 46\% \\
+          & 23    & EJE I.7-9 & 23    & 14\% \bigstrut[b]\\
+    \hline
+  \end{tabular}
+  }
+  \label{tab:rescompresion}
+\end{table}
+
+\subsection{Esquemas de armaduras de muro}
+
+A continuación se ilustran los esquemas de armaduras de muros realizados en AUTOCAD. Cabe destacar que, en los encuentros de dos muros, se utilizó una armadura de punta de 2+2 fierros, usando para ello la armadura mínima obtenida en las Tablas \ref{tablamuros1} a \ref{tablamuros5}; esto se realizó por un tema constructivo, para el amarre de las mallas. Los muros en cuestión que presentan esta característica corresponden a los siguientes:
+
+\begin{itemize}
+    \item \textit{Eje 6}: Muro piso -1 eje E, Piso 1 eje G, Pisos 3 al 23 eje E.
+    \item \textit{Eje 11}: Muro piso -1 eje E, Piso 1 eje G, Pisos 3 al 8 eje E.
+    \item \textit{Eje 13}: No hay encuentro de muros.
+    \item \textit{Eje G}: Muro piso -1 eje 7, Piso 1 eje 6, Piso 3 al 23 eje 3.
+    \item \textit{Eje I}: Todos los muros en el eje 9.
+\end{itemize}
+
+\insertimageboxed[]{arm6}{width=0.99\linewidth}{0.5}{Muros eje 6.}
+\insertimageboxed[]{arm11}{width=0.99\linewidth}{0.5}{Muros eje 11.}
+\insertimageboxed[]{arm13}{width=0.99\linewidth}{0.5}{Muros eje 13.}
+\insertimageboxed[]{armg}{width=0.99\linewidth}{0.5}{Muros eje G entre 3 y 6.}
+\insertimageboxed[]{armi}{width=0.99\linewidth}{0.5}{Muros eje I.}

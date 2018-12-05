@@ -1,0 +1,136 @@
+\newpage
+
+\section{Diseño de vigas sísmica}
+
+    Las vigas sísmicas a diseñar corresponden a las ubicadas en los ejes C (entre 11 y 12) y K (entre 10 y 11), en el nivel 2, estas son del tipo \texttt{VI25/168G35} (en adelante Viga C) y \texttt{VI25/180G35} (en adelante viga K), y de largos \texttt{90 cm} y \texttt{184 cm}, respectivamente.
+    
+    \insertimage[\label{vigas-sismicas}]{vigas-sismicas}{width=0.8\textwidth}{Vigas sísmicas a diseñar.}
+    
+    \subsection{Armadura mínima}
+    
+        Las armaduras mínimas, tanto a flexión como a corte, se determinan según lo indicado en la ACI318:
+        
+        \insertequationcaptioned[\label{a-min-flexion}]{A_s >\frac{\sqrt{f_c}}{4 f_y} > \frac{1,4 \cdot b \cdot d}{f_y}}{Armadura mínima a flexión.}
+        
+        \insertequationcaptioned[\label{a-min-corte}]{A_s >\frac{b \cdot s}{3 f_y}}{Armadura mínima a corte.}
+        
+        Con esto se obtienen las siguientes áreas mínimas de refuerzo requeridas:
+        
+        \begin{table}[H]
+          \centering
+          \caption{Áreas mínimas de acero de refuerzo para vigas sísmicas.}
+            \begin{tabular}{cccc}
+            \cline{2-4} & Flexión & Corte & $\rho_{min}$ \bigstrut\\
+            \hline
+            Viga C & 4,56  & 1,58  & 0,003 \bigstrut[t]\\
+            Viga K & 4,9   & 1,68  & 0,003 \bigstrut[b]\\
+            \hline
+            \end{tabular}%
+          \label{area-min-sismica}%
+        \end{table}%
+        
+    \subsection{Esfuerzos de diseño}
+
+        Los esfuerzos de diseño se determinan a través del modelo en ETABS, los resultados se muestran a continuación:
+        
+        
+        \begin{images}[\label{imagenmultiple}]{Cargas aplicadas a Viga C.}
+            \addimage{viga-sismica-PP-C}{width=7.5cm}{Esfuerzos de corte y flexión producto de peso propio.}
+            \addimage{viga-sismica-SC-C}{width=7.5cm}{Esfuerzos de corte y flexión producto de sobrecarga.}
+            \addimage{viga-sismica-sismo-C}{width=7.5cm}{Esfuerzos de corte y flexión producto de cargas de sismo.}
+            \addimage{viga-sismica-env-C}{width=7.5cm}{Envolvente de esfuerzos sobre viga sísmica, según combinación LRFD.}
+        \end{images}
+        
+        En la tabla \ref{esfuerzos-viga-C} se muestra el resumen del corte y momento últimos a los que está sometida la Viga C, que serán los que determinan su diseño.
+        
+        \begin{table}[H]
+          \centering
+          \caption{Esfuerzos de diseño Viga C.}
+            \begin{tabular}{ccccc}
+            \hline
+            \textbf{Esfuerzo} & \textbf{PP} & \textbf{SC} & \textbf{Sismo} & \boldmath{}\textbf{$1,2  PP + SC+1,4  Sismo$}\unboldmath{} \bigstrut\\
+            \hline
+            $M [tonf \cdot m] $ & 1,4   & -0,2  & 14,44 & \textbf{21,69} \bigstrut[t]\\
+            $V [tonf]$ & 3,26  & 0,17 & 18,20 & \textbf{29,57} \bigstrut[b]\\
+            \hline
+            \end{tabular}%
+          \label{esfuerzos-viga-C}%
+        \end{table}%
+        
+        En análisis para la Viga K es análogo. Se obtienen los siguientes resultados:
+        
+        \begin{table}[H]
+          \centering
+          \caption{Esfuerzos de diseño Viga K.}
+            \begin{tabular}{ccccc}
+            \hline
+            \textbf{Esfuerzo} & \textbf{PP} & \textbf{SC} & \textbf{Sismo} & \boldmath{}\textbf{$1,2  PP +  SC+1,4  Sismo$}\unboldmath{} \bigstrut\\
+            \hline
+            $M [tonf \cdot m] $ & 10,67 & 2,95 & 5,28  & \textbf{23,15} \bigstrut[t]\\
+            $V [tonf]$ & 6,70 & 1,54 & 2,43  & \textbf{13,00} \bigstrut[b]\\
+            \hline
+            \end{tabular}%
+          \label{esfuerzos-viga-K}%
+        \end{table}%
+    
+    \subsection{Armadura de corte}
+    
+        Del análisis se obtienen los siguientes resultados de armadura de corte.
+            
+        \begin{table}[H]
+          \centering
+          \caption{Armadura de corte y resistencia al corte Viga C.}
+            \begin{tabular}{cc}
+            \hline
+            \textbf{Estribos} & \boldmath{}\textbf{$\phi Vn [tonf]$}\unboldmath{} \bigstrut\\
+            \hline
+            $E \phi 12 @ 80$ & 45,09 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{arm.corte.c}%
+        \end{table}%
+        
+        \begin{table}[H]
+          \centering
+          \caption{Armadura de corte y resistencia al corte Viga K.}
+            \begin{tabular}{cc}
+            \hline
+            \textbf{Estribos} & \boldmath{}\textbf{$\phi \cdot Vn [tonf]$}\unboldmath{} \bigstrut\\
+            \hline
+            $E \phi 12 @ 20$ & 45,09 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{arm.corte.k}%
+        \end{table}%
+        
+        
+    
+    \subsection{Armadura de flexión}
+    
+        Del análisis se obtienen los siguientes resultados de armadura de flexión.
+        
+        \begin{table}[H]
+          \centering
+          \caption{Armadura de flexión y resistencia a flexión Viga C.}
+            \begin{tabular}{ccccc}
+            \hline
+            \boldmath{}\textbf{$\rho_{req}$}\unboldmath{} & \boldmath{}\textbf{$A_{req} [cm^2]$}\unboldmath{} & \textbf{F} & \textbf{F'} & \boldmath{}\textbf{$\phi Mn [tonf \cdot m]$}\unboldmath{} \bigstrut\\
+            \hline
+            0,003 & 16,66 & $3 \phi 25$ & $3 \phi 25$ & 88,97 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{arm.flexion.c}%
+    \end{table}%
+    
+    \begin{table}[H]
+      \centering
+      \caption{Armadura de flexión y resistencia a flexión Viga K.}
+        \begin{tabular}{ccccc}
+        \hline
+        \boldmath{}\textbf{$\rho_{req}$}\unboldmath{} & \boldmath{}\textbf{$A_{req} [cm^2]$}\unboldmath{} & \textbf{F} & \textbf{F'} & \boldmath{}\textbf{$\phi Mn [tonf \cdot m]$}\unboldmath{} \bigstrut\\
+        \hline
+        0,003 & 14,66 & $3 \phi 25$ & $3 \phi 25$ & 95,65 \bigstrut\\
+        \hline
+        \end{tabular}%
+      \label{arm.flexion.k}%
+    \end{table}%

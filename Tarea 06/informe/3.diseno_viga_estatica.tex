@@ -1,0 +1,115 @@
+\newpage
+\section{Diseño de viga estática}
+
+    La viga estática a diseñar corresponde a la ubicada entre los ejes A y B, en el nivel -1, esta es del tipo \texttt{V30/50G35}, de largo total \texttt{35,51 m}, con apoyos intermedios como se esquematiza en la figura \ref{diagrama-viga-estatica}, correspondientes a muros.
+    
+    \insertimage[\label{diagrama-viga-estatica}]{diagrama-viga-estatica}{width=\textwidth}{Diagrama viga estática a diseñar.}
+    
+    \subsection{Armadura mínima}
+        Las armaduras mínimas se calculan nuevamente con las expresiones \eqref{a-min-flexion} y \eqref{a-min-corte}, obteniendose:
+        
+        \begin{table}[H]
+          \centering
+          \caption{Armadura mínima para viga estática.}
+            \begin{tabular}{ccc}
+            \cline{2-3}          & Flexión & Corte \bigstrut\\
+            \hline
+            Viga estática & 1,537 & 0,476 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{area-minima-estatica}%
+        \end{table}%
+        
+    \subsection{Esfuerzos de diseño.}
+        
+        Las cargas a considerar se obtienen de tributar las sobrecargas y peso propio de la losa en el área tributaria correspondiente a la viga en cuestión. En la figura \ref{tributacion} se ejemplifica la forma en que se tributó el área mostrando una de las secciones consideradas.
+        
+        \insertimage[\label{tributacion}]{tributacion}{width=0.3\textwidth}{Esquema de tribtación de cargas a viga estática.}
+        
+        Estas solictaciones se aplican como cargas distribuidas de forma trapezoidal sobre el modelo de la viga, donde además se considera su peso propio. En las figuras \ref{PP-viga-estatica} y \ref{SC-viga-estatica} se muestran las cargas aplicadas en el modelo.
+        
+        \insertimage[\label{PP-viga-estatica}]{PP-viga-estatica}{width=\textwidth}{Cargas de peso propio aplicadas al modelo de la viga. \textit{SAP2000.}}
+        
+        \insertimage[\label{SC-viga-estatica}]{SC-viga-estatica}{width=\textwidth}{Sobrecargas aplicadas al modelo de la viga. \textit{SAP2000.}}
+        
+    \subsection{Diagramas de momento y corte}
+        
+        Los esfuerzos de diseño, de corte y flexión, se obtienen modelando la viga en SAP2000. Se considera la combinación $1,2PP+1,6SC$.  Se muestran los resultados en las figuras \ref{momentos-viga-estatica} y \ref{corte-viga-estatica}.
+        
+        \insertimage[\label{momentos-viga-estatica}]{momentos-viga-estatica}{width=\textwidth}{Flexión resultante en viga estática. \textit{SAP2000.}}        
+        
+        \insertimage[\label{corte-viga-estatica}]{corte-viga-estatica}{width=\textwidth}{Esfuerzo de corte resultante en viga estática. \textit{SAP2000.}} 
+        
+        Los esfuerzos considerados en el diseño del refuerzo de la viga se muestran en la siguiente tabla:
+        
+        \begin{table}[H]
+          \centering
+          \caption{Esfuerzos de diseño viga estática.}
+            \begin{tabular}{cc}
+            \hline
+            \textbf{Esfuerzo} & \boldmath{}\textbf{$1,2 PP+1,6 SC$}\unboldmath{} \bigstrut\\
+            \hline
+            \multirow{2}[1]{*}{$M [tonf \cdot m] $} & 22,08 \bigstrut[t]\\
+                  & \textbf{-30,92} \\
+                \hline
+            $V [tonf]$ & \textbf{22,36} \bigstrut[b]\\
+            \hline
+            \end{tabular}%
+          \label{esf-diseno-estatica}%
+        \end{table}%
+        
+    \subsection{Armadura de Corte.}
+    
+        Del análisis se obtienen los siguientes resultados de armadura de corte.
+        
+        \begin{table}[H]
+          \centering
+          \caption{Armadura de corte y resistencia al corte Viga estática.}
+            \begin{tabular}{cc}
+            \hline
+            \textbf{Estribos} & \boldmath{}\textbf{$\phi \cdot Vn [tonf]$}\unboldmath{} \bigstrut\\
+            \hline
+            $E \phi 12 @ 20$ & 26,65 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{arm-corte-estatica}%
+        \end{table}%
+    
+    \subsection{Armadura de Flexión.}
+    
+        Del análisis se obtienen los siguientes resultados de armadura de flexión negativa y positiva.
+        
+        \begin{table}[htbp]
+          \centering
+          \caption{Armadura de flexión positiva y resistencia a la flexión positiva Viga estática.}
+            \begin{tabular}{ccc}
+            \hline
+            \boldmath{}\textbf{$A_{req} [cm^2]$}\unboldmath{} & \textbf{F} & \boldmath{}\textbf{$\phi Mn [tonf \cdot m]$}\unboldmath{} \bigstrut\\
+            \hline
+            13,65 & $3 \phi 25$ & 23,67 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{flex+estatica}%
+        \end{table}%
+        
+        \begin{table}[htbp]
+          \centering
+          \caption{Armadura de flexión negativa y resistencia a la flexión negativa Viga estática.}
+            \begin{tabular}{ccc}
+            \hline
+            \boldmath{}\textbf{$A'_{req} [cm^2]$}\unboldmath{} & \textbf{F'} & \boldmath{}\textbf{$\phi Mn [tonf \cdot m]$}\unboldmath{} \bigstrut\\
+            \hline
+            19,78 & $4 \phi 28$ & 37,43 \bigstrut\\
+            \hline
+            \end{tabular}%
+          \label{flex-estatica}%
+        \end{table}%
+
+    \subsection{Esqema de armadura de corte y flexión}
+    
+    En las figuras siguinentes se esquematiza la disposición de su armaduras de corte y flexión en la viga estática.
+    
+    \begin{images}[\label{armadura}]{Esquemas de disposición de armadura en viga estática.}
+        \addimage{armadura-viga-estatica}{width=\textwidth}{Esquema longitudinal de uno de los vanos.}
+        \addimage{trans-viga-estatica}{width=4cm}{Esquema transversal.}
+    \end{images}    
