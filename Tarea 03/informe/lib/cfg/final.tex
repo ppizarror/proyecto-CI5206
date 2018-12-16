@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Configuraciones finales
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,7 +8,7 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \markboth{}{}
@@ -64,10 +64,20 @@
 	\counterwithin{lstlisting}{subsubsection}
 	\counterwithin{table}{subsubsection}
 }{
-	\throwbadconfig{Valor configuracion incorrecto}{\showsectioncaption}{none,sec,ssec,sssec}
-}}}}
-\renewcommand{\thepage}{\arabic{page}}
-\setcounter{page}{1}
+\ifthenelse{\equal{\showsectioncaption}{ssssec}}{
+	\counterwithin{equation}{subsubsubsection}
+	\counterwithin{figure}{subsubsubsection}
+	\counterwithin{lstlisting}{subsubsubsection}
+	\counterwithin{table}{subsubsubsection}
+}{
+	\throwbadconfig{Valor configuracion incorrecto}{\showsectioncaption}{none,sec,ssec,sssec,ssssec}
+}}}}}
+\ifthenelse{\equal{\predocuseromannumber}{true}}{
+	\renewcommand{\thepage}{\arabic{page}}}{
+}
+\ifthenelse{\equal{\resetpagnumafterindex}{true}}{
+	\setcounter{page}{1}}{
+}
 \setcounter{section}{0}
 \setcounter{footnote}{0}
 \ifthenelse{\equal{\showlinenumbers}{true}}{

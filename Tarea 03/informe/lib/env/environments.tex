@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Definición de entornos
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,7 +8,7 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \newenvironment{references}{
@@ -17,7 +17,7 @@
 		\throwerror{\references}{Solo se puede usar entorno references con estilo citas \noexpand\stylecitereferences=bibtex}
 	}
 	\begingroup
-\ifthenelse{\equal{\donumrefsection}{true}}{
+\ifthenelse{\equal{\sectionrefenv}{true}}{
 		\section{\namereferences}
 	}{
 		\sectionanum{\namereferences}
@@ -33,9 +33,6 @@
 \begingroup
 	\clearpage
 	\phantomsection
-	\ifthenelse{\equal{\showappendixsectitle}{true}}{
-		\appendixpage}{
-	}
 \def\GLOBALsectionalph{true}
 \appendixtitleon
 	\appendicestocpagenum
@@ -206,28 +203,16 @@
 \newenvironment{resumen}{
 	\sectionfont{\color{\titlecolor} \fontsizetitle \styletitle \selectfont}
 	\sectionanumnoiheadless{\nameabstract}}{
-	\ifthenelse{\equal{\addemptypagetwosides}{true}}{
-		\checkoddpage
-		\ifoddpage
-			\newpage
-			\null
-			\thispagestyle{empty}
-			\newpage
-			\addtocounter{page}{-1}
-		\else
-		\fi}{
-	}
 }
 \newenvironment{images}[2][]{
 	\def\envimageslabelvar {#1}
 	\def\envimagescaptionvar {#2}
-	\def\GLOBALenvimageintialized {true}
-	\vspace{\margintopimages cm}
+	\def\GLOBALenvimageinitialized {true}
+	\def\GLOBALenvimageadded {false}
+	\vspace{\marginimagetop cm}
 	\captionsetup{margin=\captionmarginmultimg cm}
 	\begin{figure}[H] \centering
-		\vspace{-\marginrightmultimage cm}
-		\vspace{-\marginrightmultimage cm}
-		\vspace{-\marginrightmultimage cm}
+		\vspace{\marginimagemulttop cm}
 		}{
 		\setcaptionmargincm{\captionlrmargin}
 		\ifx\hfuzz\envimagescaptionvar\hfuzz
@@ -237,6 +222,6 @@
 		\fi
 	\end{figure}
 	\setcaptionmargincm{\captionlrmargin}
-	\vspace{\marginbottomimages cm}
-	\def\GLOBALenvimageintialized {false}
+	\vspace{\marginimagebottom cm}
+	\def\GLOBALenvimageinitialized {false}
 }

@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Funciones para insertar elementos
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,7 +8,7 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \newcommand{\newp}{
@@ -35,5 +35,12 @@
 	\pagenumbering{arabic}
 	\setcounter{page}{\thetemplatepagecounter}
 }
+\newcommand{\includehfpdf}[2][]{
+	\includepdf[pagecommand={\pagestyle{fancy}},#1]{#2}
+}
+\newcommand{\includefullhfpdf}[2][]{
+	\includepdf[pages=-,pagecommand={\pagestyle{fancy}},#1]{#2}
+}
 \newcommand{\quotes}[1]{\enquote*{#1}}
 \newcommand{\insertemail}[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand{\insertphone}[1]{\href{tel:#1}{\texttt{#1}}}
