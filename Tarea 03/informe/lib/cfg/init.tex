@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,7 +8,7 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \checkvardefined{\autordeldocumento}
@@ -62,19 +62,19 @@
 		Template.Autor.Alias={ppizarror},
 		Template.Autor.Email={pablo.pizarro@ing.uchile.cl},
 		Template.Autor.Nombre={Pablo Pizarro R.},
-		Template.Autor.Web={http://ppizarror.com/},
+		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={21/10/2018},
+		Template.Fecha={14/12/2018},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Informe},
 		Template.Tipo={Normal},
-		Template.Version.Dev={6.0.1-1-N},
-		Template.Version.Hash={3D537F19AA2D663CD9541EC7C61A7074},
-		Template.Version.Release={6.0.1},
+		Template.Version.Dev={6.1.6-N},
+		Template.Version.Hash={F62C786B8B4EA020E11FB02A885E1920},
+		Template.Version.Release={6.1.6},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Informe/},
-		Template.Web.Manual={http://latex.ppizarror.com/Template-Informe/},
+		Template.Web.Manual={https://latex.ppizarror.com/Template-Informe/},
 		Universidad.Departamento={\departamentouniversidad},
 		Universidad.Nombre={\nombreuniversidad},
 		Universidad.Ubicacion={\localizacionuniversidad}
@@ -84,24 +84,22 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Informe v6.0.1 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Informe v6.1.6 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
 	pdfsubject={\temaatratar},
 	pdftitle={\titulodelinforme},
-	pdftoolbar={\cfgpdftoolbar},
-	pdfview={\cfgpdfpageview}
+	pdftoolbar={\cfgpdftoolbar}
 }
 \graphicspath{{./\defaultimagefolder}}
 \newcounter{templatepagecounter}
 \renewcommand{\baselinestretch}{\defaultinterline}
 \setlength{\headheight}{64 pt}
-\setcounter{MaxMatrixCols}{20}
-\setlength{\footnotemargin}{4 mm}
+\setlength{\footnotemargin}{\marginfootnote pt}
 \setlength{\columnsep}{\columnsepwidth em}
 \ifthenelse{\equal{\showlinenumbers}{true}}{
-	\setlength{\linenumbersep}{0.22cm}
+	\setlength{\linenumbersep}{0.50cm}
 	\renewcommand\linenumberfont{\normalfont\tiny\color{\linenumbercolor}}
 	}{
 }
@@ -264,6 +262,9 @@
 	\renewcommand{\theparagraph}{\thesubsubsubsection.\arabic{paragraph}}
 }
 \makeatletter
+	\def\toclevel@subsubsubsection{4}
+	\def\toclevel@paragraph{5}
+	\def\toclevel@subparagraph{6}
 	\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}
 		{3.25ex \@plus 1ex \@minus .2ex}
 		{-1em}
@@ -272,11 +273,52 @@
 		{3.25ex \@plus 1ex \@minus .2ex}
 		{-1em}
 		{\normalfont\normalsize\bfseries}}
-	\def\toclevel@subsubsubsection{4}
-	\def\toclevel@paragraph{5}
-	\def\toclevel@paragraph{6}
-	\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
-	\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
-	\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+	\ifthenelse{\equal{\showdotontitles}{true}}{
+\def\l@subsubsubsection{\@dottedtocline{4}{7.83em}{4.15em}}
+		\def\l@paragraph{\@dottedtocline{5}{11.98em}{4.92em}}
+		\def\l@subparagraph{\@dottedtocline{6}{14.65em}{5.69em}}
+	}{
+		\def\l@subsubsubsection{\@dottedtocline{4}{6.97em}{4em}}
+		\def\l@paragraph{\@dottedtocline{5}{10.97em}{5em}}
+		\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+	}
 \makeatother
 \setcounter{tocdepth}{\indexdepth}
+\ifthenelse{\equal{\footnoterestart}{none}}{
+}{
+\ifthenelse{\equal{\footnoterestart}{sec}}{
+	\counterwithin*{footnote}{section}
+}{
+\ifthenelse{\equal{\footnoterestart}{ssec}}{
+	\counterwithin*{footnote}{subsection}
+}{
+\ifthenelse{\equal{\footnoterestart}{sssec}}{
+	\counterwithin*{footnote}{subsubsection}
+}{
+\ifthenelse{\equal{\footnoterestart}{ssssec}}{
+	\counterwithin*{footnote}{subsubsubsection}
+}{
+\ifthenelse{\equal{\footnoterestart}{page}}{
+	\counterwithin*{footnote}{page}
+}{
+	\throwbadconfig{Formato reinicio numero footnote desconocido}{\footnoterestart}{none,page,sec,ssec,sssec,ssssec}}}}}}
+}
+\ifthenelse{\equal{\equationrestart}{none}}{
+}{
+\ifthenelse{\equal{\equationrestart}{sec}}{
+	\counterwithin*{equation}{section}
+}{
+\ifthenelse{\equal{\equationrestart}{ssec}}{
+	\counterwithin*{equation}{subsection}
+}{
+\ifthenelse{\equal{\equationrestart}{sssec}}{
+	\counterwithin*{equation}{subsubsection}
+}{
+\ifthenelse{\equal{\equationrestart}{ssssec}}{
+	\counterwithin*{equation}{subsubsubsection}
+}{
+\ifthenelse{\equal{\equationrestart}{page}}{
+	\counterwithin*{equation}{page}
+}{
+	\throwbadconfig{Formato reinicio numero ecuacion desconocido}{\footnoterestart}{none,page,sec,ssec,sssec,ssssec}}}}}}
+}

@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Configuración de página
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,14 +8,17 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \newpage
-\ifthenelse{\equal{\romanpageuppercase}{true}}{
-	\pagenumbering{Roman}
-}{
-	\pagenumbering{roman}
+\ifthenelse{\equal{\predocuseromannumber}{true}}{
+	\ifthenelse{\equal{\romanpageuppercase}{true}}{
+		\pagenumbering{Roman}
+	}{
+		\pagenumbering{roman}
+	}}{
+	\pagenumbering{arabic}
 }
 \setcounter{page}{1}
 \setcounter{footnote}{1}

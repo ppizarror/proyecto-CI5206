@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Funciones para insertar títulos
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,7 +8,7 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \pretocmd{\section}{
@@ -154,14 +154,27 @@
 	\emptyvarerr{\changeheadertitle}{#1}{Titulo no definido}
 	\markboth{#1}{}
 }
-\newcommand{\insertindextitle}[2]{
-	\emptyvarerr{\insertindextitle}{#1}{Titulo no definido}
-	\ifx\hfuzz#2\hfuzz
+\newcommand{\insertindextitle}[2][]{
+	\emptyvarerr{\insertindextitle}{#2}{Titulo no definido}
+	\ifx\hfuzz#1\hfuzz
 		\addtocontents{toc}{\protect\addvspace{\indextitlemargin pt}}
 	\else
-		\addtocontents{toc}{\protect\addvspace{#2 pt}}
+		\addtocontents{toc}{\protect\addvspace{#1 pt}}
 	\fi
-	\addtocontents{toc}{\noindent\hyperref[swpn]{\textbf{#1}}}
+	\addtocontents{toc}{\noindent\hyperref[swpn]{\textbf{#2}}}
+}
+\newcommand{\insertindextitlepage}[2][]{
+	\emptyvarerr{\insertindextitlepage}{#2}{Titulo no definido}
+	\ifx\hfuzz#1\hfuzz
+		\addtocontents{toc}{\protect\addvspace{\indextitlemargin pt}}
+	\else
+		\addtocontents{toc}{\protect\addvspace{#1 pt}}
+	\fi
+	\addcontentsline{toc}{section}{#2}
+}
+\newcommand{\createhiddensection}[2][]{
+	\changeheadertitle{#2}
+	\insertindextitlepage[#1]{#2}
 }
 \newcommand{\newchapter}[1]{
 	\emptyvarerr{\newchapter}{#1}{Titulo no definido}

@@ -1,6 +1,6 @@
 % Template:     Informe/Reporte LaTeX
 % Documento:    Estilos de código fuente
-% Versión:      6.0.1 (21/10/2018)
+% Versión:      6.1.6 (14/12/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -8,7 +8,7 @@
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
 %
-% Manual template: [http://latex.ppizarror.com/Template-Informe/]
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
 % Licencia MIT:    [https://opensource.org/licenses/MIT/]
 
 \lstdefinestyle{bash}{
@@ -239,32 +239,63 @@
 	ndkeywordstyle=\color{BurntOrange}\bfseries,
 	sensitive=true
 }
-\lstdefinestyle{matlab}{
-	language=Matlab,
-	emph=[1]{break,end,for,if},
-	emphstyle=[1]\color{dkcyan},
-	keepspaces=true,
-	morekeywords={matlab2tikz}
-}
 \lstdefinestyle{latex}{
 	language=TeX,
-	morekeywords={aacos,aasin,aatan,acos,addimage,addimageboxed,align,asin,atan,
-		begin,bibitem,bibliography,bigstrut,boldmath,bookmarksetup,boxed,cancelto,
-		caption,checkmark,checkvardefined,cite,dd,degree,eqref,equal,frac,
-		fracnpartial,fullcite,hline,href,ifthenelse,insertalign,insertalignanum,
-		insertaligncaptioned,insertaligncaptioned,insertaligncaptionedanum,
-		insertaligned,insertalignedanum,insertalignedcaptioned,insertalignedcaptionedanum
-		,insertemail,insertemptypage,inserteqimage,insertequation,insertequationanum,
+	morekeywords={aacos,aasin,aatan,acos,addimage,addimageboxed,addimagenewline,
+		align,asin,atan,begin,bibitem,bibliography,bigstrut,boldmath,
+		bookmarksetup,boxed,cancelto,caption,changeheadertitle,checkmark,
+		checkvardefined,cite,dd,degree,eqref,equal,frac,fracnpartial,fullcite,
+		hline,href,ifthenelse,includehfpdf,includefullhfpdf,insertalign,
+		insertalignanum,insertaligncaptioned,insertaligncaptioned,
+		insertaligncaptionedanum,insertaligned,insertalignedanum,
+		insertalignedcaptioned,insertalignedcaptionedanum,insertemail,
+		insertemptypage,inserteqimage,insertequation,insertequationanum,
 		insertequationcaptioned,insertequationcaptionedanum,insertgather,
 		insertgatheranum,insertgathercaptioned,insertgathercaptionedanum,
 		insertgathered,insertgatheredanum,insertgatheredcaptioned,
-		insertgatheredcaptionedanum,insertimage,insertimageleft,insertimageright,
+		insertgatheredcaptionedanum,insertimage,insertimageleft,
+		insertimageright,insertindextitle,insertindextitlepage,insertphone,
 		isundefined,itemresize,label,LaTeX,lipsum,lpow,makeatletter,makeatother,
 		newcommand,newcounter,newp,newpage,pow,quotes,ref,renewcommand,section,
-		sectionanum,setcounter,setlength,shortcite,sourcecode,sourcecodep,subsection,
-		subsectionanum,subsubsection,subsubsectionanum,subsubsubsection,
-		subsubsubsection,subsubsubsectionanum,textbf,textit,textregistered,
-		textsuperscript,texttt,throwbadconfig,unboldmath,url,xspace}
+		sectionanum,setcounter,setlength,shortcite,sourcecode,sourcecodep,
+		subsection,subsectionanum,subsubsection,subsubsectionanum,
+		subsubsubsection,subsubsubsection,subsubsubsectionanum,textbf,textit,
+		textregistered,textsuperscript,texttt,throwbadconfig,unboldmath,url,
+		xspace}
+}
+\lstdefinestyle{matlab}{
+	language=Matlab,
+	keepspaces=true,
+	morekeywords={break,end,for,if,matlab2tikz,warning}
+}
+\lstdefinestyle{opencl}{
+	language=C++,
+	breakatwhitespace=false,
+	morecomment=[l][\color{magenta}]{\#},
+	morekeywords={bool3,bool4,bool8,bool16,char2,char3,char4,char8,char16,
+		complex,constant,event_t,bool2,float2,float3,float4,float8,float16,
+		global,half2,half3,half4,half8,half16,image2d_t,image3d_t,imaginary,
+		int2,int3,int4,int8,int16,kernel,local,long2,long3,long4,long8,long16,
+		private,quad,quad2,quad3,quad4,quad8,quad16,sampler_t,short2,short3,
+		short4,short8,short16,uchar2,uchar3,uchar4,uchar8,uchar16,uint2,uint3,
+		uint4,uint8,uint16,ulong2,ulong3,ulong4,ulong8,ulong16,ushort2,ushort3,
+		ushort4,ushort8,ushort16,__constant,__global,__kernel,__local,__private},
+}
+\lstdefinestyle{opensees}{
+	language=tcl,
+	breakatwhitespace=false,
+	emph=[1]{-dof,-ele,-eleRange,-file,-iNode,-jNode,-kNode,-ndf,-ndm,-node,
+		-nodeRange,-region,-time},
+	emphstyle=[1]\color{black}\bfseries\em,
+	keepspaces=true,
+	morecomment=[l]{\#},
+	ndkeywords={Aggregator,algorithm,analysis,analyze,BasicBuilder,constraints,
+		deformation,disp,DisplayModel2D,DisplayModel3D,Elastic,element,equalDOF,fix,
+		fixX,fixY,fixZ,geomTransf,integrator,Linear,loadConst,LoadControl,mass,
+		model,Node,node,nonlinearBeamColumn,numberer,pattern,Plain,printA,
+		rayleigh,reaction,recorder,region,section,Steel01,system,test,truss,
+		uniaxialMaterial,wipe},
+	ndkeywordstyle=\color{dkcyan}\ttfamily
 }
 \lstdefinestyle{perl}{
 	language=Perl,
@@ -302,18 +333,19 @@
 	backgroundcolor=\color{white},
 	breakatwhitespace=false,
 	commentstyle=\color{gray}\upshape,
-	frame=tB,
+	frame=tb,
 	keepspaces=true,
-	keywords={and,be,begin,datatype,do,elif,else,end,for,foreach,fun,function,
-		if,in,input,let,null,or,output,pop,procedure,push,repeat,return,swap,
-		until,while,xor},
+	keywords={and,be,begin,break,datatype,do,elif,else,end,for,foreach,fun,
+		function,if,in,input,let,null,or,output,pop,procedure,push,repeat,
+		return,swap,until,while,xor},
 	keywordstyle=\color{black}\bfseries\em,
 	mathescape=true,
 	morecomment=[l]{//},
 	morecomment=[l]{\#},
 	morecomment=[s]{/*}{*/},
 	morecomment=[s]{/**}{*/},
-	sensitive=false
+	sensitive=false,
+	stringstyle=\color{dkgray}\bfseries\em
 }
 \lstdefinestyle{python}{
 	language=Python,
@@ -344,6 +376,12 @@
 \lstdefinestyle{sql}{
 	language=SQL,
 	breakatwhitespace=true
+}
+\lstdefinestyle{tcl}{
+	language=tcl,
+	breakatwhitespace=false,
+	keepspaces=true,
+	morecomment=[l]{\#}
 }
 \lstdefinelanguage{XML}{
 	morecomment=[s]{<?}{?>},
@@ -403,6 +441,8 @@
 	\ifthenelse{\equal{#1}{kotlin}}{}{
 	\ifthenelse{\equal{#1}{latex}}{}{
 	\ifthenelse{\equal{#1}{matlab}}{}{
+	\ifthenelse{\equal{#1}{opencl}}{}{
+	\ifthenelse{\equal{#1}{opensees}}{}{
 	\ifthenelse{\equal{#1}{perl}}{}{
 	\ifthenelse{\equal{#1}{php}}{}{
 	\ifthenelse{\equal{#1}{plaintext}}{}{
@@ -411,10 +451,11 @@
 	\ifthenelse{\equal{#1}{ruby}}{}{
 	\ifthenelse{\equal{#1}{scala}}{}{
 	\ifthenelse{\equal{#1}{sql}}{}{
+	\ifthenelse{\equal{#1}{tcl}}{}{
 	\ifthenelse{\equal{#1}{xml}}{}{
 		\def\sourcecodestyle {#1}
 		\throwbadconfig{Estilo de codigo desconocido}{\sourcecodestyle}{bash,c,cpp,
-		csharp,cuda,docker,glsl,html5,java,js,json,kotlin,latex,matlab,perl,php,
-		plaintext,pseudocode,python,ruby,scala,sql,xml}
-	}}}}}}}}}}}}}}}}}}}}}}}
+		csharp,cuda,docker,glsl,html5,java,js,json,kotlin,latex,matlab,opencl,
+		opensees,perl,php,plaintext,pseudocode,python,ruby,scala,sql,tcl,xml}
+	}}}}}}}}}}}}}}}}}}}}}}}}}}
 }
