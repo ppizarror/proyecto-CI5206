@@ -1,0 +1,18 @@
++ Planos
+	- Cielo Nivel -1 
+		- Corregir espesores de muros y vigas.	
+	- Fundación
+		- Completar fundaciones sobre eje 12 y corregir dimensiones
+		- Agregar corte de zapata típica, permietral e interna
+		- Agregar información: zona sísmica, suelo y materiales
+	- Losa Cielo tipo
+		- Agregar cuadro de contraflechas
+		- Agregar refuerzos de shafts
+		- Corregir numeraciones de losas
+		- Corregir fierros
+	- Elevación Eje 15 (entre B y L)
+		- Muchas weas c:
+
++ Presentación 
+	- Agregar:	 - Armadura
+			 - Casos en Chile
