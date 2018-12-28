@@ -1,6 +1,6 @@
 + Planos
 	- Cielo Nivel -1 
-		- Corregir espesores de muros y vigas.	
+		- Corregir espesores de muros y vigas.	OK
 	- Fundación
 		- Completar fundaciones sobre eje 12 y corregir dimensiones
 		- Agregar corte de zapata típica, permietral e interna
