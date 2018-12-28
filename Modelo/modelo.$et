@@ -1,4 +1,4 @@
-$ File C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.$et saved 12/28/2018 4:12:21 PM
+$ File C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.$et saved 12/28/2018 5:33:12 PM
  
 $ PROGRAM INFORMATION
   PROGRAM  "ETABS 2016"  VERSION "16.2.1"  
@@ -6993,8 +6993,6 @@ $ POINT OBJECT LOADS
 $ FRAME OBJECT LOADS
 
 $ SHELL OBJECT LOADS
-  AREALOAD  "W89"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W90"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
   AREALOAD  "F30"  "-1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
   AREALOAD  "F2"  "-1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
   AREALOAD  "F3"  "-1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
@@ -7028,24 +7026,6 @@ $ SHELL OBJECT LOADS
   AREALOAD  "F27"  "-1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
   AREALOAD  "F28"  "-1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
   AREALOAD  "F29"  "-1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
-  AREALOAD  "W60"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W63"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W67"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W70"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W71"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W72"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W114"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W115"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W116"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W117"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W118"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W119"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W120"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W121"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W122"  "-1"  TYPE "NONUNIF"  DIR "X"  LC "PP"  A 0  B 0  C 25.92451  D -2551.626  RESTRICTION "All"  
-  AREALOAD  "W92"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W93"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
-  AREALOAD  "W94"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
   AREALOAD  "F2"  "1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
   AREALOAD  "F3"  "1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
   AREALOAD  "F4"  "1"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.7111671
@@ -7929,7 +7909,6 @@ $ SHELL OBJECT LOADS
   AREALOAD  "F34"  "Cubierta"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.1422334
   AREALOAD  "F41"  "24"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.5689337
   AREALOAD  "F41"  "24"  TYPE "UNIFF"  DIR "GRAV"  LC "PP"  FVAL 0.1991268
-  AREALOAD  "W196"  "-1"  TYPE "NONUNIF"  DIR "Y"  LC "PP"  A 0  B 0  C -25.92451  D 2551.626  RESTRICTION "All"  
   AREALOAD  "F42"  "23"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.1422334
   AREALOAD  "F62"  "23"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.1422334
   AREALOAD  "F64"  "23"  TYPE "UNIFF"  DIR "GRAV"  LC "SC"  FVAL 0.1422334
@@ -8344,6 +8323,12 @@ ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:07:12 PM
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:10:51 PM
 ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:12:21 PM
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:12:39 PM
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:15:35 PM
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:40:17 PM
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:40:37 PM
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 4:43:35 PM
+ETABS 2016 Ultimate  16.2.1 File saved as C:\Users\mleal\Desktop\Proy. Hormigón\Modelo\modelo.EDB at 12/28/2018 5:33:12 PM
   ENDCOMMENTS  
 
   END
