@@ -1,0 +1,119 @@
+% Template:     Informe/Reporte LaTeX
+% Documento:    Archivo principal
+% Versión:      6.1.0 (03/11/2018)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R. @ppizarror
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Manual template: [https://latex.ppizarror.com/Template-Informe/]
+% Licencia MIT:    [https://opensource.org/licenses/MIT/]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\titulodelinforme {Título del informe}
+\def\temaatratar {Tema a tratar}
+
+\def\autordeldocumento {Nombre del autor}
+\def\nombredelcurso {Curso}
+\def\codigodelcurso {CO-1234}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de Ingeniería Civil}
+\def\imagendepartamento {departamentos/dic}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\tablaintegrantes {
+\begin{tabular}{ll}
+	Integrantes:
+	& \begin{tabular}[t]{@{}l@{}}
+		Integrante 1 \\
+		Integrante 2
+	\end{tabular} \\
+	Profesor:
+	& \begin{tabular}[t]{@{}l@{}}
+		Profesor 1
+	\end{tabular} \\
+	Auxiliar:
+	& \begin{tabular}[t]{@{}l@{}}
+		Auxiliar 1
+	\end{tabular} \\
+	Ayudantes:
+	& \begin{tabular}[t]{@{}l@{}}
+		Ayudante 1 \\
+		Ayudante 2
+	\end{tabular} \\
+	\multicolumn{2}{l}{Ayudante del laboratorio: Ayudante 1} \\
+	& \\
+	\multicolumn{2}{l}{Fecha de realización: \today} \\
+	\multicolumn{2}{l}{Fecha de entrega: \today} \\
+	\multicolumn{2}{l}{\localizacionuniversidad}
+\end{tabular}}{
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/env/imports}
+
+% IMPORTACIÓN DE FUNCIONES Y ENTORNOS
+\input{lib/cmd/all}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/style/all}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/cfg/init}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\input{lib/page/portrait} % Se puede borrar
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/cfg/page}
+
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\input{lib/page/index} % Se puede borrar
+
+% CONFIGURACIONES FINALES
+\input{lib/cfg/final}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+\section{Definición elemento estructural}
+    Se utilizan cuando existen cargas importantes, de modo que entre la placa y el pilar se construye un capitel (superior e inferior) que optimiza el trabajo de la losa, tanto a los esfuerzos de flexión como de corte. Su armado es similar a las de losas de espesor constante.
+    \subsection{Tipos de capitel}
+    
+\section{Historia}
+
+\section{Ejemplos de aplicación}
+
+\section{Recomendaciones de diseño}
+
+\section{Normativa}
+
+\section{Ventajas y desventajas}
+
+\section{Alternativas}
+
+\section{Referencias}
+    %DESCRIPCION GENERAL - página 18 - https://upcommons.upc.edu/bitstream/handle/2099.1/6081/07.pdf?sequence=8&isAllowed=y
+    %ARMADURA ANTIPUNZONAMIENTO - https://www.plakagroup.com/getmedia/a3aa2687-d79e-4939-8677-254d41866530/01-006-ARMATEC_INT1306_ES_LR.pdf
+    %DEFINICION - https://www.construmatica.com/construpedia/Losas_con_Capitel
+    %PUNZONAMIENTO - https://e-struc.com/2017/05/23/punzonamiento-por-que-se-produce-y-cuales-son-sus-efectos/
+    %PUNZONAMIENTO - https://e-struc.com/2017/06/06/punzonamiento-diseno-estructural/
+
+% FIN DEL DOCUMENTO
+\end{document}
